@@ -1,0 +1,319 @@
+{
+  "company": {
+    "id": 4,
+    "name": "Texas Instruments",
+    "domain": "ti.com",
+    "industry": "semiconductors",
+    "brands": [
+      "Texas Instruments"
+    ],
+    "is_existing_customer": false,
+    "customer_tier": null
+  },
+  "run_id": 5,
+  "run_date": "2026-11-16",
+  "mode": "run",
+  "company_score": {
+    "score": 3.66,
+    "factors": {
+      "best_opportunity": {
+        "rating": 4,
+        "reason": "Best opportunity scores 4.15"
+      },
+      "strong_count": {
+        "rating": 2,
+        "reason": "1 opportunities at or above 3.5"
+      },
+      "company_size": {
+        "rating": 5,
+        "reason": "A global semiconductor company with $6.06 billion in quarterly revenue and calculators sold nationwide."
+      },
+      "industry_fit": {
+        "rating": 3,
+        "reason": "Industry 'semiconductors'"
+      },
+      "new_activity": {
+        "rating": 3,
+        "reason": "Newest strong opportunity source is 77 days old"
+      }
+    },
+    "snapshot": "Texas Instruments is a semiconductor maker whose recent news is mostly business-to-business chip launches for AI data centers, robots, factories and EVs. Its consumer-facing activity is the TI-84 Evo graphing calculator, released in April 2026 and sold at national retailers."
+  },
+  "opportunities": [
+    {
+      "id": 29,
+      "moment_id": 33,
+      "moment": {
+        "title": "TI-84 Evo graphing calculator at national retail",
+        "type": "product_launch",
+        "summary": "The TI-84 Evo was released on April 28, 2026 in the United States, replacing the TI-84 CE Python, at a $160 retail price with a four-year online emulator license included. Amazon cut its price for back-to-school and again during its Labor Day sale, and TI is promoting it to classrooms with a bundle of 10 handhelds plus 50 online licenses.",
+        "timing": {
+          "date_text": "Released April 28, 2026; on sale through the school year",
+          "start_date": "2026-04-28",
+          "end_date": null,
+          "status": "ongoing"
+        },
+        "physical_touchpoints": [
+          "calculator packaging",
+          "retail shelf displays",
+          "in-box insert",
+          "classroom materials"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 49,
+            "exact_quote": "The TI-84 Evo was released on April 28, 2026 in the United States. It is an update of the TI-84 CE Python and in fact, replacing the TI-84 CE Python."
+          },
+          {
+            "evidence_id": 49,
+            "exact_quote": "Retail Price: $160 (US dollars). There is a four year license to an online emulator included."
+          },
+          {
+            "evidence_id": 44,
+            "exact_quote": "Amazon has dropped the price of the Texas Instruments TI-84 Evo calculator in white by 44% for a $71 savings off the MSRP of $160."
+          },
+          {
+            "evidence_id": 44,
+            "exact_quote": "the TI-84 series calculators remain the de facto pick of school districts across America"
+          },
+          {
+            "evidence_id": 45,
+            "exact_quote": "As part of the ongoing Labor Day sale, Amazon is offering a deal that drops the Texas Instruments TI-84 Evo graphing calculator for $74 shipped."
+          },
+          {
+            "evidence_id": 42,
+            "exact_quote": "Get ready for the upcoming school year with tips, tutorials, activities, and downloads from TI."
+          },
+          {
+            "evidence_id": 42,
+            "exact_quote": "The TI-84 Evo is purpose-built for a distraction-free classroom experience, supporting every student's math journey."
+          },
+          {
+            "evidence_id": 42,
+            "exact_quote": "Ask your local Educational Technology Consultant about the TI-84 Evo bundle for your classroom: 10 handheld calculators + 50 online calculator licenses."
+          },
+          {
+            "evidence_id": 42,
+            "exact_quote": "Or, find where to buy your favorite calculator color in stock now."
+          }
+        ]
+      },
+      "play_id": "packaging_signup",
+      "why_flowcode_fits": "The TI-84 Evo is a new flagship sold at national retailers in seven colors, and every box includes a four-year online emulator license the student has to activate. A code on the box or in-box insert can take buyers straight to license activation and product registration, turning anonymous retail buyers, mostly students and parents, into a contact list TI owns.",
+      "flowcode_products": [
+        "Flowcodes (branded QR codes)",
+        "FlowURLs",
+        "FlowID (customer profiles built from scans)",
+        "Analytics and Integrations"
+      ],
+      "similar_story": {
+        "name": "LOVE CORN",
+        "url": "https://www.flowcode.com/case-study/love-corn",
+        "result": "43,000 scans and 27,000 new contacts"
+      },
+      "suggested_first_pitch": "Every TI-84 Evo sold at Amazon or Target is a buyer you never meet; a code on the box that activates the four-year online license in one scan gets you their email and shows you which retailer and color moved.",
+      "verification": {
+        "quotes_checked": 9,
+        "quotes_passed": 9,
+        "verdict": "partly",
+        "reason": "The quotes do not state the number of colors.",
+        "original_summary": "The TI-84 Evo, released on April 28, 2026 in the United States, replaces the TI-84 CE Python and comes in seven colors at a $160 retail price with a four-year online emulator license. Amazon cut its price for back-to-school and again for Labor Day."
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 4,
+          "reason": "On sale now through the school year; the big back-to-school window has passed but the holiday season is next."
+        },
+        "playbook_fit": {
+          "rating": 5,
+          "reason": "New retail product whose box already carries a license to activate fits packaging_signup closely."
+        },
+        "reach": {
+          "rating": 5,
+          "reason": "Sold nationally through Amazon and retailers, and the TI-84 line is the de facto pick of US school districts."
+        },
+        "evidence_strength": {
+          "rating": 3,
+          "reason": "TI's own back-to-school page plus deal coverage, newest source 77 days old."
+        },
+        "openness": {
+          "rating": 3,
+          "reason": "Already pushes online licenses and where-to-buy links, but no stated scan use."
+        }
+      },
+      "score": 4.15,
+      "sources": [
+        {
+          "evidence_id": 49,
+          "publisher": "edspi31415.blogspot.com",
+          "date": "2026-05-24",
+          "quote": "The TI-84 Evo was released on April 28, 2026 in the United States. It is an update of the \u2026",
+          "url": "https://edspi31415.blogspot.com/2026/05/the-new-ti-84-evo.html"
+        },
+        {
+          "evidence_id": 49,
+          "publisher": "edspi31415.blogspot.com",
+          "date": "2026-05-24",
+          "quote": "Retail Price: $160 (US dollars). There is a four year license to an online emulator included.",
+          "url": "https://edspi31415.blogspot.com/2026/05/the-new-ti-84-evo.html"
+        },
+        {
+          "evidence_id": 44,
+          "publisher": "Notebookcheck",
+          "date": "2026-08-02",
+          "quote": "Amazon has dropped the price of the Texas Instruments TI-84 Evo calculator in white by 44% for a $71 \u2026",
+          "url": "https://www.notebookcheck.net/TI-84-Evo-graphing-calculator-drops-to-best-price-ever-for-back-to-school.1358379.0.html"
+        },
+        {
+          "evidence_id": 44,
+          "publisher": "Notebookcheck",
+          "date": "2026-08-02",
+          "quote": "the TI-84 series calculators remain the de facto pick of school districts across America",
+          "url": "https://www.notebookcheck.net/TI-84-Evo-graphing-calculator-drops-to-best-price-ever-for-back-to-school.1358379.0.html"
+        },
+        {
+          "evidence_id": 45,
+          "publisher": "9To5Toys",
+          "date": "2026-08-31",
+          "quote": "As part of the ongoing Labor Day sale, Amazon is offering a deal that drops the Texas Instruments TI-84 \u2026",
+          "url": "https://9to5toys.com/2026/08/31/texas-instrument-ti-84-evo-usb-c-graphing-calculator-can-run-python-code/"
+        },
+        {
+          "evidence_id": 42,
+          "publisher": "ti-enews-education.ti.com",
+          "date": "2026-06-22",
+          "quote": "Get ready for the upcoming school year with tips, tutorials, activities, and downloads from TI.",
+          "url": "https://ti-enews-education.ti.com/BacktoSchool2026"
+        },
+        {
+          "evidence_id": 42,
+          "publisher": "ti-enews-education.ti.com",
+          "date": "2026-06-22",
+          "quote": "The TI-84 Evo is purpose-built for a distraction-free classroom experience, supporting every student's math journey.",
+          "url": "https://ti-enews-education.ti.com/BacktoSchool2026"
+        },
+        {
+          "evidence_id": 42,
+          "publisher": "ti-enews-education.ti.com",
+          "date": "2026-06-22",
+          "quote": "Ask your local Educational Technology Consultant about the TI-84 Evo bundle for your classroom: 10 handheld calculators + 50 \u2026",
+          "url": "https://ti-enews-education.ti.com/BacktoSchool2026"
+        },
+        {
+          "evidence_id": 42,
+          "publisher": "ti-enews-education.ti.com",
+          "date": "2026-06-22",
+          "quote": "Or, find where to buy your favorite calculator color in stock now.",
+          "url": "https://ti-enews-education.ti.com/BacktoSchool2026"
+        }
+      ],
+      "new": true
+    },
+    {
+      "id": 33,
+      "moment_id": 43,
+      "moment": {
+        "title": "TI calculator packaging moves from blister packs to folding cartons",
+        "type": "packaging",
+        "summary": "A TI distributor reported in February 2025 that TI calculators are moving from blister packs to folding cartons as a running change, so some models may already be in the new packaging while others remain in older packaging.",
+        "timing": {
+          "date_text": "Running change starting in 2025",
+          "start_date": "2025-02-18",
+          "end_date": null,
+          "status": "ongoing"
+        },
+        "physical_touchpoints": [
+          "calculator packaging",
+          "hanging tab",
+          "case packs"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 48,
+            "exact_quote": "You will now be seeing less and less of the blister packs, and more of the... drum roll... folding cartons!"
+          },
+          {
+            "evidence_id": 48,
+            "exact_quote": "The packaging transition is a running change."
+          },
+          {
+            "evidence_id": 48,
+            "exact_quote": "You may see some models already in the new packaging while other models remain in older packaging."
+          }
+        ]
+      },
+      "play_id": "packaging_signup",
+      "why_flowcode_fits": "TI is moving its whole calculator line onto new folding cartons as a running change, so packaging artwork is already being reprinted model by model. Adding a code to the new cartons now, with the link set after printing, costs little and gives each model a sign-up and support entry point.",
+      "flowcode_products": [
+        "Flowcodes (branded QR codes)",
+        "FlowURLs",
+        "Analytics and Integrations"
+      ],
+      "similar_story": {
+        "name": "LOVE CORN",
+        "url": "https://www.flowcode.com/case-study/love-corn",
+        "result": "43,000 scans and 27,000 new contacts"
+      },
+      "suggested_first_pitch": "While the calculator line is already moving to new cartons, add one dynamic code per model; you can point it at tutorials, test-approval info or registration later without reprinting.",
+      "verification": {
+        "quotes_checked": 3,
+        "quotes_passed": 3,
+        "verdict": "partly",
+        "reason": "The quotes do not say the cartons are more compact or limit this to big box retailers, and the source is a distributor, not TI.",
+        "original_summary": "Texas Instruments began replacing the blister packs used for its calculators at big box retailers with new, more compact folding cartons. The switch is a running change, so stores may carry some models in new packaging and others in old."
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 2,
+          "reason": "Transition reported in February 2025 with no current date; it may already be finished."
+        },
+        "playbook_fit": {
+          "rating": 4,
+          "reason": "A packaging redesign is a named packaging_signup signal."
+        },
+        "reach": {
+          "rating": 4,
+          "reason": "TI's whole calculator line at retailers."
+        },
+        "evidence_strength": {
+          "rating": 1,
+          "reason": "One distributor blog post from 21 months ago."
+        },
+        "openness": {
+          "rating": 3,
+          "reason": "No evidence either way about codes on packaging."
+        }
+      },
+      "score": 2.9,
+      "sources": [
+        {
+          "evidence_id": 48,
+          "publisher": "Underwood Distributing Co.",
+          "date": "2025-02-18",
+          "quote": "You will now be seeing less and less of the blister packs, and more of the... drum roll... folding \u2026",
+          "url": "https://underwooddistributing.com/blogs/calculators/ti-calculators-new-packaging"
+        },
+        {
+          "evidence_id": 48,
+          "publisher": "Underwood Distributing Co.",
+          "date": "2025-02-18",
+          "quote": "The packaging transition is a running change.",
+          "url": "https://underwooddistributing.com/blogs/calculators/ti-calculators-new-packaging"
+        },
+        {
+          "evidence_id": 48,
+          "publisher": "Underwood Distributing Co.",
+          "date": "2025-02-18",
+          "quote": "You may see some models already in the new packaging while other models remain in older packaging.",
+          "url": "https://underwooddistributing.com/blogs/calculators/ti-calculators-new-packaging"
+        }
+      ],
+      "new": true
+    }
+  ],
+  "channels_covered": [
+    "packaging"
+  ]
+}
