@@ -26,7 +26,7 @@ def match_moments(ctx: RunContext, company: Company, moments: list[tuple[int, Mo
     user = (f"Company: {company.name} (industry: {company.industry})\n\n"
             f"## Flowcode playbook\n```yaml\n{yaml.safe_dump(playbook, sort_keys=False)}```\n\n"
             f"## Moments\n```json\n{json.dumps(listing, indent=1)}\n```")
-    calllog.progress(f"Matching {len(moments)} moments to the Flowcode playbook")
+    calllog.progress("Matching findings to Flowcode plays")
     with calllog.tagged(step="match", moments=len(moments)):
         answer = ctx.llm.complete_json(ctx.prompt("match"), user, MatchList, ctx.main_model)
 

@@ -69,7 +69,7 @@ def run_company(ctx: RunContext, user_input: str, domain: str | None = None, mod
 def _run_company(ctx: RunContext, user_input: str, domain: str | None, mode: str) -> RunResult:
     start_search, start_in, start_out = ctx.search.requests, *_tokens(ctx)
     with calllog.tagged(company=user_input):
-        calllog.progress(f"Starting research on {user_input}")
+        calllog.progress("Starting research")
         company = _known_company(ctx, user_input, domain) or resolve_company(ctx, user_input, domain)
     unfinished = ctx.db.unfinished_run(company.id, mode)
     if unfinished:

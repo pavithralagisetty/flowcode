@@ -67,3 +67,10 @@ def test_is_fresh():
     assert is_fresh(date(2026, 9, 1), "", TODAY, 180)
     assert not is_fresh(date(2024, 1, 1), "A race in 2024.", TODAY, 180)
     assert is_fresh(date(2025, 1, 1), "The program runs through December 2026.", TODAY, 180)
+
+
+def test_every_search_has_a_plain_progress_label():
+    from flowcode_agent.steps.gather import QUERY_TEMPLATES, SEARCH_LABELS
+
+    assert set(SEARCH_LABELS) == set(QUERY_TEMPLATES)
+    assert all("{" not in label and "http" not in label for label in SEARCH_LABELS.values())

@@ -53,7 +53,7 @@ def merge_moments(ctx: RunContext, moments: list[Moment]) -> list[Moment]:
         return moments
     listing = [{"index": i, "title": m.title, "type": m.type, "summary": m.summary,
                 "timing": m.timing.date_text} for i, m in enumerate(moments)]
-    calllog.progress(f"Merging {len(moments)} moments that describe the same thing")
+    calllog.progress("Combining duplicate findings")
     with calllog.tagged(step="merge", moments=len(moments)):
         groups = ctx.llm.complete_json(MERGE_SYSTEM, json.dumps(listing, indent=1), MergeGroups, ctx.cheap_model).groups
     used: set[int] = set()
@@ -83,10 +83,9 @@ def find_moments(ctx: RunContext, company: Company) -> list[Moment]:
     evidence = usable_evidence(ctx, company)
     size = ctx.config.research.evidence_batch_size
     moments: list[Moment] = []
+    calllog.progress("Reading the pages for campaigns, launches and events")
     for start in range(0, len(evidence), size):
         batch = evidence[start : start + size]
-        calllog.progress(f"Reading pages {start + 1}–{start + len(batch)} of {len(evidence)} for campaigns, "
-                         "launches and events")
         with calllog.tagged(batch=f"{start // size + 1}/{-(-len(evidence) // size)}"):
             moments += find_moments_in_batch(ctx, company, batch)
     log.info("Found %d moments in %d evidence pages", len(moments), len(evidence))

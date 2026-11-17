@@ -109,7 +109,7 @@ def score(ctx: RunContext, company: Company, opps: list[Opportunity]) -> tuple[l
         listing = [_describe(i, o, evidence) for i, o in enumerate(live)]
         user = (f"Today's date: {ctx.today.isoformat()}\nCompany: {company.name} (industry: {company.industry})\n\n"
                 f"## Opportunities\n```json\n{json.dumps(listing, indent=1)}\n```")
-        calllog.progress(f"Scoring {len(live)} opportunities")
+        calllog.progress("Scoring the opportunities")
         with calllog.tagged(step="score", opportunities=len(live)):
             answer = ctx.llm.complete_json(ctx.prompt("score"), user, ScoreAnswer, ctx.main_model)
         ratings = {r.index: r for r in answer.opportunities}

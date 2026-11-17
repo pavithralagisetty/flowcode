@@ -28,6 +28,20 @@ QUERY_TEMPLATES = [
     "{brand} QR code",
     "{brand} site:prnewswire.com OR site:businesswire.com",
 ]
+# What each search looks for, shown as the live step while it runs.
+SEARCH_LABELS = {
+    "{brand} campaign": "Looking for current campaigns",
+    "{brand} new ad": "Looking for new ads",
+    "{brand} commercial site:ispot.tv": "Looking for TV commercials",
+    "{brand} sponsorship": "Looking for sponsorships",
+    "{brand} partnership": "Looking for partnerships",
+    "{brand} tour OR festival OR pop up": "Looking for tours, festivals and pop-ups",
+    "{brand} new packaging": "Looking for new packaging",
+    "{brand} limited edition": "Looking for limited editions",
+    "{brand} loyalty program OR sweepstakes": "Looking for loyalty programs and sweepstakes",
+    "{brand} QR code": "Checking how they use QR codes",
+    "{brand} site:prnewswire.com OR site:businesswire.com": "Reading press releases",
+}
 NEWSROOM_PATHS = ["/news", "/newsroom", "/press", "/press-releases"]
 NEWSROOM_ARTICLE_LIMIT = 10
 THIN_RESULTS = 15  # if the company name finds fewer new pages than this, also search each brand
@@ -127,14 +141,14 @@ class Gatherer:
             if self.full:
                 return
             query = template.format(brand=brand)
-            calllog.progress(f"Searching “{query}”")
+            calllog.progress(SEARCH_LABELS.get(template, "Searching the web"))
             for result in cached_search(self.ctx, query, self.ctx.config.search.max_results_per_query):
                 self.consider(result.url)
 
     def read_newsroom(self) -> None:
         """Find the newsroom by search and common paths, then read its recent articles."""
         domain = self.company.domain
-        calllog.progress(f"Finding the {self.company.name} newsroom")
+        calllog.progress("Reading the company newsroom")
         pages = [f"https://{domain}{p}" for p in NEWSROOM_PATHS]
         for r in cached_search(self.ctx, f"{self.company.name} newsroom press releases",
                                self.ctx.config.search.max_results_per_query):

@@ -93,8 +93,8 @@ def verify_opportunity(ctx: RunContext, opp: Opportunity, evidence: dict[int, Ev
 def verify(ctx: RunContext, company_id: int, opps: list[Opportunity]) -> list[Opportunity]:
     """Verify all opportunities. Unverified ones are kept (marked) so eval can count them."""
     evidence = ctx.db.get_evidence_map(company_id)
-    for i, opp in enumerate(opps, 1):
-        calllog.progress(f"Checking quotes {i}/{len(opps)}: {opp.moment.title}")
+    calllog.progress("Checking every claim against its source")
+    for opp in opps:
         verify_opportunity(ctx, opp, evidence)
     log.info("Verified %d of %d opportunities", sum(o.verified for o in opps), len(opps))
     return opps
