@@ -52,3 +52,12 @@ paths:
   playbook: playbook.yaml
   existing_customers: existing_customers.yaml
   handoff: handoff
+  calls_log: logs/api_calls.jsonl   # one line per AI call and search, for cost analysis
+
+# Prices for the cost estimate on the Usage page (US dollars, Anthropic list prices as of Nov 2026;
+# check https://www.anthropic.com/pricing). Claude Code runs are estimated the same way.
+pricing:
+  web_search_per_1k: 10
+  models:
+    claude-sonnet-5-5: {input_per_mtok: 2, output_per_mtok: 10}
+    claude-haiku-4-5: {input_per_mtok: 1, output_per_mtok: 5}

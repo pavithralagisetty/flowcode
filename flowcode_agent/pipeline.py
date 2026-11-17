@@ -3,9 +3,11 @@
 from __future__ import annotations
 
 import logging
+import uuid
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from flowcode_agent import calllog
 from flowcode_agent.config import Config
 from flowcode_agent.context import RunContext
 from flowcode_agent.db import STAGES, Database
@@ -60,8 +62,16 @@ def _known_company(ctx: RunContext, user_input: str, domain: str | None) -> Comp
 
 def run_company(ctx: RunContext, user_input: str, domain: str | None = None, mode: str = "run") -> RunResult:
     """Run (or resume) the full pipeline for one company. `mode` is 'run' or 'refresh'."""
-    start_search, start_in, start_out = ctx.search.requests, ctx.llm.input_tokens, ctx.llm.output_tokens
-    company = _known_company(ctx, user_input, domain) or resolve_company(ctx, user_input, domain)
+    calllog.configure(ctx.config.path("calls_log"))
+    with calllog.tagged(session=uuid.uuid4().hex[:10], mode=mode):
+        return _run_company(ctx, user_input, domain, mode)
+
+
+def _run_company(ctx: RunContext, user_input: str, domain: str | None, mode: str) -> RunResult:
+    start_search, start_in, start_out = ctx.search.requests, *_tokens(ctx)
+    with calllog.tagged(company=user_input):
+        calllog.progress(f"Starting research on {user_input}")
+        company = _known_company(ctx, user_input, domain) or resolve_company(ctx, user_input, domain)
     unfinished = ctx.db.unfinished_run(company.id, mode)
     if unfinished:
         run_id, status = unfinished["id"], unfinished["status"]
@@ -71,12 +81,19 @@ def run_company(ctx: RunContext, user_input: str, domain: str | None = None, mod
         ctx.db.set_run_status(run_id, "resolved")
         status = "resolved"
     try:
-        result = _run_stages(ctx, company, run_id, status, refresh=(mode == "refresh"))
+        with calllog.tagged(company=company.name, run_id=run_id):
+            result = _run_stages(ctx, company, run_id, status, refresh=(mode == "refresh"))
     finally:
-        ctx.db.add_usage(run_id, company.id, ctx.search.requests - start_search,
-                         ctx.llm.input_tokens - start_in, ctx.llm.output_tokens - start_out)
+        end_in, end_out = _tokens(ctx)
+        ctx.db.add_usage(run_id, company.id, ctx.search.requests - start_search, end_in - start_in, end_out - start_out)
     result.usage = ctx.db.get_usage(run_id)
     return result
+
+
+def _tokens(ctx: RunContext) -> tuple[int, int]:
+    """AI tokens so far, including tokens the search provider spends (Claude web search uses the model)."""
+    return (ctx.llm.input_tokens + getattr(ctx.search, "input_tokens", 0),
+            ctx.llm.output_tokens + getattr(ctx.search, "output_tokens", 0))
 
 
 def _run_stages(ctx: RunContext, company: Company, run_id: int, status: str, refresh: bool) -> RunResult:
@@ -118,6 +135,7 @@ def _run_stages(ctx: RunContext, company: Company, run_id: int, status: str, ref
         [o for o in db.list_opportunities(run_id) if o.verified and o.score is not None and not is_over(o, ctx.today)],
         key=lambda o: o.score, reverse=True,
     )
+    calllog.progress("Writing the report")
     folder = write_report(ctx.config.path("outputs"), company, cs, ranked, db.get_evidence_map(company.id), run_id,
                           ctx.today, refresh=refresh, new_evidence_ids=new_ids)
     db.set_run_status(run_id, "done")

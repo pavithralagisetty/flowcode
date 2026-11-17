@@ -35,6 +35,8 @@ class GeminiSearchProvider:
         self.client = genai.Client(api_key=require_env("GEMINI_API_KEY"))
         self.http = httpx.Client(follow_redirects=True, timeout=timeout, headers={"User-Agent": USER_AGENT})
         self.requests = 0
+        self.input_tokens = 0
+        self.output_tokens = 0
 
     def search(self, query: str, max_results: int = 10) -> list[SearchResult]:
         """Run one grounded request and return its source links. The answer text is ignored."""
@@ -46,6 +48,9 @@ class GeminiSearchProvider:
             _retryable,
         )
         self.requests += 1
+        usage = getattr(response, "usage_metadata", None)
+        self.input_tokens += (getattr(usage, "prompt_token_count", 0) or 0) if usage else 0
+        self.output_tokens += (getattr(usage, "candidates_token_count", 0) or 0) if usage else 0
         meta = response.candidates[0].grounding_metadata if response.candidates else None
         if meta is None:
             log.info("No grounding metadata for query %r", query)

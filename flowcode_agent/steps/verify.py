@@ -7,6 +7,7 @@ import re
 import unicodedata
 from difflib import SequenceMatcher
 
+from flowcode_agent import calllog
 from flowcode_agent.context import RunContext
 from flowcode_agent.models import Evidence, Opportunity, Verification, VerifyAnswer
 
@@ -69,7 +70,9 @@ def ai_check(ctx: RunContext, opp: Opportunity, evidence: dict[int, Evidence]) -
     )
     timing = opp.moment.timing.date_text or "not stated"
     user = f"Claim: {opp.moment.summary}\nTiming claimed: {timing}\n\nQuotes:\n{quotes}"
-    return ctx.llm.complete_json(ctx.prompt("verify"), user, VerifyAnswer, ctx.main_model)
+    pages = sorted({evidence[link.evidence_id].final_url for link in opp.moment.evidence})
+    with calllog.tagged(step="verify", opportunity=opp.moment.title, pages=pages):
+        return ctx.llm.complete_json(ctx.prompt("verify"), user, VerifyAnswer, ctx.main_model)
 
 
 def verify_opportunity(ctx: RunContext, opp: Opportunity, evidence: dict[int, Evidence]) -> Opportunity:
@@ -90,7 +93,8 @@ def verify_opportunity(ctx: RunContext, opp: Opportunity, evidence: dict[int, Ev
 def verify(ctx: RunContext, company_id: int, opps: list[Opportunity]) -> list[Opportunity]:
     """Verify all opportunities. Unverified ones are kept (marked) so eval can count them."""
     evidence = ctx.db.get_evidence_map(company_id)
-    for opp in opps:
+    for i, opp in enumerate(opps, 1):
+        calllog.progress(f"Checking quotes {i}/{len(opps)}: {opp.moment.title}")
         verify_opportunity(ctx, opp, evidence)
     log.info("Verified %d of %d opportunities", sum(o.verified for o in opps), len(opps))
     return opps

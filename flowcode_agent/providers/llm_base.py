@@ -9,6 +9,8 @@ from typing import Protocol, TypeVar
 
 from pydantic import BaseModel, ValidationError
 
+from flowcode_agent import calllog
+
 log = logging.getLogger(__name__)
 M = TypeVar("M", bound=BaseModel)
 
@@ -49,6 +51,7 @@ class BaseLLM:
     def __init__(self) -> None:
         self.input_tokens = 0
         self.output_tokens = 0
+        self.last_call_info: dict = {}  # provider-specific extras for the call log
 
     def _raw(self, system: str, messages: list[dict[str, str]], model: str) -> tuple[str, int, int]:
         """Return (text, input_tokens, output_tokens). `messages` alternate user/assistant."""
@@ -64,6 +67,10 @@ class BaseLLM:
             self.input_tokens += tin
             self.output_tokens += tout
             log.info("LLM %s/%s %s: %d in, %d out tokens", self.name, model, schema.__name__, tin, tout)
+            calllog.record("llm", provider=self.name, model=model, schema=schema.__name__, attempt=attempt,
+                           input_tokens=tin, output_tokens=tout,
+                           prompt_chars=len(system_full) + sum(len(m["content"]) for m in messages),
+                           **getattr(self, "last_call_info", {}))
             try:
                 return schema.model_validate_json(extract_json(text))
             except (ValidationError, ValueError) as exc:

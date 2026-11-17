@@ -8,6 +8,7 @@ from pathlib import Path
 
 import yaml
 
+from flowcode_agent import calllog
 from flowcode_agent.context import RunContext
 from flowcode_agent.fetch import domain_of, is_blocked
 from flowcode_agent.models import Candidate, Company, ResolvedCompany
@@ -46,8 +47,8 @@ def looks_like_url(text: str) -> bool:
     return text.startswith(("http://", "https://", "www.")) or bool(re.fullmatch(r"[\w-]+(\.[\w-]+)+(/.*)?", text))
 
 
-def _gather_context(ctx: RunContext, query: str, domain: str | None) -> str:
-    """Search results plus short page excerpts for the AI to resolve from."""
+def _gather_context(ctx: RunContext, query: str, domain: str | None) -> tuple[str, list[dict]]:
+    """Search results plus short page excerpts for the AI to resolve from, and the pages used."""
     blocked = ctx.config.research.blocked_domains
     lines: list[str] = []
     pages: list[str] = []
@@ -60,12 +61,16 @@ def _gather_context(ctx: RunContext, query: str, domain: str | None) -> str:
         lines.append(f"- {r.title or ''} | {r.url}")
         if len(pages) < 3 and r.url not in pages:
             pages.append(r.url)
-    excerpts = []
+    excerpts, used = [], []
     for url in pages:
+        calllog.progress(f"Reading {url} to identify the company")
         page = ctx.fetcher(url)
         if page:
-            excerpts.append(f"### {page.final_url}\nTitle: {page.title}\n{page.text[:EXCERPT_CHARS]}")
-    return "## Search results\n" + "\n".join(lines) + "\n\n## Page excerpts\n" + "\n\n".join(excerpts)
+            excerpt = page.text[:EXCERPT_CHARS]
+            excerpts.append(f"### {page.final_url}\nTitle: {page.title}\n{excerpt}")
+            used.append({"url": page.final_url, "chars_sent": len(excerpt)})
+    context = "## Search results\n" + "\n".join(lines) + "\n\n## Page excerpts\n" + "\n\n".join(excerpts)
+    return context, used
 
 
 def resolve_company(ctx: RunContext, user_input: str, domain: str | None = None) -> Company:
@@ -80,9 +85,12 @@ def resolve_company(ctx: RunContext, user_input: str, domain: str | None = None)
             return mark_customer(ctx, existing)
 
     query = domain or user_input
-    context = _gather_context(ctx, query if not domain else f"{user_input} {domain}", domain)
+    calllog.progress(f"Searching “{query} official website”")
+    context, used = _gather_context(ctx, query if not domain else f"{user_input} {domain}", domain)
     user = f"User input: {user_input}\nKnown domain: {domain or 'none'}\n\n{context}"
-    answer = ctx.llm.complete_json(ctx.prompt("resolve"), user, ResolvedCompany, ctx.cheap_model)
+    calllog.progress(f"Identifying {user_input}: official name, website and brands")
+    with calllog.tagged(step="resolve", pages=used):
+        answer = ctx.llm.complete_json(ctx.prompt("resolve"), user, ResolvedCompany, ctx.cheap_model)
     log.info("Resolved %r -> %s (%s), confidence %.2f", user_input, answer.official_name, answer.official_domain,
              answer.confidence)
 

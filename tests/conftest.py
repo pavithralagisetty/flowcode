@@ -76,7 +76,8 @@ class FakeFetcher:
 def config(tmp_path) -> Config:
     data = yaml.safe_load((ROOT / "config.yaml").read_text())
     data["search"]["provider"] = "fake"
-    data["paths"].update(db=str(tmp_path / "test.db"), outputs=str(tmp_path / "outputs"))
+    data["paths"].update(db=str(tmp_path / "test.db"), outputs=str(tmp_path / "outputs"),
+                         calls_log=str(tmp_path / "logs" / "api_calls.jsonl"))
     return Config(**data, base_dir=ROOT)
 
 

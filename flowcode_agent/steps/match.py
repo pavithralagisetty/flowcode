@@ -7,6 +7,7 @@ import logging
 
 import yaml
 
+from flowcode_agent import calllog
 from flowcode_agent.context import RunContext
 from flowcode_agent.models import Company, MatchList, Moment, Opportunity, SimilarStory
 
@@ -25,7 +26,9 @@ def match_moments(ctx: RunContext, company: Company, moments: list[tuple[int, Mo
     user = (f"Company: {company.name} (industry: {company.industry})\n\n"
             f"## Flowcode playbook\n```yaml\n{yaml.safe_dump(playbook, sort_keys=False)}```\n\n"
             f"## Moments\n```json\n{json.dumps(listing, indent=1)}\n```")
-    answer = ctx.llm.complete_json(ctx.prompt("match"), user, MatchList, ctx.main_model)
+    calllog.progress(f"Matching {len(moments)} moments to the Flowcode playbook")
+    with calllog.tagged(step="match", moments=len(moments)):
+        answer = ctx.llm.complete_json(ctx.prompt("match"), user, MatchList, ctx.main_model)
 
     products = set(playbook.get("products", []))
     by_index = {m.moment_index: m for m in answer.matches}

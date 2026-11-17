@@ -14,7 +14,8 @@ class FakeMessages:
 
 
 def _response(stop, blocks, searches=1):
-    return NS(stop_reason=stop, content=blocks, usage=NS(server_tool_use=NS(web_search_requests=searches)))
+    return NS(stop_reason=stop, content=blocks, usage=NS(server_tool_use=NS(web_search_requests=searches),
+                                                       input_tokens=1000, output_tokens=50))
 
 
 def test_reads_only_search_result_links_and_resumes_pause_turn():
@@ -27,8 +28,10 @@ def test_reads_only_search_result_links_and_resumes_pause_turn():
     ]
     provider = ClaudeSearchProvider.__new__(ClaudeSearchProvider)
     provider.model, provider.max_uses, provider.requests = "m", 3, 0
+    provider.input_tokens = provider.output_tokens = 0
     provider.client = NS(messages=FakeMessages(responses))
     results = provider.search("acme campaign")
     assert [r.url for r in results] == ["https://a.com", "https://b.com", "https://c.com"]
     assert provider.requests == 2
+    assert (provider.input_tokens, provider.output_tokens) == (2000, 100)
     assert provider.client.messages.calls[1]["messages"][1]["role"] == "assistant"

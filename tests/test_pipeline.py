@@ -185,3 +185,16 @@ def test_batch_ranking(config, tmp_path):
     md, csv_path = write_ranking(config.path("outputs"), items)
     assert "| 1 | Acme Soda |" in md.read_text()
     assert "Acme Soda" in csv_path.read_text()
+
+
+def test_call_log_records_every_ai_call_with_step_and_pages(ctx, config):
+    from flowcode_agent import calllog
+
+    result = run_company(ctx, "Acme Soda")
+    rows = calllog.read(config.path("calls_log"), run_id=result.run_id)
+    llm_steps = [r["step"] for r in rows if r["kind"] == "llm"]
+    assert {"moments", "match", "verify", "score"} <= set(llm_steps)
+    moments = next(r for r in rows if r["kind"] == "llm" and r["step"] == "moments")
+    assert moments["company"] == "Acme Soda" and moments["pages"][0]["url"].startswith("https://")
+    assert all("input_tokens" in r for r in rows if r["kind"] == "llm")
+    assert any(r["kind"] in ("search", "search_cached") for r in rows)

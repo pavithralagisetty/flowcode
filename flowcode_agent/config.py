@@ -86,6 +86,19 @@ class PathsConfig(BaseModel):
     playbook: str = "playbook.yaml"
     existing_customers: str = "existing_customers.yaml"
     handoff: str = "handoff"
+    calls_log: str = "logs/api_calls.jsonl"
+
+
+class ModelPrice(BaseModel):
+    """US dollars per million tokens. Only used to estimate cost in the Usage page."""
+
+    input_per_mtok: float = 0
+    output_per_mtok: float = 0
+
+
+class PricingConfig(BaseModel):
+    models: dict[str, ModelPrice] = {}
+    web_search_per_1k: float = 0
 
 
 class Config(BaseModel):
@@ -97,6 +110,7 @@ class Config(BaseModel):
     scoring: ScoringConfig
     batch: BatchConfig = BatchConfig()
     paths: PathsConfig = PathsConfig()
+    pricing: PricingConfig = PricingConfig()
     base_dir: Path = Path(".")
 
     def path(self, name: str) -> Path:

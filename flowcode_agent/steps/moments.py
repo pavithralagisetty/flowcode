@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import logging
 
+from flowcode_agent import calllog
 from flowcode_agent.context import RunContext
 from flowcode_agent.models import Company, Evidence, MergeGroups, Moment, MomentList
 from flowcode_agent.steps.gather import is_fresh
@@ -34,7 +35,9 @@ def find_moments_in_batch(ctx: RunContext, company: Company, batch: list[Evidenc
     user = (f"Today's date: {ctx.today.isoformat()}\nTarget company: {company.name} ({company.domain})\n"
             f"Brands: {', '.join(company.brands) or 'none listed'}\n\n"
             + "\n\n".join(format_evidence(e, max_chars) for e in batch))
-    answer = ctx.llm.complete_json(ctx.prompt("moments"), user, MomentList, ctx.cheap_model)
+    pages = [{"evidence_id": e.id, "url": e.final_url, "chars_sent": min(len(e.text), max_chars)} for e in batch]
+    with calllog.tagged(step="moments", pages=pages):
+        answer = ctx.llm.complete_json(ctx.prompt("moments"), user, MomentList, ctx.cheap_model)
     valid_ids = {e.id for e in batch}
     moments = []
     for m in answer.moments:
@@ -50,7 +53,9 @@ def merge_moments(ctx: RunContext, moments: list[Moment]) -> list[Moment]:
         return moments
     listing = [{"index": i, "title": m.title, "type": m.type, "summary": m.summary,
                 "timing": m.timing.date_text} for i, m in enumerate(moments)]
-    groups = ctx.llm.complete_json(MERGE_SYSTEM, json.dumps(listing, indent=1), MergeGroups, ctx.cheap_model).groups
+    calllog.progress(f"Merging {len(moments)} moments that describe the same thing")
+    with calllog.tagged(step="merge", moments=len(moments)):
+        groups = ctx.llm.complete_json(MERGE_SYSTEM, json.dumps(listing, indent=1), MergeGroups, ctx.cheap_model).groups
     used: set[int] = set()
     merged: list[Moment] = []
     for group in groups + [[i] for i in range(len(moments))]:
@@ -79,6 +84,10 @@ def find_moments(ctx: RunContext, company: Company) -> list[Moment]:
     size = ctx.config.research.evidence_batch_size
     moments: list[Moment] = []
     for start in range(0, len(evidence), size):
-        moments += find_moments_in_batch(ctx, company, evidence[start : start + size])
+        batch = evidence[start : start + size]
+        calllog.progress(f"Reading pages {start + 1}–{start + len(batch)} of {len(evidence)} for campaigns, "
+                         "launches and events")
+        with calllog.tagged(batch=f"{start // size + 1}/{-(-len(evidence) // size)}"):
+            moments += find_moments_in_batch(ctx, company, batch)
     log.info("Found %d moments in %d evidence pages", len(moments), len(evidence))
     return merge_moments(ctx, moments)

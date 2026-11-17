@@ -6,6 +6,7 @@ import logging
 import re
 from datetime import date, timedelta
 
+from flowcode_agent import calllog
 from flowcode_agent.context import RunContext
 from flowcode_agent.db import now_iso
 from flowcode_agent.fetch import FetchedPage, domain_of, extract_news_links, is_blocked, text_hash, url_hash
@@ -40,16 +41,31 @@ def cached_search(ctx: RunContext, query: str, max_results: int) -> list[SearchR
     day = ctx.today.isoformat()
     cached = ctx.db.get_cached_search(ctx.search.name, query, day)
     if cached is not None:
+        calllog.record("search_cached", provider=ctx.search.name, query=query, results=len(cached),
+                       urls=[r.url for r in cached])
         return cached
+    before = _search_counters(ctx)
+    failed = False
     try:
         results = ctx.search.search(query, max_results=max_results)
     except NeedsAnswer:
         raise
     except Exception as exc:  # noqa: BLE001 - one failed query should not stop the run
         log.warning("Search failed for %r: %s", query, exc)
-        return []
-    ctx.db.save_search(ctx.search.name, query, day, results)
+        results, failed = [], True
+    after = _search_counters(ctx)
+    calllog.record("search", provider=ctx.search.name, model=getattr(ctx.search, "model", None), query=query,
+                   web_searches=after[0] - before[0], input_tokens=after[1] - before[1],
+                   output_tokens=after[2] - before[2], results=len(results), urls=[r.url for r in results],
+                   failed=failed, **({"list_price_usd": round(after[3] - before[3], 6)} if after[3] > before[3] else {}))
+    if not failed:
+        ctx.db.save_search(ctx.search.name, query, day, results)
     return results
+
+
+def _search_counters(ctx: RunContext) -> tuple[int, int, int, float]:
+    s = ctx.search
+    return s.requests, getattr(s, "input_tokens", 0), getattr(s, "output_tokens", 0), getattr(s, "cost_usd", 0.0)
 
 
 def is_fresh(published: date | None, text: str, today: date, recency_days: int) -> bool:
@@ -110,13 +126,15 @@ class Gatherer:
         for template in QUERY_TEMPLATES:
             if self.full:
                 return
-            for result in cached_search(self.ctx, template.format(brand=brand),
-                                        self.ctx.config.search.max_results_per_query):
+            query = template.format(brand=brand)
+            calllog.progress(f"Searching “{query}”")
+            for result in cached_search(self.ctx, query, self.ctx.config.search.max_results_per_query):
                 self.consider(result.url)
 
     def read_newsroom(self) -> None:
         """Find the newsroom by search and common paths, then read its recent articles."""
         domain = self.company.domain
+        calllog.progress(f"Finding the {self.company.name} newsroom")
         pages = [f"https://{domain}{p}" for p in NEWSROOM_PATHS]
         for r in cached_search(self.ctx, f"{self.company.name} newsroom press releases",
                                self.ctx.config.search.max_results_per_query):

@@ -28,6 +28,8 @@ class ClaudeSearchProvider:
         self.model = model
         self.max_uses = max_uses
         self.requests = 0
+        self.input_tokens = 0
+        self.output_tokens = 0
 
     def search(self, query: str, max_results: int = 10) -> list[SearchResult]:
         """Return the URLs from web_search_tool_result blocks. Claude's written answer is ignored."""
@@ -40,6 +42,8 @@ class ClaudeSearchProvider:
                                                    messages=messages)
             server_use = getattr(response.usage, "server_tool_use", None)
             self.requests += (server_use.web_search_requests if server_use else 0) or 0
+            self.input_tokens += response.usage.input_tokens
+            self.output_tokens += response.usage.output_tokens
             for block in response.content:
                 if block.type != "web_search_tool_result":
                     continue
