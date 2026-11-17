@@ -218,3 +218,15 @@ def test_copy_database_keeps_rows_and_ids(ctx, tmp_path):
     assert target.latest_reports()[0]["slug"] == ctx.db.latest_reports()[0]["slug"]
     target.close()
 
+
+def test_report_pdf_renders(ctx):
+    import json
+
+    from flowcode_agent.pdf import report_pdf
+
+    result = run_company(ctx, "Acme Soda")
+    data = json.loads((result.report_dir / "report.json").read_text())
+    pdf = report_pdf(data)
+    assert pdf.startswith(b"%PDF") and len(pdf) > 5000
+    data["opportunities"][0]["sources"][0]["quote"] = "「ハイク（HYKE）」が発売する。"  # Japanese uses the fallback font
+    assert report_pdf(data).startswith(b"%PDF")

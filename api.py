@@ -18,7 +18,7 @@ from pathlib import Path
 
 import yaml
 from fastapi import FastAPI, HTTPException
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
@@ -169,6 +169,17 @@ def get_report(slug: str) -> dict:
     if saved is None:
         raise HTTPException(404, "No report for that company")
     return {"report": saved["json"], "markdown": saved["markdown"]}
+
+
+@app.get("/api/reports/{slug}/pdf")
+def report_pdf(slug: str) -> Response:
+    from flowcode_agent.pdf import report_pdf as build_pdf
+
+    saved = _db().get_report(slug)
+    if saved is None:
+        raise HTTPException(404, "No report for that company")
+    return Response(build_pdf(saved["json"]), media_type="application/pdf",
+                    headers={"Content-Disposition": f'attachment; filename="{slug}-flowcode-report.pdf"'})
 
 
 @app.post("/api/runs")

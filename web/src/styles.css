@@ -294,3 +294,5 @@ a { color: inherit; }
   border-top: 0; border-bottom-color: var(--ink); }
 .has-tip:hover .tip, .has-tip:focus .tip { visibility: visible; opacity: 1; }
 .box { overflow: visible; }
+
+.pdf-btn { font-size: 16px; padding: 11px 18px; white-space: nowrap; flex-shrink: 0; }

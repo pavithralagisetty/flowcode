@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { marked } from "marked";
-import { ArrowLeft, BookOpen, ChevronDown, ChevronUp, ExternalLink, MapPin } from "lucide-react";
+import { ArrowLeft, BookOpen, ChevronDown, ChevronUp, Download, ExternalLink, MapPin } from "lucide-react";
 import { api } from "../api.js";
 import { fmt, scoreTone, titleCase } from "../format.js";
 
@@ -119,7 +119,12 @@ export default function Report({ slug, go }) {
   return (
     <div className="page">
       <button className="back" onClick={() => go("/reports")}><ArrowLeft size={18} /> All reports</button>
-      <div className="page-head"><h1>{r.company.name}: where Flowcode could help</h1></div>
+      <div className="page-head">
+        <h1>{r.company.name}: where Flowcode could help</h1>
+        <a className="btn btn-dark pdf-btn" href={`/api/reports/${slug}/pdf`} download>
+          <Download size={18} /> Download PDF
+        </a>
+      </div>
       <div className="report-meta">
         <span className="chip">{r.company.domain}</span>
         <span className="chip">{r.company.industry}</span>
