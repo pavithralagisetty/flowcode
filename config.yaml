@@ -1,11 +1,11 @@
 search:
-  provider: handoff             # handoff (no key, Claude Code answers), claude, or gemini
+  provider: claude_code              # claude (API key), claude_code (Claude Code login, no API credits), gemini, handoff
   claude_model: claude-sonnet-5-5
   gemini_model: "gemini-3.5-flash-lite"  # supports Google Search grounding
   max_results_per_query: 10
 
 llm:
-  provider: handoff             # handoff (no key), anthropic, or gemini
+  provider: claude_code            # anthropic (API key), claude_code (Claude Code login), gemini, handoff
   main_model: claude-sonnet-5-5
   cheap_model: claude-haiku-4-5 # there is no claude-haiku-5-5; Haiku 4.5 is the current Haiku
   gemini_main_model: gemini-3.5-flash-lite
