@@ -94,4 +94,4 @@ cd web && npm install && npm run build      # build once
 
 For live-reload development, run the API as above and `cd web && npm run dev` (http://localhost:5173 proxies `/api` to port 8600).
 
-Pages: Home (start research, live run log), Reports (one company's scored opportunities with sources), Ranking, Activity (runs this session) and Manage (providers, weights, playbook). The older Streamlit app (`app.py`) still works.
+Pages: Home (start research, live run log), Reports (ranked companies; click one for its scored opportunities with sources) and Manage (providers, weights, playbook).
