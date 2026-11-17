@@ -284,3 +284,13 @@ a { color: inherit; }
 .run-section { padding: 32px 66px; border-top: 1px solid var(--line); background: #fff; }
 .run-panel .log div { overflow-wrap: anywhere; }
 .run-step span:last-child { overflow-wrap: anywhere; }
+
+/* ---------- hover explanations ---------- */
+.has-tip { position: relative; cursor: help; text-decoration: underline dotted #b6afa6; text-underline-offset: 4px; width: fit-content; }
+.has-tip .tip { visibility: hidden; opacity: 0; position: absolute; left: 0; top: calc(100% + 8px); z-index: 30;
+  width: 320px; background: var(--ink); color: #fff; font-size: 14px; line-height: 1.45; font-weight: 400;
+  padding: 12px 14px; border-radius: 6px; box-shadow: 0 8px 24px rgba(0,0,0,.18); transition: opacity .12s; }
+.has-tip .tip::before { content: ""; position: absolute; top: -6px; left: 18px; border: 6px solid transparent;
+  border-top: 0; border-bottom-color: var(--ink); }
+.has-tip:hover .tip, .has-tip:focus .tip { visibility: visible; opacity: 1; }
+.box { overflow: visible; }
