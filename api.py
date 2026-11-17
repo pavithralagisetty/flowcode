@@ -37,6 +37,12 @@ app = FastAPI(title="Flowcode Research API")
 MAX_JOB_LOG_LINES = 300
 
 
+@app.get("/api/health")
+def health() -> dict:
+    """Public check that the server is up (used by Render and uptime monitors)."""
+    return {"ok": True}
+
+
 _local = threading.local()
 
 
@@ -110,8 +116,14 @@ def _work(job: RunJob) -> None:
 @app.on_event("startup")
 def _mark_interrupted_jobs() -> None:
     """Runs that were in progress when the server last stopped will never finish; say so."""
-    db = _db()
-    for data in db.list_jobs(limit=500):
+    try:
+        db = _db()
+        jobs = db.list_jobs(limit=500)
+    except Exception as exc:  # noqa: BLE001 - start anyway so /api/health answers and the error is visible
+        _local.db = None
+        log.error("Database not reachable at startup: %s", str(exc).split("\n")[0])
+        return
+    for data in jobs:
         if data.get("status") == "running":
             data.update(status="interrupted", message="The server restarted before this run finished. Run it again "
                                                       "to continue from where it stopped.")

@@ -121,3 +121,26 @@ Tests run on SQLite by default. To run them against Postgres, point this at an e
 ```
 FLOWCODE_TEST_DATABASE_URL=postgresql://localhost/flowcode_test .venv/bin/python -m pytest
 ```
+
+## Deploying (Render, free plan)
+
+The repo has a `Dockerfile` (builds the React app, then runs the API) and a `render.yaml` Blueprint.
+
+1. In Supabase, click **Connect** and copy the **Session pooler** string (port 5432), then add `?sslmode=require`.
+   Do not use the Direct connection (`db.<ref>.supabase.co`): it is IPv6-only and Render connects over IPv4.
+2. In Render: **New > Blueprint**, pick this GitHub repo. It creates one free web service from `render.yaml`.
+3. Fill in the environment variables it asks for:
+   - `DATABASE_URL`: the Session pooler string.
+   - `ANTHROPIC_API_KEY`: optional. Without it the deployed app shows reports, usage and PDFs but cannot run new
+     research, so it can never spend API credits. Research can still be run locally in Claude Code mode, and it
+     shows up in the deployed app because both use the same database.
+   - `FLOWCODE_MODE=api` is already set; Claude Code mode needs the `claude` command logged in locally.
+4. Deploy. Render checks `/api/health` to know the service is up.
+
+On the free plan the service sleeps after 15 minutes without visits; the next visit wakes it in about a minute.
+A free uptime monitor pinging `/api/health` every 10 to 14 minutes keeps it awake. Nothing is stored on the
+server itself, so sleeping, restarts and redeploys lose no data. A research run cut off by a restart is marked
+"interrupted"; running it again resumes from the last finished step.
+
+To test the image locally: `docker build -t flowcode-research .` then
+`docker run -p 8000:8000 -e DATABASE_URL=... flowcode-research`.

@@ -1,0 +1,16 @@
+# Render Blueprint: one free web service built from the Dockerfile.
+# Secrets are entered in the Render dashboard when the Blueprint is created (sync: false).
+services:
+  - type: web
+    name: flowcode-research
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: FLOWCODE_MODE
+        value: api
+      - key: DATABASE_URL
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
