@@ -155,7 +155,7 @@ a { color: inherit; }
 .tint-2 { background: var(--lilac); } .tint-3 { background: var(--tan); }
 
 /* ---------- run status ---------- */
-.run-panel { margin-top: 26px; max-width: 660px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
+.run-panel { max-width: 1100px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
 .run-panel-head { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-bottom: 1px solid var(--line); font-weight: 600; }
 .run-panel .log { max-height: 220px; overflow-y: auto; padding: 12px 18px; font-family: ui-monospace, Menlo, monospace;
   font-size: 12.5px; color: var(--muted); line-height: 1.6; }
@@ -250,3 +250,37 @@ a { color: inherit; }
 .back { border: 0; background: transparent; display: inline-flex; align-items: center; gap: 6px; color: var(--muted);
   font-size: 16px; padding: 0; margin-bottom: 14px; }
 .back:hover { color: var(--ink); }
+
+/* ---------- live step + usage ---------- */
+.run-step { display: flex; gap: 12px; align-items: baseline; padding: 14px 18px; border-bottom: 1px solid var(--line);
+  font-size: 18px; background: #fdf3e2; }
+.run-step-label { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #7a5413; }
+.log-wrap summary { cursor: pointer; padding: 10px 18px; color: var(--muted); font-size: 14px; }
+.usage-totals { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); margin-top: 26px; }
+.usage-totals > div { padding: 20px 24px; display: flex; flex-direction: column; gap: 6px; }
+.usage-totals > div + div { border-left: 1px solid var(--line); }
+.usage-totals .lbl { color: var(--muted); font-size: 14px; }
+.usage-totals .val { font-size: 30px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.table td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.table tr.expanded > td { background: #fcfbfa; padding: 8px 20px 24px; }
+.table.calls { font-size: 14px; margin-top: 8px; background: #fff; }
+.table.calls td { padding: 10px 12px; vertical-align: top; }
+.table.calls tr.dim td { opacity: .55; }
+.page-list { margin: 6px 0 0; padding-left: 18px; }
+.page-list li { margin: 2px 0; }
+.page-list a { color: var(--green-dark); }
+.sub-h { font-size: 15px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin: 20px 0 8px; font-weight: 700; }
+.step-bars { max-width: 760px; }
+
+/* ---------- API / Claude Code toggle ---------- */
+.mode { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; padding-right: 28px; }
+.mode-toggle { display: inline-flex; background: var(--pill); border-radius: 999px; padding: 4px; }
+.mode-toggle button { border: 0; background: transparent; border-radius: 999px; padding: 7px 16px; font-size: 15px;
+  font-weight: 600; color: var(--muted); }
+.mode-toggle button.on { background: var(--ink); color: #fff; }
+.mode-toggle button:disabled:not(.on) { opacity: .45; cursor: default; }
+.mode-note { font-size: 12px; color: var(--muted); }
+
+.run-section { padding: 32px 66px; border-top: 1px solid var(--line); background: #fff; }
+.run-panel .log div { overflow-wrap: anywhere; }
+.run-step span:last-child { overflow-wrap: anywhere; }

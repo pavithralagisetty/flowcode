@@ -6,8 +6,9 @@ import Home from "./pages/Home.jsx";
 import Report from "./pages/Report.jsx";
 import Ranking from "./pages/Ranking.jsx";
 import Settings from "./pages/Settings.jsx";
+import Usage from "./pages/Usage.jsx";
 
-/** Tiny hash router: #/home, #/reports, #/reports/<slug>, #/settings */
+/** Tiny hash router: #/home, #/reports, #/reports/<slug>, #/usage, #/settings */
 function useRoute() {
   const read = () => {
     const [, section = "home", arg] = window.location.hash.replace(/^#/, "").split("/");
@@ -28,6 +29,12 @@ export default function App() {
   const [reports, setReports] = useState([]);
   const [settings, setSettings] = useState(null);
   const [job, setJob] = useState(null); // the run started from Home, polled until it finishes
+  const [mode, setMode] = useState(null);
+  useEffect(() => { api.mode().then(setMode).catch(() => {}); }, []);
+  const changeMode = async (m) => {
+    setMode(await api.setMode(m));
+    api.settings().then(setSettings).catch(() => {});
+  };
 
   const refreshReports = useCallback(() => api.reports().then(setReports).catch(() => {}), []);
   useEffect(() => { refreshReports(); api.settings().then(setSettings).catch(() => {}); }, [refreshReports]);
@@ -49,11 +56,12 @@ export default function App() {
   if (section === "reports" && arg) page = <Report slug={arg} go={go} />;
   else if (section === "reports") page = <Ranking reports={reports} go={go} />;
   else if (section === "settings") page = <Settings settings={settings} />;
+  else if (section === "usage") page = <Usage />;
   else page = <Home reports={reports} go={go} job={job} startRun={startRun} />;
 
   return (
     <div className="app">
-      <TopBar reports={reports} go={go} />
+      <TopBar reports={reports} go={go} mode={mode} onMode={changeMode} running={job?.status === "running"} />
       <Rail section={section} go={go} />
       <main className="main">{page}</main>
     </div>

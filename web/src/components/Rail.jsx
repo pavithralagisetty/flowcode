@@ -1,8 +1,9 @@
-import { FileText, House, Settings2 } from "lucide-react";
+import { FileText, Gauge, House, Settings2 } from "lucide-react";
 
 const ITEMS = [
   { id: "home", label: "Home", icon: House },
   { id: "reports", label: "Reports", icon: FileText },
+  { id: "usage", label: "Usage", icon: Gauge },
   { id: "settings", label: "Manage", icon: Settings2 },
 ];
 

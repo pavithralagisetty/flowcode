@@ -17,6 +17,12 @@ function RunPanel({ job, go }) {
   return (
     <div className="run-panel">
       <div className="run-panel-head">{icons[job.status]} {label}</div>
+      {job.status === "running" && (
+        <div className="run-step">
+          <span className="run-step-label">NOW</span>
+          <span>{job.step}</span>
+        </div>
+      )}
       {job.message && <div className="msg">{job.message}</div>}
       {job.candidates?.length > 0 && (
         <div className="msg">
@@ -27,7 +33,15 @@ function RunPanel({ job, go }) {
       {job.status === "done" && job.slug && (
         <div className="msg"><button className="btn btn-dark" onClick={() => go(`/reports/${job.slug}`)}>Open report</button></div>
       )}
-      {job.logs.length > 0 && <div className="log">{job.logs.slice(-40).map((l, i) => <div key={i}>{l}</div>)}</div>}
+      {job.status !== "running" && job.run_id && (
+        <div className="msg"><button className="btn btn-link" style={{ padding: 0 }} onClick={() => go("/usage")}>See tokens and cost for this run →</button></div>
+      )}
+      {job.logs.length > 0 && (
+        <details className="log-wrap">
+          <summary>Full log ({job.logs.length} lines)</summary>
+          <div className="log">{job.logs.slice(-200).map((l, i) => <div key={i}>{l}</div>)}</div>
+        </details>
+      )}
     </div>
   );
 }
@@ -63,7 +77,6 @@ export default function Home({ reports, go, job, startRun }) {
             </button>
           </form>
           {error && <p style={{ color: "var(--red)" }}>{error}</p>}
-          {job && <RunPanel job={job} go={go} />}
         </div>
 
         <div className="hero-right">
@@ -91,6 +104,12 @@ export default function Home({ reports, go, job, startRun }) {
           )}
         </div>
       </section>
+
+      {job && (
+        <section className="run-section">
+          <RunPanel job={job} go={go} />
+        </section>
+      )}
 
       <section className="band">
         <h3>RECENT REPORTS</h3>
