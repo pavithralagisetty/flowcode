@@ -9,10 +9,11 @@ function RunPanel({ job, go }) {
     paused: <PauseCircle size={20} color="#b07d24" />,
     ambiguous: <AlertTriangle size={20} color="#b07d24" />,
     failed: <AlertTriangle size={20} color="var(--red)" />,
+    interrupted: <AlertTriangle size={20} color="#b07d24" />,
   };
   const label = {
     running: `Researching ${job.query}…`, done: `Done: ${job.query}`, paused: "Paused: waiting for Claude Code",
-    ambiguous: "Need a more specific company", failed: "Run failed",
+    ambiguous: "Need a more specific company", failed: "Run failed", interrupted: "Run interrupted",
   }[job.status];
   return (
     <div className="run-panel">

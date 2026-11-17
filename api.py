@@ -1,12 +1,12 @@
 """JSON API for the React frontend. Run with: .venv/bin/uvicorn api:app --port 8600
 
-Serves saved reports, starts research runs in background threads, and serves the built
-frontend from web/dist when it exists.
+Serves reports and usage from the database, starts research runs in background threads,
+and serves the built frontend from web/dist when it exists. Nothing the app shows lives
+only on the server's disk or in memory, so a redeploy or restart loses no data.
 """
 
 from __future__ import annotations
 
-import json
 import logging
 import os
 import re
@@ -22,8 +22,8 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
-from flowcode_agent import calllog
-from flowcode_agent.config import load_config
+from flowcode_agent.config import PROVIDER_MODES, forced_mode, load_config
+from flowcode_agent.db import Database
 from flowcode_agent.pipeline import build_context, run_company
 from flowcode_agent.providers.handoff import NeedsAnswer
 from flowcode_agent.steps.resolve import AmbiguousCompany
@@ -34,13 +34,24 @@ cfg = load_config(ROOT / "config.yaml")
 log = logging.getLogger("flowcode_agent")
 log.setLevel(logging.INFO)
 app = FastAPI(title="Flowcode Research API")
+MAX_JOB_LOG_LINES = 300
+
+
+_local = threading.local()
+
+
+def _db() -> Database:
+    """This thread's database connection (FastAPI runs each request on a worker thread)."""
+    if getattr(_local, "db", None) is None:
+        _local.db = Database(cfg.db_target())
+    return _local.db
 
 
 @dataclass
 class RunJob:
     id: str
     query: str
-    status: str = "running"  # running | done | paused | ambiguous | failed
+    status: str = "running"  # running | done | paused | ambiguous | failed | interrupted
     message: str = ""
     step: str = "Starting"  # the research step running right now
     slug: str | None = None
@@ -49,12 +60,16 @@ class RunJob:
     logs: list[str] = field(default_factory=list)
     started_at: str = field(default_factory=lambda: datetime.now().isoformat(timespec="seconds"))
 
+    def save(self) -> None:
+        """Persist the job so the run list survives a restart."""
+        _db().save_job(self.id, self.started_at, {**asdict(self), "logs": self.logs[-MAX_JOB_LOG_LINES:]})
 
-JOBS: dict[str, RunJob] = {}
+
+JOBS: dict[str, RunJob] = {}  # jobs started by this process; also saved in the database
 
 
 class JobLogHandler(logging.Handler):
-    """Copies pipeline log lines from one worker thread into its job."""
+    """Copies pipeline log lines from one worker thread into its job, saving it when the step changes."""
 
     def __init__(self, job: RunJob, thread_id: int):
         super().__init__(level=logging.INFO)
@@ -63,16 +78,17 @@ class JobLogHandler(logging.Handler):
     def emit(self, record: logging.LogRecord) -> None:
         if record.thread != self.thread_id:
             return
+        self.job.logs.append(record.getMessage())
         if hasattr(record, "progress"):
             self.job.step = record.progress
-        self.job.logs.append(record.getMessage())
+            self.job.save()
 
 
 def _work(job: RunJob) -> None:
     handler = JobLogHandler(job, threading.get_ident())
     log.addHandler(handler)
     try:
-        result = run_company(build_context(cfg), job.query)
+        result = run_company(build_context(cfg, db=_db()), job.query)
         job.status, job.slug = "done", result.report_dir.name if result.report_dir else None
         job.run_id = result.run_id
         job.message = (f"Company score {result.score.score:.2f}, {len(result.opportunities)} opportunities"
@@ -88,16 +104,18 @@ def _work(job: RunJob) -> None:
         job.status, job.message = "failed", f"{type(exc).__name__}: {exc}"
     finally:
         log.removeHandler(handler)
+        job.save()
 
 
-def _reports() -> dict[str, dict]:
-    out = {}
-    for path in sorted(cfg.path("outputs").glob("*/report.json")):
-        try:
-            out[path.parent.name] = json.loads(path.read_text())
-        except json.JSONDecodeError:
-            continue
-    return out
+@app.on_event("startup")
+def _mark_interrupted_jobs() -> None:
+    """Runs that were in progress when the server last stopped will never finish; say so."""
+    db = _db()
+    for data in db.list_jobs(limit=500):
+        if data.get("status") == "running":
+            data.update(status="interrupted", message="The server restarted before this run finished. Run it again "
+                                                      "to continue from where it stopped.")
+            db.save_job(data["id"], data["started_at"], data)
 
 
 def _summary(slug: str, d: dict) -> dict:
@@ -120,13 +138,9 @@ class ModeRequest(BaseModel):
     mode: str  # "api" or "claude_code"
 
 
-# Which (search, llm) providers each mode uses.
-MODES = {"api": ("claude", "anthropic"), "claude_code": ("claude_code", "claude_code")}
-
-
 def _current_mode() -> str:
     pair = (cfg.search.provider, cfg.llm.provider)
-    return next((m for m, p in MODES.items() if p == pair), "custom")
+    return next((m for m, p in PROVIDER_MODES.items() if p == pair), "custom")
 
 
 def _set_providers(search: str, llm: str) -> None:
@@ -145,18 +159,16 @@ def _set_providers(search: str, llm: str) -> None:
 
 @app.get("/api/reports")
 def list_reports() -> list[dict]:
-    items = [_summary(slug, d) for slug, d in _reports().items()]
+    items = [_summary(r["slug"], r["json"]) for r in _db().latest_reports()]
     return sorted(items, key=lambda r: r["score"], reverse=True)
 
 
 @app.get("/api/reports/{slug}")
 def get_report(slug: str) -> dict:
-    folder = cfg.path("outputs") / slug
-    if not (folder / "report.json").exists() or folder.parent != cfg.path("outputs"):
+    saved = _db().get_report(slug)
+    if saved is None:
         raise HTTPException(404, "No report for that company")
-    data = json.loads((folder / "report.json").read_text())
-    md = (folder / "report.md").read_text() if (folder / "report.md").exists() else ""
-    return {"report": data, "markdown": md}
+    return {"report": saved["json"], "markdown": saved["markdown"]}
 
 
 @app.post("/api/runs")
@@ -166,27 +178,32 @@ def start_run(req: RunRequest) -> dict:
         raise HTTPException(400, "Enter a company name or website")
     job = RunJob(id=uuid.uuid4().hex[:8], query=query)
     JOBS[job.id] = job
+    job.save()
     threading.Thread(target=_work, args=(job,), daemon=True).start()
     return asdict(job)
 
 
 @app.get("/api/runs")
 def list_runs() -> list[dict]:
-    return [asdict(j) for j in sorted(JOBS.values(), key=lambda j: j.started_at, reverse=True)]
+    saved = {j["id"]: j for j in _db().list_jobs()}
+    saved.update({j.id: asdict(j) for j in JOBS.values()})  # live jobs have the freshest state
+    return sorted(saved.values(), key=lambda j: j["started_at"], reverse=True)
 
 
 @app.get("/api/runs/{job_id}")
 def get_run(job_id: str) -> dict:
-    if job_id not in JOBS:
+    if job_id in JOBS:
+        return asdict(JOBS[job_id])
+    saved = _db().get_job(job_id)
+    if saved is None:
         raise HTTPException(404, "Unknown run")
-    return asdict(JOBS[job_id])
+    return saved
 
 
 def _cost(row: dict) -> float | None:
     """Estimated dollars for one logged call at API list prices, or None when no price is set for its model.
 
-    Claude Code calls are estimated the same way (the CLI reports its own list-price figure, which also
-    counts cache rates); they are flagged `billed: False` because they use the Claude Code login."""
+    Claude Code calls use the list-price figure the CLI reports, which also counts cache rates."""
     if row.get("list_price_usd") is not None:
         return round(row["list_price_usd"], 6)
     prices = cfg.pricing
@@ -201,11 +218,10 @@ def _cost(row: dict) -> float | None:
     return round(cost, 6)
 
 
-def _calls(run_id: int | None = None) -> list[dict]:
-    rows = calllog.read(cfg.path("calls_log"), run_id)
+def _calls(session: str | None = None) -> list[dict]:
+    rows = _db().list_api_calls(session=session)
     for r in rows:
         r["cost"] = _cost(r)
-        r["billed"] = r.get("provider") not in ("claude_code", "handoff", "fake")
     return rows
 
 
@@ -219,7 +235,6 @@ def usage() -> list[dict]:
                                   "mode": r.get("mode", "run"), "started": r["time"],
                                   "ai_calls": 0, "searches": 0, "cached_searches": 0, "web_searches": 0,
                                   "input_tokens": 0, "output_tokens": 0, "cost": 0.0, "priced": True,
-                                  "billed": False,
                                   "by_step": {}})
         u["company"] = r.get("company") or u["company"]
         u["run_id"] = r.get("run_id") or u["run_id"]
@@ -236,7 +251,6 @@ def usage() -> list[dict]:
         s["calls"] += 1
         s["input_tokens"] += r.get("input_tokens", 0)
         s["output_tokens"] += r.get("output_tokens", 0)
-        u["billed"] = u["billed"] or r["billed"]
         if r["cost"] is None:
             u["priced"] = False
         else:
@@ -251,24 +265,26 @@ def usage() -> list[dict]:
 @app.get("/api/calls")
 def calls(session: str | None = None) -> list[dict]:
     """Every logged AI call and search, optionally for one research session."""
-    rows = _calls()
-    return [r for r in rows if r.get("session") == session] if session else rows
+    return _calls(session)
 
 
 @app.get("/api/mode")
 def get_mode() -> dict:
     from flowcode_agent.providers.claude_code import claude_available
 
-    return {"mode": _current_mode(), "has_api_key": bool(os.environ.get("ANTHROPIC_API_KEY")),
+    return {"mode": _current_mode(), "locked": forced_mode() is not None,
+            "has_api_key": bool(os.environ.get("ANTHROPIC_API_KEY")),
             "claude_code_installed": claude_available(),
             "running": any(j.status == "running" for j in JOBS.values())}
 
 
 @app.post("/api/mode")
 def set_mode(req: ModeRequest) -> dict:
-    if req.mode not in MODES:
-        raise HTTPException(400, f"Mode must be one of {', '.join(MODES)}")
-    _set_providers(*MODES[req.mode])
+    if forced_mode():
+        raise HTTPException(409, "The mode is set by the FLOWCODE_MODE environment variable on this server")
+    if req.mode not in PROVIDER_MODES:
+        raise HTTPException(400, f"Mode must be one of {', '.join(PROVIDER_MODES)}")
+    _set_providers(*PROVIDER_MODES[req.mode])
     return get_mode()
 
 
@@ -279,7 +295,7 @@ def settings() -> dict:
     pending = list((cfg.path("handoff") / "pending").glob("*.md")) if cfg.path("handoff").exists() else []
     return {
         "search_provider": cfg.search.provider, "llm_provider": cfg.llm.provider,
-        "main_model": main, "cheap_model": cheap,
+        "main_model": main, "cheap_model": cheap, "storage": cfg.storage.backend,
         "recency_days": cfg.research.recency_days, "max_pages": cfg.research.max_pages_per_company,
         "strong_threshold": cfg.scoring.strong_threshold, "strong_industries": cfg.scoring.strong_industries,
         "opportunity_weights": cfg.scoring.opportunity_weights, "company_weights": cfg.scoring.company_weights,

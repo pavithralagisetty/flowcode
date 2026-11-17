@@ -45,6 +45,10 @@ scoring:
 batch:
   concurrency: 4
 
+storage:
+  backend: postgres          # sqlite (local file, paths.db) or postgres (connection string in DATABASE_URL)
+  url_env: DATABASE_URL
+
 paths:
   db: flowcode.db
   outputs: outputs
@@ -52,7 +56,6 @@ paths:
   playbook: playbook.yaml
   existing_customers: existing_customers.yaml
   handoff: handoff
-  calls_log: logs/api_calls.jsonl   # one line per AI call and search, for cost analysis
 
 # Prices for the cost estimate on the Usage page (US dollars, Anthropic list prices as of Nov 2026;
 # check https://www.anthropic.com/pricing). Claude Code runs are estimated the same way.

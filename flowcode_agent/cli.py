@@ -90,7 +90,7 @@ def batch(csv_path: str = typer.Argument("companies.csv", help="CSV with name an
 def refresh(config: str = CONFIG_OPT, verbose: bool = VERBOSE_OPT) -> None:
     """Re-gather evidence for stored companies and redo the analysis only where something new appeared."""
     cfg = _setup(config, verbose)
-    db = Database(cfg.path("db"))
+    db = Database(cfg.db_target())
     items = refresh_items(db)
     db.close()
     if not items:
@@ -100,6 +100,29 @@ def refresh(config: str = CONFIG_OPT, verbose: bool = VERBOSE_OPT) -> None:
     changed = [i for i in items if i.result and i.result.status == "done"]
     typer.echo(f"Refresh finished: {len(changed)} of {len(items)} companies had new evidence.")
     _print_usage([i.result.usage for i in items if i.result])
+
+
+@app.command()
+def migrate(source: str = typer.Argument(None, help="SQLite file to copy from (default: paths.db in config)"),
+            config: str = CONFIG_OPT, verbose: bool = VERBOSE_OPT) -> None:
+    """Copy local data into the configured Postgres database (set storage.backend: postgres first)."""
+    from flowcode_agent.migrate import migrate as run_migrate
+
+    cfg = _setup(config, verbose)
+    if cfg.storage.backend != "postgres":
+        typer.echo("Set storage.backend: postgres in config.yaml and DATABASE_URL in .env, then run this again.")
+        raise typer.Exit(1)
+    src = Database(source or cfg.path("db"))
+    dst = Database(cfg.db_target())
+    try:
+        counts = run_migrate(src, dst, cfg.path("outputs"), cfg.base_dir / "logs" / "api_calls.jsonl")
+    except ValueError as exc:
+        typer.echo(f"Not copied: {exc}")
+        raise typer.Exit(1)
+    finally:
+        src.close()
+        dst.close()
+    typer.echo("Copied: " + ", ".join(f"{n} {table}" for table, n in counts.items() if n))
 
 
 @app.command(name="eval")

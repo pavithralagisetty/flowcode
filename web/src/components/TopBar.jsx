@@ -13,14 +13,16 @@ function ModeToggle({ mode, onMode, running }) {
     <div className="mode">
       <div className="mode-toggle" role="radiogroup" aria-label="Run research with">
         {options.map((o) => (
-          <button key={o.id} role="radio" aria-checked={mode.mode === o.id} disabled={running || !o.ok}
+          <button key={o.id} role="radio" aria-checked={mode.mode === o.id} disabled={running || mode.locked || !o.ok}
                   className={mode.mode === o.id ? "on" : ""} onClick={() => mode.mode !== o.id && onMode(o.id)}
                   title={o.ok ? o.note : o.id === "api" ? "No ANTHROPIC_API_KEY in .env" : "The claude command is not installed"}>
             {o.label}
           </button>
         ))}
       </div>
-      <span className="mode-note">{running ? "Can't switch during a run" : current ? current.note : "Custom providers in config.yaml"}</span>
+      <span className="mode-note">
+        {mode.locked ? "Set by this server" : running ? "Can't switch during a run" : current ? current.note : "Custom providers in config.yaml"}
+      </span>
     </div>
   );
 }

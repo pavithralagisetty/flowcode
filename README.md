@@ -95,3 +95,29 @@ cd web && npm install && npm run build      # build once
 For live-reload development, run the API as above and `cd web && npm run dev` (http://localhost:5173 proxies `/api` to port 8600).
 
 Pages: Home (start research, live run log), Reports (ranked companies; click one for its scored opportunities with sources) and Manage (providers, weights, playbook).
+
+## Storage: SQLite or PostgreSQL
+
+All data the app shows lives in one database: companies, runs, saved pages, moments, opportunities, scores,
+the search cache, reports, the per-call cost log and the runs started from the web app. Pick the engine in
+`config.yaml`:
+
+```yaml
+storage:
+  backend: postgres      # or sqlite (the local file in paths.db)
+  url_env: DATABASE_URL  # environment variable with the postgres:// connection string
+```
+
+Report files are still written to `outputs/` as a convenience, but the app reads reports from the database.
+
+To move existing local data into Postgres (the target must be empty):
+
+```
+.venv/bin/python -m flowcode_agent migrate             # copies paths.db, plus old report files and logs/api_calls.jsonl
+```
+
+Tests run on SQLite by default. To run them against Postgres, point this at an empty throwaway database:
+
+```
+FLOWCODE_TEST_DATABASE_URL=postgresql://localhost/flowcode_test .venv/bin/python -m pytest
+```

@@ -187,14 +187,34 @@ def test_batch_ranking(config, tmp_path):
     assert "Acme Soda" in csv_path.read_text()
 
 
-def test_call_log_records_every_ai_call_with_step_and_pages(ctx, config):
-    from flowcode_agent import calllog
-
+def test_call_log_records_every_ai_call_with_step_and_pages(ctx):
     result = run_company(ctx, "Acme Soda")
-    rows = calllog.read(config.path("calls_log"), run_id=result.run_id)
+    rows = ctx.db.list_api_calls(run_id=result.run_id)
     llm_steps = [r["step"] for r in rows if r["kind"] == "llm"]
     assert {"moments", "match", "verify", "score"} <= set(llm_steps)
     moments = next(r for r in rows if r["kind"] == "llm" and r["step"] == "moments")
     assert moments["company"] == "Acme Soda" and moments["pages"][0]["url"].startswith("https://")
     assert all("input_tokens" in r for r in rows if r["kind"] == "llm")
     assert any(r["kind"] in ("search", "search_cached") for r in rows)
+
+
+def test_report_is_saved_in_the_database(ctx):
+    result = run_company(ctx, "Acme Soda")
+    saved = ctx.db.get_report(result.report_dir.name)
+    assert saved["run_id"] == result.run_id
+    assert saved["json"]["run_id"] == result.run_id
+    assert saved["markdown"].startswith("# Acme Soda")
+    assert [r["slug"] for r in ctx.db.latest_reports()] == [result.report_dir.name]
+
+
+def test_copy_database_keeps_rows_and_ids(ctx, tmp_path):
+    from flowcode_agent.db import Database, copy_database
+
+    run_company(ctx, "Acme Soda")
+    target = Database(tmp_path / "copy.db")
+    counts = copy_database(ctx.db, target)
+    assert counts["evidence"] == len(ctx.db.list_evidence(1)) > 0
+    assert [e.id for e in target.list_evidence(1)] == [e.id for e in ctx.db.list_evidence(1)]
+    assert target.latest_reports()[0]["slug"] == ctx.db.latest_reports()[0]["slug"]
+    target.close()
+

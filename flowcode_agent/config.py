@@ -7,7 +7,7 @@ from pathlib import Path
 
 import yaml
 from dotenv import load_dotenv
-from pydantic import BaseModel, Field, model_validator
+from pydantic import BaseModel, Field, field_validator, model_validator
 
 ALWAYS_BLOCKED = "flowcode.com"
 
@@ -86,7 +86,20 @@ class PathsConfig(BaseModel):
     playbook: str = "playbook.yaml"
     existing_customers: str = "existing_customers.yaml"
     handoff: str = "handoff"
-    calls_log: str = "logs/api_calls.jsonl"
+
+
+class StorageConfig(BaseModel):
+    """Where research data is kept: a local SQLite file or a PostgreSQL server."""
+
+    backend: str = "sqlite"  # sqlite or postgres
+    url_env: str = "DATABASE_URL"  # environment variable holding the postgres:// connection string
+
+    @field_validator("backend")
+    @classmethod
+    def _known_backend(cls, v: str) -> str:
+        if v not in ("sqlite", "postgres"):
+            raise ValueError("storage.backend must be sqlite or postgres")
+        return v
 
 
 class ModelPrice(BaseModel):
@@ -111,11 +124,35 @@ class Config(BaseModel):
     batch: BatchConfig = BatchConfig()
     paths: PathsConfig = PathsConfig()
     pricing: PricingConfig = PricingConfig()
+    storage: StorageConfig = StorageConfig()
     base_dir: Path = Path(".")
 
     def path(self, name: str) -> Path:
         """Resolve a path from the `paths` section against the config's folder."""
         return self.base_dir / getattr(self.paths, name)
+
+    def db_target(self) -> str:
+        """What to open the Database with: the SQLite file path, or the Postgres URL from the environment."""
+        if self.storage.backend == "postgres":
+            url = require_env(self.storage.url_env)
+            if url.startswith("postgres://"):  # some hosts hand out the short scheme
+                url = "postgresql://" + url[len("postgres://"):]
+            return url
+        return str(self.path("db"))
+
+
+# Named provider pairs (search, llm). FLOWCODE_MODE in the environment picks one and overrides config.yaml,
+# which is how a deployed server is pinned to API mode.
+PROVIDER_MODES = {"api": ("claude", "anthropic"), "claude_code": ("claude_code", "claude_code")}
+MODE_ENV = "FLOWCODE_MODE"
+
+
+def forced_mode() -> str | None:
+    """The mode set by FLOWCODE_MODE, if any."""
+    mode = os.environ.get(MODE_ENV, "").strip()
+    if mode and mode not in PROVIDER_MODES:
+        raise RuntimeError(f"{MODE_ENV} must be one of {', '.join(PROVIDER_MODES)}, not {mode!r}")
+    return mode or None
 
 
 def load_config(path: str | Path = "config.yaml") -> Config:
@@ -123,6 +160,9 @@ def load_config(path: str | Path = "config.yaml") -> Config:
     path = Path(path)
     load_dotenv(path.parent / ".env")
     data = yaml.safe_load(path.read_text()) or {}
+    mode = forced_mode()
+    if mode:
+        data.setdefault("search", {})["provider"], data.setdefault("llm", {})["provider"] = PROVIDER_MODES[mode]
     return Config(**data, base_dir=path.parent)
 
 

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 import socket
 from datetime import date
 from pathlib import Path
@@ -13,7 +14,7 @@ from pydantic import BaseModel
 
 from flowcode_agent.config import Config
 from flowcode_agent.context import RunContext
-from flowcode_agent.db import Database
+from flowcode_agent.db import TABLES, Database
 from flowcode_agent.fetch import FetchedPage, extract_page
 from flowcode_agent.providers.llm_base import BaseLLM
 from flowcode_agent.providers.search_fake import FakeSearchProvider
@@ -21,6 +22,18 @@ from flowcode_agent.providers.search_fake import FakeSearchProvider
 ROOT = Path(__file__).resolve().parent.parent
 FIXTURES = Path(__file__).resolve().parent / "fixtures"
 TODAY = date(2026, 11, 16)
+
+# Set this to a postgres:// URL (an empty, throwaway database) to run every test against PostgreSQL.
+PG_TEST_ENV = "FLOWCODE_TEST_DATABASE_URL"
+
+
+def _reset_postgres(url: str) -> None:
+    """Drop every table so each test starts from an empty database."""
+    import psycopg
+
+    with psycopg.connect(url, autocommit=True) as conn:
+        for table in TABLES:
+            conn.execute(f"DROP TABLE IF EXISTS {table} CASCADE")
 
 
 @pytest.fixture(autouse=True)
@@ -76,14 +89,18 @@ class FakeFetcher:
 def config(tmp_path) -> Config:
     data = yaml.safe_load((ROOT / "config.yaml").read_text())
     data["search"]["provider"] = "fake"
-    data["paths"].update(db=str(tmp_path / "test.db"), outputs=str(tmp_path / "outputs"),
-                         calls_log=str(tmp_path / "logs" / "api_calls.jsonl"))
+    data["paths"].update(db=str(tmp_path / "test.db"), outputs=str(tmp_path / "outputs"))
+    if os.environ.get(PG_TEST_ENV):
+        _reset_postgres(os.environ[PG_TEST_ENV])
+        data["storage"] = {"backend": "postgres", "url_env": PG_TEST_ENV}
+    else:
+        data["storage"] = {"backend": "sqlite"}
     return Config(**data, base_dir=ROOT)
 
 
 @pytest.fixture
 def db(config) -> Database:
-    database = Database(config.path("db"))
+    database = Database(config.db_target())
     yield database
     database.close()
 

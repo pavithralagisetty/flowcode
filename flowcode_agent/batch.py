@@ -37,7 +37,7 @@ def read_companies(path: str | Path) -> list[BatchItem]:
 
 def _run_one(config: Config, make_ctx: ContextFactory, item: BatchItem, mode: str) -> BatchItem:
     """Each worker thread gets its own database connection and providers, so usage counts stay per company."""
-    db = Database(config.path("db"))
+    db = Database(config.db_target())
     try:
         item.result = run_company(make_ctx(db), item.name, item.domain, mode=mode)
     except AmbiguousCompany as exc:

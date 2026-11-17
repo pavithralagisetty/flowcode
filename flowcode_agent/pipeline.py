@@ -41,7 +41,7 @@ def build_context(config: Config, db: Database | None = None, search=None, llm=N
     """Make a context with real providers unless test doubles are passed in."""
     return RunContext(
         config=config,
-        db=db or Database(config.path("db")),
+        db=db or Database(config.db_target()),
         search=search or get_search_provider(config),
         llm=llm or get_llm(config),
         fetcher=fetcher or Fetcher(timeout=config.research.fetch_timeout_seconds),
@@ -62,8 +62,7 @@ def _known_company(ctx: RunContext, user_input: str, domain: str | None) -> Comp
 
 def run_company(ctx: RunContext, user_input: str, domain: str | None = None, mode: str = "run") -> RunResult:
     """Run (or resume) the full pipeline for one company. `mode` is 'run' or 'refresh'."""
-    calllog.configure(ctx.config.path("calls_log"))
-    with calllog.tagged(session=uuid.uuid4().hex[:10], mode=mode):
+    with calllog.writing_to(ctx.db), calllog.tagged(session=uuid.uuid4().hex[:10], mode=mode):
         return _run_company(ctx, user_input, domain, mode)
 
 
@@ -138,6 +137,8 @@ def _run_stages(ctx: RunContext, company: Company, run_id: int, status: str, ref
     calllog.progress("Writing the report")
     folder = write_report(ctx.config.path("outputs"), company, cs, ranked, db.get_evidence_map(company.id), run_id,
                           ctx.today, refresh=refresh, new_evidence_ids=new_ids)
+    db.save_report(company.id, run_id, folder.name, (folder / "report.json").read_text(),
+                   (folder / "report.md").read_text())
     db.set_run_status(run_id, "done")
     return RunResult(company=company, run_id=run_id, status="done", score=cs, report_dir=folder,
                      new_evidence=len(new_ids), opportunities=ranked)
