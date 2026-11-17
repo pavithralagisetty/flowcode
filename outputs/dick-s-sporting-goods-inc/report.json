@@ -1,0 +1,1025 @@
+{
+  "company": {
+    "id": 8,
+    "name": "DICK'S Sporting Goods, Inc.",
+    "domain": "dicks.com",
+    "industry": "retail and consumer goods",
+    "brands": [
+      "CALIA",
+      "DSG",
+      "VRST",
+      "Maxfli",
+      "Walter Hagen"
+    ],
+    "is_existing_customer": false,
+    "customer_tier": null
+  },
+  "run_id": 10,
+  "run_date": "2026-11-17",
+  "mode": "run",
+  "company_score": {
+    "score": 4.74,
+    "factors": {
+      "best_opportunity": {
+        "rating": 4,
+        "reason": "Best opportunity scores 4.35"
+      },
+      "strong_count": {
+        "rating": 5,
+        "reason": "6 opportunities at or above 3.5"
+      },
+      "company_size": {
+        "rating": 5,
+        "reason": "National retailer running global athlete campaigns, a national high school sponsorship, a nationwide paid loyalty program and nationwide Golf Galaxy events."
+      },
+      "industry_fit": {
+        "rating": 5,
+        "reason": "Industry 'retail and consumer goods' is a strong fit"
+      },
+      "new_activity": {
+        "rating": 5,
+        "reason": "Newest strong opportunity source is 0 days old"
+      }
+    },
+    "snapshot": "DICK'S is in a busy stretch of national partnerships and launches, including a multiyear Caitlin Clark brand deal, a three-year NFHS retail partnership, and its first licensed collegiate collections. Golf Galaxy is heading into Black Friday with a first-ever nationwide giveaway, big discounts and a Bryson X SWAG mystery headcover. The ScoreCard loyalty program, including the paid ScoreCard+ tier, continues alongside these efforts."
+  },
+  "opportunities": [
+    {
+      "id": 69,
+      "moment_id": 82,
+      "moment": {
+        "title": "Bryson X SWAG Break50 Mystery Headcover Collaboration",
+        "type": "loyalty_or_contest",
+        "summary": "Beginning November 19, Golf Galaxy and DICK'S are selling a Bryson X SWAG Break50 Blind Bag mystery headcover that gives buyers a chance to win prizes. Fifty winners will receive autographed headcovers. Four grand prize winners will get a behind-the-scenes look at the filming of Break 50 and the chance to spend the afternoon with DeChambeau.",
+        "timing": {
+          "date_text": "beginning November 19, 2026",
+          "start_date": "2026-11-19",
+          "end_date": "2026-12-31",
+          "status": "ongoing"
+        },
+        "physical_touchpoints": [
+          "product packaging",
+          "store shelf",
+          "point of purchase"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 114,
+            "exact_quote": "Beginning on November 19, golfers can purchase a Bryson X SWAG Break50 Blind Bag mystery headcover at Golf Galaxy and DICK'S for a chance to win exclusive prizes."
+          },
+          {
+            "evidence_id": 114,
+            "exact_quote": "Fifty winners will receive autographed headcovers, while four grand prize winners will get a behind-the-scenes look at the filming of Break 50 and the opportunity to spend the afternoon with DeChambeau."
+          }
+        ]
+      },
+      "play_id": "packaging_signup",
+      "why_flowcode_fits": "The Bryson X SWAG Break50 Blind Bag is a limited-edition mystery headcover with winners and grand prizes. A Flowcode on the packaging could take buyers to a page to enter and reveal their headcover. DICK'S would also get a list of engaged golf fans.",
+      "flowcode_products": [
+        "FlowHubs",
+        "Analytics and Integrations"
+      ],
+      "similar_story": {
+        "name": "LOVE CORN",
+        "url": "https://www.flowcode.com/case-study/love-corn",
+        "result": "43,000 scans and 27,000 new contacts"
+      },
+      "suggested_first_pitch": "The Break50 Blind Bag is made for a scan. A Flowcode on the packaging could be how buyers enter to win autographed headcovers, and you'd keep their contact info.",
+      "verification": {
+        "quotes_checked": 2,
+        "quotes_passed": 2,
+        "verdict": "partly",
+        "reason": "The quotes support the date, the retailers, the 50 autographed headcovers and the four grand prizes. They never say the headcover is \"limited-edition\", and they describe a look at the filming of Break 50, not access to footage.",
+        "original_summary": "Golf Galaxy and Dick's Sporting Goods are offering a limited-edition Bryson X SWAG Break50 Blind Bag mystery headcover beginning November 19, with 50 winners receiving autographed headcovers and four grand prize winners getting behind-the-scenes footage access and time with Bryson DeChambeau."
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 5,
+          "reason": "Starts November 19, 2026, three days away, and runs through December 31."
+        },
+        "playbook_fit": {
+          "rating": 5,
+          "reason": "A mystery headcover with prizes in packaging matches the packaging sign-up story closely."
+        },
+        "reach": {
+          "rating": 4,
+          "reason": "Sold at Golf Galaxy and DICK'S stores with a well-known golfer, but limited to golf fans."
+        },
+        "evidence_strength": {
+          "rating": 4,
+          "reason": "Company press release from November 10, within 30 days, but a single source."
+        },
+        "openness": {
+          "rating": 3,
+          "reason": "Buyers enter to win prizes, but there is no evidence about QR codes or competitors."
+        }
+      },
+      "score": 4.35,
+      "sources": [
+        {
+          "evidence_id": 114,
+          "publisher": "Cision PR Newswire",
+          "date": "2026-11-10",
+          "quote": "Beginning on November 19, golfers can purchase a Bryson X SWAG Break50 Blind Bag mystery headcover at Golf Galaxy \u2026",
+          "url": "https://www.prnewswire.com/news-releases/golf-galaxy-kicks-off-black-friday-with-first-ever-pick-a-tag-win-some-swag-giveaway-event-302934953.html"
+        },
+        {
+          "evidence_id": 114,
+          "publisher": "Cision PR Newswire",
+          "date": "2026-11-10",
+          "quote": "Fifty winners will receive autographed headcovers, while four grand prize winners will get a behind-the-scenes look at the filming \u2026",
+          "url": "https://www.prnewswire.com/news-releases/golf-galaxy-kicks-off-black-friday-with-first-ever-pick-a-tag-win-some-swag-giveaway-event-302934953.html"
+        }
+      ],
+      "new": true
+    },
+    {
+      "id": 59,
+      "moment_id": 72,
+      "moment": {
+        "title": "Caitlin Clark Brand Partner Deal",
+        "type": "sponsorship",
+        "summary": "DICK'S Sporting Goods announced a multiyear partnership with WNBA star Caitlin Clark, in an exclusive deal that includes DICK'S and Foot Locker and marks the first time either company has signed an athlete as a brand partner. Clark will collaborate with both companies on national and global campaigns and custom promotion supporting her signature footwear, apparel and product lines.",
+        "timing": {
+          "date_text": "November 2026",
+          "start_date": "2026-11-03",
+          "end_date": null,
+          "status": "ongoing"
+        },
+        "physical_touchpoints": [
+          "store displays",
+          "product packaging",
+          "retail signage"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 94,
+            "exact_quote": "Caitlin Clark is winning off the court, as DICK'S Sporting Goods announced a multiyear partnership with the WNBA superstar on Wednesday, uniting with the major sports retailer to bring her brand to fans across the globe."
+          },
+          {
+            "evidence_id": 94,
+            "exact_quote": "The exclusive deal includes DICK'S and Foot Locker, marking the first time either company has signed an athlete as a brand partner."
+          },
+          {
+            "evidence_id": 94,
+            "exact_quote": "Clark will be collaborating with DICK'S and Foot Locker on national and global campaigns as well as custom promotion supporting her signature footwear, apparel and product lines."
+          }
+        ]
+      },
+      "play_id": "packaging_signup",
+      "why_flowcode_fits": "The Caitlin Clark signature footwear and apparel line is a new product with fan activations, and the moment lists product packaging and retail signage as touchpoints. A code on the packaging and signs could lead to a fan sign-up or exclusive content, and every scan would build DICK'S own customer list.",
+      "flowcode_products": [
+        "FlowHubs",
+        "Analytics and Integrations"
+      ],
+      "similar_story": {
+        "name": "LOVE CORN",
+        "url": "https://www.flowcode.com/case-study/love-corn",
+        "result": "43,000 scans and 27,000 new contacts"
+      },
+      "suggested_first_pitch": "The Caitlin Clark launch will bring a lot of fans into stores and onto packaging. A Flowcode on the box and signage could turn each of them into a known contact you can reach again.",
+      "verification": {
+        "quotes_checked": 3,
+        "quotes_passed": 3,
+        "verdict": "partly",
+        "reason": "The quotes support the multiyear exclusive partnership, the first-athlete-brand-partner point, and the national/global campaigns, but say nothing about retail and digital experiences or fan activations.",
+        "original_summary": "DICK'S Sporting Goods and Foot Locker announced a multiyear exclusive partnership with WNBA star Caitlin Clark, marking the first time either company has signed an athlete as a brand partner. The deal includes national and global campaigns supporting her signature footwear and apparel, plus retail and digital experiences and fan activations."
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 5,
+          "reason": "Announced November 3, 2026 and ongoing, with national and global campaigns just starting."
+        },
+        "playbook_fit": {
+          "rating": 4,
+          "reason": "New signature footwear and apparel line with packaging and signage touchpoints closely matches the packaging sign-up story."
+        },
+        "reach": {
+          "rating": 5,
+          "reason": "National and global campaigns across DICK'S and Foot Locker with a very high-profile athlete."
+        },
+        "evidence_strength": {
+          "rating": 4,
+          "reason": "Fox Business reports the company's announcement within the last 30 days, though only one publisher is given."
+        },
+        "openness": {
+          "rating": 3,
+          "reason": "No evidence about QR code use or competitor ties for this partnership."
+        }
+      },
+      "score": 4.3,
+      "sources": [
+        {
+          "evidence_id": 94,
+          "publisher": "Fox Business",
+          "date": "2026-11-03",
+          "quote": "Caitlin Clark is winning off the court, as DICK'S Sporting Goods announced a multiyear partnership with the WNBA superstar \u2026",
+          "url": "https://www.foxbusiness.com/sports/caitlin-clark-becomes-first-ever-brand-partner-dicks-sporting-goods-foot-locker"
+        },
+        {
+          "evidence_id": 94,
+          "publisher": "Fox Business",
+          "date": "2026-11-03",
+          "quote": "The exclusive deal includes DICK'S and Foot Locker, marking the first time either company has signed an athlete as \u2026",
+          "url": "https://www.foxbusiness.com/sports/caitlin-clark-becomes-first-ever-brand-partner-dicks-sporting-goods-foot-locker"
+        },
+        {
+          "evidence_id": 94,
+          "publisher": "Fox Business",
+          "date": "2026-11-03",
+          "quote": "Clark will be collaborating with DICK'S and Foot Locker on national and global campaigns as well as custom promotion \u2026",
+          "url": "https://www.foxbusiness.com/sports/caitlin-clark-becomes-first-ever-brand-partner-dicks-sporting-goods-foot-locker"
+        }
+      ],
+      "new": true
+    },
+    {
+      "id": 60,
+      "moment_id": 73,
+      "moment": {
+        "title": "NFHS Official Retail Partner",
+        "type": "sponsorship",
+        "summary": "DICK'S Sporting Goods and the NFHS announced a three-year partnership naming DICK'S the \"Official and Exclusive Retail Partner of the NFHS\" and the \"Official National Sponsor of High School Sports.\" DICK'S will host local Shop Day activations with high school communities to welcome athletes into stores.",
+        "timing": {
+          "date_text": "November 2026",
+          "start_date": "2026-11-12",
+          "end_date": null,
+          "status": "ongoing"
+        },
+        "physical_touchpoints": [
+          "store signage",
+          "in-store displays"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 95,
+            "exact_quote": "The NFHS and DICK'S Sporting Goods have announced a three-year partnership that will name DICK'S as the \"Official and Exclusive Retail Partner of the NFHS\" and the \"Official National Sponsor of High School Sports.\""
+          },
+          {
+            "evidence_id": 95,
+            "exact_quote": "DICK'S will host local Shop Day activations with high school communities to welcome athletes into stores and provide a differentiated assortment of brands and products."
+          }
+        ]
+      },
+      "play_id": "many_locations",
+      "why_flowcode_fits": "As Official Retail Partner of the NFHS, DICK'S will host local Shop Day activations with high school communities, with store signage and in-store displays. A unique Flowcode for each school or store could lead to a local landing page, and scan data would show which communities respond most.",
+      "flowcode_products": [
+        "FlowURLs",
+        "FlowHubs",
+        "Analytics and Integrations"
+      ],
+      "similar_story": {
+        "name": "CLEAR",
+        "url": "https://www.flowcode.com/case-study/clear",
+        "result": "over 7,000 codes and over 1.2M scans"
+      },
+      "suggested_first_pitch": "For the NFHS Shop Days, a unique Flowcode for each school or store could take families to a local page. You'd then see which communities are engaging the most.",
+      "verification": {
+        "quotes_checked": 2,
+        "quotes_passed": 2,
+        "verdict": "partly",
+        "reason": "The quotes support the three-year partnership, the titles, and the Shop Day activations, but nothing in them mentions reaching eight million high school student-athletes and their families.",
+        "original_summary": "DICK'S Sporting Goods announced a three-year partnership as the \"Official and Exclusive Retail Partner of the NFHS\" and \"Official National Sponsor of High School Sports.\" The company will host local Shop Day activations with high school communities and reach eight million high school student-athletes and their families."
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 5,
+          "reason": "Announced November 12, 2026 as a three-year partnership, with Shop Day activations coming."
+        },
+        "playbook_fit": {
+          "rating": 4,
+          "reason": "Local school activations with store signage and displays fit the many-locations story with unique codes per school or store."
+        },
+        "reach": {
+          "rating": 4,
+          "reason": "National sponsor of high school sports across many communities, though each activation is local."
+        },
+        "evidence_strength": {
+          "rating": 4,
+          "reason": "The NFHS itself announced the partnership on November 12, within 30 days, but only one source is given."
+        },
+        "openness": {
+          "rating": 3,
+          "reason": "No evidence about QR code use or competitor ties for this partnership."
+        }
+      },
+      "score": 4.1,
+      "sources": [
+        {
+          "evidence_id": 95,
+          "publisher": "NFHS_Org",
+          "date": "2026-11-12",
+          "quote": "The NFHS and DICK'S Sporting Goods have announced a three-year partnership that will name DICK'S as the \"Official and \u2026",
+          "url": "https://nfhs.org/stories/nfhs-announces-partnership-with-dick-s-sporting-goods-as-official-and-exclusive-sporting-goods-retail-partner"
+        },
+        {
+          "evidence_id": 95,
+          "publisher": "NFHS_Org",
+          "date": "2026-11-12",
+          "quote": "DICK'S will host local Shop Day activations with high school communities to welcome athletes into stores and provide a \u2026",
+          "url": "https://nfhs.org/stories/nfhs-announces-partnership-with-dick-s-sporting-goods-as-official-and-exclusive-sporting-goods-retail-partner"
+        }
+      ],
+      "new": true
+    },
+    {
+      "id": 68,
+      "moment_id": 81,
+      "moment": {
+        "title": "Golf Galaxy 'Pick a Tag. Win Some Swag.' Black Friday Giveaway",
+        "type": "live_event",
+        "summary": "Golf Galaxy is hosting a giveaway event called \"Pick a Tag. Win Some Swag.\" at all of its stores nationwide on November 27. Golfers who visit can randomly select an envelope to reveal an instant prize, with the first 30 participants guaranteed to win.",
+        "timing": {
+          "date_text": "November 27, 2026 at 7 a.m. local time",
+          "start_date": "2026-11-27",
+          "end_date": null,
+          "status": "upcoming"
+        },
+        "physical_touchpoints": [
+          "store signage",
+          "envelope"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 114,
+            "exact_quote": "Golf Galaxy is teeing off Black Friday with a new way for golfers to win big. Today, the retailer announced its first-ever \"Pick a Tag. Win Some Swag.\" giveaway, taking place at all Golf Galaxy stores nationwide on November 27."
+          },
+          {
+            "evidence_id": 114,
+            "exact_quote": "golfers who visit their local Golf Galaxy can randomly select an envelope to reveal an instant prize, with the first 30 participants guaranteed to win."
+          }
+        ]
+      },
+      "play_id": "contest_entry",
+      "why_flowcode_fits": "The 'Pick a Tag. Win Some Swag.' event is an in-store giveaway at every Golf Galaxy location, with envelopes and store signage. A Flowcode on the envelopes or signs could register entrants and capture their contact info, and scans would show turnout by store.",
+      "flowcode_products": [
+        "FlowHubs",
+        "Analytics and Integrations"
+      ],
+      "similar_story": {
+        "name": "Capri Sun",
+        "url": "https://www.flowcode.com/case-study/capri-sun",
+        "result": "over 28,000 contest entries"
+      },
+      "suggested_first_pitch": "For 'Pick a Tag. Win Some Swag.', a Flowcode on the envelopes or signs could capture each participant's contact info. You'd also see which stores draw the biggest crowds.",
+      "verification": {
+        "quotes_checked": 2,
+        "quotes_passed": 2,
+        "verdict": "partly",
+        "reason": "The quotes support the nationwide November 27 date, the envelope pick, instant prizes, and the first 30 guaranteed winners. They say nothing about the prize types (equipment, gift cards), the local grand prize over $500, or the 7 a.m. start time.",
+        "original_summary": "Golf Galaxy is hosting an in-store giveaway event at all locations on November 27 where customers can pick an envelope for instant prizes, with the first 30 participants guaranteed to win. Prizes range from golf equipment to gift cards, with one local grand prize per store valued over $500."
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 5,
+          "reason": "Takes place November 27, 2026, about 11 days away."
+        },
+        "playbook_fit": {
+          "rating": 4,
+          "reason": "An in-store giveaway with envelopes and signage fits the contest entry story well."
+        },
+        "reach": {
+          "rating": 4,
+          "reason": "Held at all Golf Galaxy stores nationwide, though it is a one-day event."
+        },
+        "evidence_strength": {
+          "rating": 4,
+          "reason": "Company press release on PR Newswire from November 10, within 30 days, but a single source."
+        },
+        "openness": {
+          "rating": 2,
+          "reason": "The giveaway uses physical envelopes to pick prizes, with no digital sign-up, and no QR use is mentioned."
+        }
+      },
+      "score": 3.95,
+      "sources": [
+        {
+          "evidence_id": 114,
+          "publisher": "Cision PR Newswire",
+          "date": "2026-11-10",
+          "quote": "Golf Galaxy is teeing off Black Friday with a new way for golfers to win big. Today, the retailer \u2026",
+          "url": "https://www.prnewswire.com/news-releases/golf-galaxy-kicks-off-black-friday-with-first-ever-pick-a-tag-win-some-swag-giveaway-event-302934953.html"
+        },
+        {
+          "evidence_id": 114,
+          "publisher": "Cision PR Newswire",
+          "date": "2026-11-10",
+          "quote": "golfers who visit their local Golf Galaxy can randomly select an envelope to reveal an instant prize, with the \u2026",
+          "url": "https://www.prnewswire.com/news-releases/golf-galaxy-kicks-off-black-friday-with-first-ever-pick-a-tag-win-some-swag-giveaway-event-302934953.html"
+        }
+      ],
+      "new": true
+    },
+    {
+      "id": 71,
+      "moment_id": 84,
+      "moment": {
+        "title": "Golf Galaxy Black Friday & Cyber Week Sales",
+        "type": "other",
+        "summary": "Golf Galaxy is offering Black Friday promotions featuring up to 60% off equipment, footwear, and apparel, valid November 22-27. Specific deals include up to $350 off golf clubs, buy more save more with free personalization on select golf balls, up to 60% off apparel, up to 50% off shoes, and $500 off the Garmin Approach R50 launch monitor.",
+        "timing": {
+          "date_text": "November 22-27, 2026; Cyber Week begins November 29",
+          "start_date": "2026-11-22",
+          "end_date": "2026-11-27",
+          "status": "upcoming"
+        },
+        "physical_touchpoints": [
+          "store signage",
+          "product tags",
+          "receipts"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 114,
+            "exact_quote": "Black Friday offers will feature up to 60% Off top equipment, footwear, apparel and more. These deals are valid November 22 \u2013 November 27"
+          },
+          {
+            "evidence_id": 114,
+            "exact_quote": "Up to $350 Off Golf Clubs, Buy More, Save More plus Free Personalization on select golf balls, Up to 60% Off Golf Apparel, Up to 50% Off Golf Shoes, $500 Off Garmin Approach R50 Launch Monitor"
+          }
+        ]
+      },
+      "play_id": "product_tags",
+      "why_flowcode_fits": "Golf Galaxy's Black Friday sale covers golf clubs, balls, apparel, shoes, and launch monitors, with signage, product tags, and receipts in store. A code on each tag could show deal details, specs, and availability. A code on the receipt could bring shoppers back for Cyber Week.",
+      "flowcode_products": [
+        "FlowURLs",
+        "FlowHubs",
+        "Analytics and Integrations"
+      ],
+      "similar_story": {
+        "name": "Eddie Bauer",
+        "url": "https://www.flowcode.com/case-study/eddie-bauer",
+        "result": "167,000 scans and 183% growth year over year"
+      },
+      "suggested_first_pitch": "Black Friday shoppers at Golf Galaxy are comparing deals on the shelf. A Flowcode on each tag could show specs and availability, and one on the receipt could bring them back for Cyber Week.",
+      "verification": {
+        "quotes_checked": 2,
+        "quotes_passed": 2,
+        "verdict": "partly",
+        "reason": "The quotes support the Black Friday offers and dates, but nothing in them mentions Cyber Week or a November 29 start.",
+        "original_summary": "Golf Galaxy is offering Black Friday promotions featuring up to 60% off equipment, footwear, and apparel from November 22-27, with specific deals on golf clubs (up to $350 off), golf balls, apparel, shoes, and launch monitors. Cyber Week begins November 29."
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 5,
+          "reason": "Black Friday deals run November 22 to 27 and Cyber Week starts November 29, within the next two weeks."
+        },
+        "playbook_fit": {
+          "rating": 3,
+          "reason": "Signage, tags and receipts fit the product tags story, but this is a sale rather than a product launch."
+        },
+        "reach": {
+          "rating": 4,
+          "reason": "Nationwide Golf Galaxy sale across many product categories."
+        },
+        "evidence_strength": {
+          "rating": 4,
+          "reason": "Company press release from November 10, within 30 days, but a single source."
+        },
+        "openness": {
+          "rating": 3,
+          "reason": "No evidence about QR codes or competitors."
+        }
+      },
+      "score": 3.85,
+      "sources": [
+        {
+          "evidence_id": 114,
+          "publisher": "Cision PR Newswire",
+          "date": "2026-11-10",
+          "quote": "Black Friday offers will feature up to 60% Off top equipment, footwear, apparel and more. These deals are valid \u2026",
+          "url": "https://www.prnewswire.com/news-releases/golf-galaxy-kicks-off-black-friday-with-first-ever-pick-a-tag-win-some-swag-giveaway-event-302934953.html"
+        },
+        {
+          "evidence_id": 114,
+          "publisher": "Cision PR Newswire",
+          "date": "2026-11-10",
+          "quote": "Up to $350 Off Golf Clubs, Buy More, Save More plus Free Personalization on select golf balls, Up to \u2026",
+          "url": "https://www.prnewswire.com/news-releases/golf-galaxy-kicks-off-black-friday-with-first-ever-pick-a-tag-win-some-swag-giveaway-event-302934953.html"
+        }
+      ],
+      "new": true
+    },
+    {
+      "id": 62,
+      "moment_id": 75,
+      "moment": {
+        "title": "Collegiate Licensed Collections Launch",
+        "type": "product_launch",
+        "summary": "On November 16, DICK'S Sporting Goods announced its first officially licensed collegiate collections from its exclusive brands VRST, CALIA and DSG. The Buckeye and Hawkeye lines include t-shirts, pants and layering pieces in men's, women's and youth sizing.",
+        "timing": {
+          "date_text": "November 16, 2026",
+          "start_date": "2026-11-16",
+          "end_date": null,
+          "status": "ongoing"
+        },
+        "physical_touchpoints": [
+          "store shelves",
+          "product packaging"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 101,
+            "exact_quote": "DICK'S Sporting Goods announced on November 16 that it has introduced its first officially licensed collegiate collections from its exclusive brands VRST, CALIA and DSG."
+          },
+          {
+            "evidence_id": 101,
+            "exact_quote": "The Buckeye and Hawkeye lines include t-shirts, pants and layering pieces across men's, women's and youth sizing, built for game day and everyday wear."
+          }
+        ]
+      },
+      "play_id": "product_tags",
+      "why_flowcode_fits": "The first licensed collegiate collections from VRST, CALIA, and DSG, including Ohio State and Iowa, are on store shelves and in product packaging. A unique code on each tag or package could show details and online availability, so shoppers in store can find other sizes or styles.",
+      "flowcode_products": [
+        "FlowURLs",
+        "FlowHubs",
+        "Analytics and Integrations"
+      ],
+      "similar_story": {
+        "name": "Eddie Bauer",
+        "url": "https://www.flowcode.com/case-study/eddie-bauer",
+        "result": "167,000 scans and 183% growth year over year"
+      },
+      "suggested_first_pitch": "For the new Ohio State and Iowa collections, a Flowcode on every tag could show sizes, styles, and stock. You'd also see which pieces get scanned most in store.",
+      "verification": {
+        "quotes_checked": 2,
+        "quotes_passed": 2,
+        "verdict": "partly",
+        "reason": "The quotes support the announcement, the brands, the product types and the sizing ranges. They say nothing about availability at select stores and online, and they refer to Ohio State and Iowa only indirectly as 'Buckeye and Hawkeye' lines.",
+        "original_summary": "DICK'S Sporting Goods launched its first officially licensed collegiate collections under VRST, CALIA, and DSG brands, featuring Ohio State University and the University of Iowa. The collections include t-shirts, pants, and layering pieces for men, women, and youth, available at select stores and online."
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 5,
+          "reason": "Collections announced November 16, 2026, the same day as today, and now on shelves."
+        },
+        "playbook_fit": {
+          "rating": 4,
+          "reason": "New apparel lines on store shelves and in packaging match the product tags story."
+        },
+        "reach": {
+          "rating": 3,
+          "reason": "Launch starts with Ohio State and Iowa lines, so reach is a mid-sized fan base across DICK'S stores."
+        },
+        "evidence_strength": {
+          "rating": 3,
+          "reason": "One trade publication reports the announcement, which is recent but not backed by a second source."
+        },
+        "openness": {
+          "rating": 3,
+          "reason": "No evidence about QR code use or competitor ties for these collections."
+        }
+      },
+      "score": 3.75,
+      "sources": [
+        {
+          "evidence_id": 101,
+          "publisher": "Youth Sports Business Report",
+          "date": "2026-11-16",
+          "quote": "DICK'S Sporting Goods announced on November 16 that it has introduced its first officially licensed collegiate collections from its \u2026",
+          "url": "https://youthsportsbusinessreport.com/dicks-brings-vrst-calia-and-dsg-into-collegiate-licensing-starting-with-ohio-state-and-iowa/"
+        },
+        {
+          "evidence_id": 101,
+          "publisher": "Youth Sports Business Report",
+          "date": "2026-11-16",
+          "quote": "The Buckeye and Hawkeye lines include t-shirts, pants and layering pieces across men's, women's and youth sizing, built for \u2026",
+          "url": "https://youthsportsbusinessreport.com/dicks-brings-vrst-calia-and-dsg-into-collegiate-licensing-starting-with-ohio-state-and-iowa/"
+        }
+      ],
+      "new": true
+    },
+    {
+      "id": 63,
+      "moment_id": 76,
+      "moment": {
+        "title": "ScoreCard+ Paid Loyalty Tier Launch",
+        "type": "loyalty_or_contest",
+        "summary": "DICK'S launched ScoreCard+, a paid membership introduced in 2026 that costs $99 per year. It includes $100 in annual rewards paid in four $25 quarterly increments, plus free shipping and service discounts.",
+        "timing": {
+          "date_text": "July 2026",
+          "start_date": "2026-07-01",
+          "end_date": null,
+          "status": "ongoing"
+        },
+        "physical_touchpoints": [
+          "mobile app",
+          "store checkout",
+          "receipt"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 105,
+            "exact_quote": "ScoreCard+ costs $99 per year and includes $100 in annual rewards, paid in four $25 quarterly increments, plus free shipping and service discounts."
+          },
+          {
+            "evidence_id": 105,
+            "exact_quote": "ScoreCard+ is the paid membership introduced in 2026."
+          },
+          {
+            "evidence_id": 107,
+            "exact_quote": "ScoreCard+ costs $99 a year and adds quarterly rewards, service perks and shipping benefits."
+          }
+        ]
+      },
+      "play_id": "contest_entry",
+      "why_flowcode_fits": "ScoreCard+ is a new paid tier, and the moment lists store checkout and receipts as touchpoints. A Flowcode at checkout or on the receipt could take shoppers straight to joining or upgrading, and the scans would show who is interested.",
+      "flowcode_products": [
+        "FlowURLs",
+        "Analytics and Integrations"
+      ],
+      "similar_story": {
+        "name": "Capri Sun",
+        "url": "https://www.flowcode.com/case-study/capri-sun",
+        "result": "over 28,000 contest entries"
+      },
+      "suggested_first_pitch": "ScoreCard+ is a $99 decision, and shoppers are at the register or holding a receipt. A Flowcode there could take them straight to upgrade, and you'd see which stores drive scans.",
+      "verification": {
+        "quotes_checked": 3,
+        "quotes_passed": 3,
+        "verdict": "partly",
+        "reason": "The price, the 2026 launch, the rewards, free shipping and service discounts are all supported. Nothing in the quotes says the tier stacks with the free ScoreCard program or the DICK'S Credit Card. The rewards are $100 per year paid quarterly, not $100 each quarter.",
+        "original_summary": "DICK'S launched ScoreCard+, a $99 annual paid membership tier introduced in 2026 that includes $100 in quarterly rewards, free shipping, and service discounts. The paid tier stacks with the free ScoreCard program and the DICK'S Credit Card to give members multiple earning and redemption options."
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 3,
+          "reason": "Launched in July 2026 and ongoing, but no near-term milestone is given."
+        },
+        "playbook_fit": {
+          "rating": 3,
+          "reason": "A paid membership with checkout and receipt touchpoints loosely fits a sign-up play."
+        },
+        "reach": {
+          "rating": 4,
+          "reason": "Loyalty program tied to a national retailer's customer base."
+        },
+        "evidence_strength": {
+          "rating": 3,
+          "reason": "Two sources, but they are a blog from October 19 and a July trade article, not the company's own announcement."
+        },
+        "openness": {
+          "rating": 3,
+          "reason": "Asks shoppers to sign up and upgrade, but no evidence on QR codes or competitors."
+        }
+      },
+      "score": 3.2,
+      "sources": [
+        {
+          "evidence_id": 105,
+          "publisher": "rivo.io",
+          "date": "2026-10-19",
+          "quote": "ScoreCard+ costs $99 per year and includes $100 in annual rewards, paid in four $25 quarterly increments, plus free \u2026",
+          "url": "https://www.rivo.io/blog/dicks-sporting-goods-scorecard-rewards"
+        },
+        {
+          "evidence_id": 105,
+          "publisher": "rivo.io",
+          "date": "2026-10-19",
+          "quote": "ScoreCard+ is the paid membership introduced in 2026.",
+          "url": "https://www.rivo.io/blog/dicks-sporting-goods-scorecard-rewards"
+        },
+        {
+          "evidence_id": 107,
+          "publisher": "Sporting Goods Intelligence",
+          "date": "2026-07-07",
+          "quote": "ScoreCard+ costs $99 a year and adds quarterly rewards, service perks and shipping benefits.",
+          "url": "https://www.sgieurope.com/retail/dicks-launches-99-paid-loyalty-tier-scorecard/122052.article"
+        }
+      ],
+      "new": true
+    },
+    {
+      "id": 70,
+      "moment_id": 83,
+      "moment": {
+        "title": "Golf Galaxy 2026 Holiday Gift Shop",
+        "type": "other",
+        "summary": "Golf Galaxy launched its 2026 Holiday Gift Shop on golfgalaxy.com and in the Golf Galaxy App, featuring a curated lineup of the season's best golf gifts. The launch was announced in a press release dated November 10, 2026.",
+        "timing": {
+          "date_text": "launched November 2026",
+          "start_date": null,
+          "end_date": null,
+          "status": "ongoing"
+        },
+        "physical_touchpoints": [
+          "store displays",
+          "mobile app"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 114,
+            "exact_quote": "Golf Galaxy has also launched its 2026 Holiday Gift Shop on golfgalaxy.com and in the Golf Galaxy App, featuring a curated lineup of the season's best golf gifts."
+          }
+        ]
+      },
+      "play_id": null,
+      "why_flowcode_fits": "",
+      "flowcode_products": [],
+      "similar_story": null,
+      "suggested_first_pitch": "",
+      "verification": {
+        "quotes_checked": 3,
+        "quotes_passed": 1,
+        "verdict": "partly",
+        "reason": "The quote supports the launch, the two channels, the curated gifts, and the November timing, but nothing in it mentions Maxfli, Walter Hagen, or other brands, or the 25% off lesson and simulator packs valid November 22-December 24.",
+        "original_summary": "Golf Galaxy launched its 2026 Holiday Gift Shop on golfgalaxy.com and in the Golf Galaxy App featuring curated golf gifts, equipment from brands like Maxfli, Walter Hagen, and others, plus limited-time 25% off lesson and simulator packs valid November 22-December 24."
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 4,
+          "reason": "Launched in November 2026 for the holiday season."
+        },
+        "playbook_fit": {
+          "rating": 2,
+          "reason": "A website and app gift shop has little physical placement beyond store displays, and no play was identified."
+        },
+        "reach": {
+          "rating": 3,
+          "reason": "Golf Galaxy holiday promotion online and in its app, with no scale stated."
+        },
+        "evidence_strength": {
+          "rating": 4,
+          "reason": "Company press release from November 10, within 30 days, but a single source."
+        },
+        "openness": {
+          "rating": 3,
+          "reason": "No evidence about QR codes or competitors."
+        }
+      },
+      "score": 3.15,
+      "sources": [
+        {
+          "evidence_id": 114,
+          "publisher": "Cision PR Newswire",
+          "date": "2026-11-10",
+          "quote": "Golf Galaxy has also launched its 2026 Holiday Gift Shop on golfgalaxy.com and in the Golf Galaxy App, featuring \u2026",
+          "url": "https://www.prnewswire.com/news-releases/golf-galaxy-kicks-off-black-friday-with-first-ever-pick-a-tag-win-some-swag-giveaway-event-302934953.html"
+        }
+      ],
+      "new": true
+    },
+    {
+      "id": 65,
+      "moment_id": 78,
+      "moment": {
+        "title": "Mobile App Exclusive Offer - $20 Off $100",
+        "type": "digital_campaign",
+        "summary": "DICK'S is offering customers $20 off a $100 purchase when they shop through the mobile app or use the app to generate an in-store coupon. The discount automatically applies in the cart on qualifying items.",
+        "timing": {
+          "date_text": "May-June 2026",
+          "start_date": "2026-05-25",
+          "end_date": null,
+          "status": "ongoing"
+        },
+        "physical_touchpoints": [
+          "mobile app",
+          "QR code"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 109,
+            "exact_quote": "Dick's Sporting Goods App Exclusive Offe $20 Off $100 Eligible Styles/Products when you purchase through their mobile app (discount will automatically apply in cart on qualifying items)."
+          },
+          {
+            "evidence_id": 110,
+            "exact_quote": "$20 off $100+ Purchase when you shop in-app or use the app to get in-store coupon."
+          }
+        ]
+      },
+      "play_id": "contest_entry",
+      "why_flowcode_fits": "The $20 off $100 offer already uses a QR code and the mobile app to generate an in-store coupon. A branded Flowcode could make that step trackable, so DICK'S can see which stores and signs prompt shoppers to claim the offer.",
+      "flowcode_products": [
+        "FlowURLs",
+        "Analytics and Integrations"
+      ],
+      "similar_story": {
+        "name": "Capri Sun",
+        "url": "https://www.flowcode.com/case-study/capri-sun",
+        "result": "over 28,000 contest entries"
+      },
+      "suggested_first_pitch": "Your app offer already uses a QR code to generate an in-store coupon. A branded Flowcode would let you see which locations and placements get the most scans.",
+      "verification": {
+        "quotes_checked": 2,
+        "quotes_passed": 2,
+        "verdict": "yes",
+        "reason": "The May 25, 2026 quote supports the $20 off $100 in-app offer with automatic cart application on qualifying items, and the June 22, 2026 quote supports the in-app or in-store coupon option, covering the May-June timing.",
+        "original_summary": null
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 2,
+          "reason": "Evidence is from May and June 2026, so the offer is likely stale."
+        },
+        "playbook_fit": {
+          "rating": 4,
+          "reason": "An offer that already runs through the app and an in-store coupon fits the contest entry or offer play."
+        },
+        "reach": {
+          "rating": 3,
+          "reason": "A retailer-wide app offer, but no scale is stated."
+        },
+        "evidence_strength": {
+          "rating": 1,
+          "reason": "Only forum posts from May and June 2026, which are weak and older than 30 days."
+        },
+        "openness": {
+          "rating": 4,
+          "reason": "Touchpoints list a QR code, and the app generates an in-store coupon, which shows openness to scanning."
+        }
+      },
+      "score": 2.85,
+      "sources": [
+        {
+          "evidence_id": 109,
+          "publisher": "Free Stuff Times Forums",
+          "date": "2026-05-25",
+          "quote": "Dick's Sporting Goods App Exclusive Offe $20 Off $100 Eligible Styles/Products when you purchase through their mobile app (discount \u2026",
+          "url": "https://forums.freestufftimes.com/threads/dicks-sporting-goods-app-exclusive-offer-eligible-styles-sale-products-20-off-100.305675/"
+        },
+        {
+          "evidence_id": 110,
+          "publisher": "Free Stuff Times Forums",
+          "date": "2026-06-22",
+          "quote": "$20 off $100+ Purchase when you shop in-app or use the app to get in-store coupon.",
+          "url": "https://forums.freestufftimes.com/threads/dicks-sporting-goods-in-app-offer-app-required-20-off-100-purchase.307839/"
+        }
+      ],
+      "new": true
+    },
+    {
+      "id": 66,
+      "moment_id": 79,
+      "moment": {
+        "title": "ScoreCard QR Code In-Store Offer",
+        "type": "loyalty_or_contest",
+        "summary": "A Dick's Sporting Goods QR code is listed on the Wesley Chapel Weddington Athletic Association page as valid through 12/31/26.",
+        "timing": {
+          "date_text": "Valid thru 12/31/26",
+          "start_date": null,
+          "end_date": "2026-12-31",
+          "status": "ongoing"
+        },
+        "physical_touchpoints": [
+          "QR code",
+          "store shelf",
+          "signage"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 108,
+            "exact_quote": "Dick's Sporting Goods QR Code Valid thru 12/31/26"
+          }
+        ]
+      },
+      "play_id": "contest_entry",
+      "why_flowcode_fits": "ScoreCard members scan QR codes at the store shelf and on signage to access in-store offers valid through December 31, 2026. Flowcodes could make that scan the loyalty entry point and tie each scan to a member profile, showing which offers and shelves get used.",
+      "flowcode_products": [
+        "Analytics and Integrations"
+      ],
+      "similar_story": {
+        "name": "Capri Sun",
+        "url": "https://www.flowcode.com/case-study/capri-sun",
+        "result": "over 28,000 contest entries"
+      },
+      "suggested_first_pitch": "Your ScoreCard QR codes already sit on shelves and signs. Flowcodes with FlowID could show which offers and locations earn the most scans and link them to member profiles.",
+      "verification": {
+        "quotes_checked": 1,
+        "quotes_passed": 1,
+        "verdict": "partly",
+        "reason": "The quote supports only the QR code and its 12/31/26 validity. It does not say DICK'S distributes it to members, that it unlocks in-store offers, or that it gives discounts on qualifying purchases.",
+        "original_summary": "DICK'S is distributing QR codes that members can scan to access in-store offers. The QR codes are valid through December 31, 2026, and provide discounts on qualifying purchases."
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 3,
+          "reason": "The code is valid through December 31, 2026, but the start date is unknown."
+        },
+        "playbook_fit": {
+          "rating": 3,
+          "reason": "QR code offers at the shelf and on signage fit, but the evidence is thin."
+        },
+        "reach": {
+          "rating": 2,
+          "reason": "The only evidence is a listing on a local athletic association page."
+        },
+        "evidence_strength": {
+          "rating": 1,
+          "reason": "One weak source, a local association page published in 2024."
+        },
+        "openness": {
+          "rating": 5,
+          "reason": "DICK'S already uses a QR code for this offer."
+        }
+      },
+      "score": 2.8,
+      "sources": [
+        {
+          "evidence_id": 108,
+          "publisher": "Wesley Chapel Weddington Athletic Association",
+          "date": "2024-06-23",
+          "quote": "Dick's Sporting Goods QR Code Valid thru 12/31/26",
+          "url": "https://wcwaa.org/dicks-sporting-goods-e-coupon-copy/"
+        }
+      ],
+      "new": true
+    },
+    {
+      "id": 64,
+      "moment_id": 77,
+      "moment": {
+        "title": "ScoreCard MOVE Fitness Tracking Program",
+        "type": "loyalty_or_contest",
+        "summary": "DICK'S ScoreCard members can earn points through the MOVE program by connecting a compatible fitness tracker and completing daily activity goals. Members earn up to three points per day by hitting one of three targets: 10,000 steps, 3 miles of walking or running, or 30 minutes of tracked activity.",
+        "timing": {
+          "date_text": null,
+          "start_date": null,
+          "end_date": null,
+          "status": "ongoing"
+        },
+        "physical_touchpoints": [
+          "mobile app"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 105,
+            "exact_quote": "MOVE lets ScoreCard members earn extra points by connecting a fitness tracker and hitting a daily activity goal, independent of anything they purchase that day."
+          },
+          {
+            "evidence_id": 105,
+            "exact_quote": "Members can earn three points per day by meeting any one of three daily goals: three miles of walking or running, 10,000 steps, or 30 minutes of tracked activity."
+          }
+        ]
+      },
+      "play_id": null,
+      "why_flowcode_fits": "",
+      "flowcode_products": [],
+      "similar_story": null,
+      "suggested_first_pitch": "",
+      "verification": {
+        "quotes_checked": 2,
+        "quotes_passed": 2,
+        "verdict": "yes",
+        "reason": "The quotes say MOVE members connect a fitness tracker and earn three points per day by meeting any one of the three goals: 10,000 steps, three miles, or 30 minutes. The word \"compatible\" is a trivial addition.",
+        "original_summary": null
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 3,
+          "reason": "The program is ongoing but no dates are given."
+        },
+        "playbook_fit": {
+          "rating": 2,
+          "reason": "The program is app-based with no physical place for a code and no play identified."
+        },
+        "reach": {
+          "rating": 3,
+          "reason": "Open to ScoreCard members, but no scale is stated."
+        },
+        "evidence_strength": {
+          "rating": 2,
+          "reason": "Only a third-party blog from October 19 supports it."
+        },
+        "openness": {
+          "rating": 3,
+          "reason": "It asks members to connect a tracker, but there is no evidence about QR codes or competitors."
+        }
+      },
+      "score": 2.6,
+      "sources": [
+        {
+          "evidence_id": 105,
+          "publisher": "rivo.io",
+          "date": "2026-10-19",
+          "quote": "MOVE lets ScoreCard members earn extra points by connecting a fitness tracker and hitting a daily activity goal, independent \u2026",
+          "url": "https://www.rivo.io/blog/dicks-sporting-goods-scorecard-rewards"
+        },
+        {
+          "evidence_id": 105,
+          "publisher": "rivo.io",
+          "date": "2026-10-19",
+          "quote": "Members can earn three points per day by meeting any one of three daily goals: three miles of walking \u2026",
+          "url": "https://www.rivo.io/blog/dicks-sporting-goods-scorecard-rewards"
+        }
+      ],
+      "new": true
+    }
+  ],
+  "channels_covered": [
+    "social",
+    "email",
+    "events",
+    "packaging"
+  ]
+}

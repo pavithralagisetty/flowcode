@@ -1,0 +1,136 @@
+{
+  "company": {
+    "id": 5,
+    "name": "Broadcom",
+    "domain": "broadcom.com",
+    "industry": "semiconductors",
+    "brands": [
+      "Broadcom"
+    ],
+    "is_existing_customer": false,
+    "customer_tier": null
+  },
+  "run_id": 7,
+  "run_date": "2026-11-16",
+  "mode": "run",
+  "company_score": {
+    "score": 2.38,
+    "factors": {
+      "best_opportunity": {
+        "rating": 2,
+        "reason": "Best opportunity scores 2.45"
+      },
+      "strong_count": {
+        "rating": 1,
+        "reason": "0 opportunities at or above 3.5"
+      },
+      "company_size": {
+        "rating": 4,
+        "reason": "A major global technology company that runs a flagship conference with more than 400 sessions, though not a consumer advertiser."
+      },
+      "industry_fit": {
+        "rating": 3,
+        "reason": "Industry 'semiconductors'"
+      },
+      "new_activity": {
+        "rating": 1,
+        "reason": "No strong opportunities"
+      }
+    },
+    "snapshot": "Broadcom sells semiconductors and infrastructure software, and its recent public activity centers on VMware: VMware Explore 2026 in Las Vegas (August 31 - September 3) launched private AI cloud products. Its Mainframe Software unit is a 2026 GSE Premier European Strategic Partner."
+  },
+  "opportunities": [
+    {
+      "id": 36,
+      "moment_id": 47,
+      "moment": {
+        "title": "Broadcom Mainframe Software renews GSE Premier European Strategic Partner role",
+        "type": "sponsorship",
+        "summary": "Broadcom Mainframe Software renewed its role as a GSE Premier European Strategic Partner for 2026, including engagement at GSE events for the IT and mainframe community.",
+        "timing": {
+          "date_text": "2026",
+          "start_date": "2026-01-27",
+          "end_date": "2026-12-31",
+          "status": "ongoing"
+        },
+        "physical_touchpoints": [
+          "GSE event booths",
+          "event signage"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 51,
+            "exact_quote": "We are pleased to announce that Broadcom Mainframe Software has renewed its role as a GSE Premier European Strategic Partner for 2026."
+          },
+          {
+            "evidence_id": 51,
+            "exact_quote": "strong engagement at GSE events"
+          }
+        ]
+      },
+      "play_id": "live_event",
+      "why_flowcode_fits": "As a GSE Premier European Strategic Partner, Broadcom Mainframe Software engages at GSE events across Europe. Codes on booth signs and session materials could capture mainframe practitioner contacts and track engagement across events.",
+      "flowcode_products": [
+        "Flowcodes (branded QR codes)",
+        "Analytics and Integrations"
+      ],
+      "similar_story": {
+        "name": "Ceremony of Roses (Zach Bryan tour)",
+        "url": "https://www.flowcode.com/case-study/ceremony-of-roses",
+        "result": "152,000 fan emails and $1.8M in extra merch sales"
+      },
+      "suggested_first_pitch": "For your GSE events this year, one dynamic code on the booth and session slides can capture mainframe contacts and show which events are worth the spend.",
+      "verification": {
+        "quotes_checked": 2,
+        "quotes_passed": 2,
+        "verdict": "yes",
+        "reason": "Both parts are stated in the quotes.",
+        "original_summary": null
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 3,
+          "reason": "The partnership runs through 2026, but no specific upcoming GSE event date is in the evidence and only about six weeks of the year remain."
+        },
+        "playbook_fit": {
+          "rating": 3,
+          "reason": "Event booths fit the live_event play, but a B2B user-group conference is a loose match to a fan tour story."
+        },
+        "reach": {
+          "rating": 1,
+          "reason": "A niche European mainframe user community."
+        },
+        "evidence_strength": {
+          "rating": 2,
+          "reason": "One partner announcement from about ten months ago."
+        },
+        "openness": {
+          "rating": 3,
+          "reason": "No evidence about code use at these events."
+        }
+      },
+      "score": 2.45,
+      "sources": [
+        {
+          "evidence_id": 51,
+          "publisher": "Guide Share Europe - GSE",
+          "date": "2026-01-27",
+          "quote": "We are pleased to announce that Broadcom Mainframe Software has renewed its role as a GSE Premier European Strategic \u2026",
+          "url": "https://www.gse.org/shaping-the-future-of-it-together-gse-and-broadcom-in-2026/"
+        },
+        {
+          "evidence_id": 51,
+          "publisher": "Guide Share Europe - GSE",
+          "date": "2026-01-27",
+          "quote": "strong engagement at GSE events",
+          "url": "https://www.gse.org/shaping-the-future-of-it-together-gse-and-broadcom-in-2026/"
+        }
+      ],
+      "new": true
+    }
+  ],
+  "channels_covered": [
+    "events"
+  ]
+}

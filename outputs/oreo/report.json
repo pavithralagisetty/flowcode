@@ -1,0 +1,558 @@
+{
+  "company": {
+    "id": 12,
+    "name": "OREO",
+    "domain": "oreo.com",
+    "industry": "food and beverage",
+    "brands": [
+      "OREO"
+    ],
+    "is_existing_customer": false,
+    "customer_tier": null
+  },
+  "run_id": 14,
+  "run_date": "2026-11-17",
+  "mode": "run",
+  "company_score": {
+    "score": 4.5,
+    "factors": {
+      "best_opportunity": {
+        "rating": 4,
+        "reason": "Best opportunity scores 4.25"
+      },
+      "strong_count": {
+        "rating": 5,
+        "reason": "4 opportunities at or above 3.5"
+      },
+      "company_size": {
+        "rating": 5,
+        "reason": "Global brand with nearly $5 billion in global revenue, a BTS partnership, a Coca-Cola collaboration and worldwide OOH campaigns."
+      },
+      "industry_fit": {
+        "rating": 3,
+        "reason": "Industry 'food and beverage'"
+      },
+      "new_activity": {
+        "rating": 5,
+        "reason": "Newest strong opportunity source is 0 days old"
+      }
+    },
+    "snapshot": "OREO is running several campaigns at once: a BTS limited edition with QR love letters, a Coca-Cola collaboration with a QR code on pack, and the global 'Name this OREO' audio campaign that launched today. It also added mini bags and new formats in July 2026. Mondelez is preparing a sweeping 2027 relaunch with a packaging redesign."
+  },
+  "opportunities": [
+    {
+      "id": 126,
+      "moment_id": 137,
+      "moment": {
+        "title": "OREO & BTS Limited Edition Korean-Inspired Cookies",
+        "type": "product_launch",
+        "summary": "OREO partnered with K-pop group BTS to create limited-edition Korean sweet pancake-inspired cookies featuring purple wafers and hotteok-inspired creme flavor. The cookies include 13 unique embossments designed by BTS members and QR codes enabling fans to submit digital 'love letters.'",
+        "timing": {
+          "date_text": "Rolling out from June 2026",
+          "start_date": "2026-06-01",
+          "end_date": null,
+          "status": "ongoing"
+        },
+        "physical_touchpoints": [
+          "package",
+          "QR code on package"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 212,
+            "exact_quote": "The partnership sees a limited edition Korean sweet pancake-inspired Oreo cookie created by BTS, featuring a hotteok-inspired creme flavour and the brand's first-ever purple wafers"
+          },
+          {
+            "evidence_id": 212,
+            "exact_quote": "consumers can scan QR codes on the cookie packs or visit the campaign website to submit digital 'love letters' to BTS"
+          },
+          {
+            "evidence_id": 212,
+            "exact_quote": "As part of BTS' 13th anniversary, the cookies will feature 13 unique embossments designed by the group"
+          },
+          {
+            "evidence_id": 228,
+            "exact_quote": "The Sweepstakes begins on June 8, 2026 at 12:00 a.m. Eastern Time and ends on August 14, 2026 at 11:59 p.m. ET"
+          },
+          {
+            "evidence_id": 228,
+            "exact_quote": "90 First Prizes: 1 OREO and BTS neon sign."
+          }
+        ]
+      },
+      "play_id": "packaging_signup",
+      "why_flowcode_fits": "The OREO and BTS limited-edition cookies already put a QR code on the package for fans to submit digital 'love letters.' Flowcode could power that code with a branded FlowHub and capture each fan as a profile. Scan data would show which packs and regions drive the most participation.",
+      "flowcode_products": [
+        "Flowcodes (branded QR codes)",
+        "FlowHubs",
+        "FlowID (customer profiles built from scans)",
+        "Analytics and Integrations"
+      ],
+      "similar_story": {
+        "name": "LOVE CORN",
+        "url": "https://www.flowcode.com/case-study/love-corn",
+        "result": "43,000 scans and 27,000 new contacts"
+      },
+      "suggested_first_pitch": "Your BTS cookies already ask fans to scan and send a love letter. We can make that scan build your customer list and show you which packs drive the most participation.",
+      "verification": {
+        "quotes_checked": 6,
+        "quotes_passed": 5,
+        "verdict": "yes",
+        "reason": "The quotes cover the hotteok-inspired creme, the first-ever purple wafers, the 13 embossments designed by the group, and the QR codes for digital 'love letters'. The June 2026 timing is supported by the June 4 coverage and the sweepstakes starting June 8, 2026.",
+        "original_summary": null
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 4,
+          "reason": "Rolling out since June 2026 and the sweepstakes ended August 14, 2026, so the campaign is ongoing but past its peak."
+        },
+        "playbook_fit": {
+          "rating": 5,
+          "reason": "QR code on the cookie pack for fans to submit digital 'love letters' matches the packaging sign-up story (LOVE CORN)."
+        },
+        "reach": {
+          "rating": 4,
+          "reason": "Global K-pop partnership with BTS and limited-edition packs, which points to a large fan base."
+        },
+        "evidence_strength": {
+          "rating": 3,
+          "reason": "Several reports from Asia Sponsorship News and Slickdeals, but they date from June 2026, older than 30 days, and no company announcement is included."
+        },
+        "openness": {
+          "rating": 5,
+          "reason": "Already prints QR codes on packs and asks fans to scan them to submit love letters."
+        }
+      },
+      "score": 4.25,
+      "sources": [
+        {
+          "evidence_id": 212,
+          "publisher": "Asia Sponsorship News \u2013 ASN",
+          "date": "2026-06-04",
+          "quote": "The partnership sees a limited edition Korean sweet pancake-inspired Oreo cookie created by BTS, featuring a hotteok-inspired creme flavour \u2026",
+          "url": "https://asiasponsorshipnews.com/?p=33564"
+        },
+        {
+          "evidence_id": 212,
+          "publisher": "Asia Sponsorship News \u2013 ASN",
+          "date": "2026-06-04",
+          "quote": "consumers can scan QR codes on the cookie packs or visit the campaign website to submit digital 'love letters' \u2026",
+          "url": "https://asiasponsorshipnews.com/?p=33564"
+        },
+        {
+          "evidence_id": 212,
+          "publisher": "Asia Sponsorship News \u2013 ASN",
+          "date": "2026-06-04",
+          "quote": "As part of BTS' 13th anniversary, the cookies will feature 13 unique embossments designed by the group",
+          "url": "https://asiasponsorshipnews.com/?p=33564"
+        },
+        {
+          "evidence_id": 228,
+          "publisher": "Slickdeals",
+          "date": "2026-06-08",
+          "quote": "The Sweepstakes begins on June 8, 2026 at 12:00 a.m. Eastern Time and ends on August 14, 2026 at \u2026",
+          "url": "https://slickdeals.net/f/19606593-oreo-love-letter-sweepstakes-8-14-2026"
+        },
+        {
+          "evidence_id": 228,
+          "publisher": "Slickdeals",
+          "date": "2026-06-08",
+          "quote": "90 First Prizes: 1 OREO and BTS neon sign.",
+          "url": "https://slickdeals.net/f/19606593-oreo-love-letter-sweepstakes-8-14-2026"
+        }
+      ],
+      "new": true
+    },
+    {
+      "id": 130,
+      "moment_id": 141,
+      "moment": {
+        "title": "OREO & Coca-Cola Limited Edition Collection",
+        "type": "product_launch",
+        "summary": "OREO and Coca-Cola launched a collaboration featuring a limited-edition OREO Coca-Cola sandwich cookie and a Coca-Cola OREO Zero Sugar drink. The cookies are stuffed with a creamy filling and popping candy to mimic the experience of drinking the beverage. Consumers scan a QR code on the limited-edition products to explore 'Bestie Mode'.",
+        "timing": {
+          "date_text": "Beginning September 2026",
+          "start_date": "2026-09-01",
+          "end_date": null,
+          "status": "ongoing"
+        },
+        "physical_touchpoints": [
+          "package",
+          "QR code on package"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 211,
+            "exact_quote": "the collaboration will see the launch of OREO Coca-Cola sandwich cookie and Coca-cola OREO zero sugar limited edition drink"
+          },
+          {
+            "evidence_id": 211,
+            "exact_quote": "The cookies are stuffed with a creamy filling and popping candy to mimic the experience of drinking the beverage."
+          },
+          {
+            "evidence_id": 211,
+            "exact_quote": "consumers have to scan a QR code on the limited-edition products and follow the steps to explore 'Bestie Mode'"
+          }
+        ]
+      },
+      "play_id": "packaging_signup",
+      "why_flowcode_fits": "The OREO Coca-Cola limited-edition cookies already carry a QR code on the package for the Spotify 'Bestie Mode' experience. Flowcode could power that scan with a branded landing page and capture each fan as a profile, so the limited edition builds a customer list.",
+      "flowcode_products": [
+        "Flowcodes (branded QR codes)",
+        "FlowHubs",
+        "FlowID (customer profiles built from scans)",
+        "Analytics and Integrations"
+      ],
+      "similar_story": {
+        "name": "LOVE CORN",
+        "url": "https://www.flowcode.com/case-study/love-corn",
+        "result": "43,000 scans and 27,000 new contacts"
+      },
+      "suggested_first_pitch": "Your Coca-Cola cookies already send fans to Bestie Mode from the pack. We can make that scan add each fan to your customer list and show you how each pack performs.",
+      "verification": {
+        "quotes_checked": 3,
+        "quotes_passed": 3,
+        "verdict": "partly",
+        "reason": "Quotes support the products, popping candy and QR code 'Bestie Mode', but say nothing about the red and black color-blocked design, Spotify, or a September 2026 start.",
+        "original_summary": "OREO and Coca-Cola launched limited-edition OREO Coca-Cola sandwich cookies and Coca-Cola OREO Zero Sugar drinks with a distinctive red and black color-blocked design. The cookies contain popping candy to mimic drinking the beverage, and feature QR codes for a Spotify 'Bestie Mode' digital experience."
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 4,
+          "reason": "Began September 2026 and is ongoing, though the launch window is already two months old."
+        },
+        "playbook_fit": {
+          "rating": 5,
+          "reason": "QR code on the limited-edition pack leads to a 'Bestie Mode' experience, which is a close match to the packaging sign-up story."
+        },
+        "reach": {
+          "rating": 4,
+          "reason": "OREO and Coca-Cola are two huge brands, and the products are cookies and drinks sold as limited editions."
+        },
+        "evidence_strength": {
+          "rating": 3,
+          "reason": "One recent trade source (Marketing-Interactive) with specific QR details, but no company announcement is included."
+        },
+        "openness": {
+          "rating": 5,
+          "reason": "Already requires consumers to scan a QR code on the products."
+        }
+      },
+      "score": 4.25,
+      "sources": [
+        {
+          "evidence_id": 211,
+          "publisher": "Marketing-Interactive",
+          "date": "2026-11-17",
+          "quote": "the collaboration will see the launch of OREO Coca-Cola sandwich cookie and Coca-cola OREO zero sugar limited edition drink",
+          "url": "https://www.marketing-interactive.com/coca-cola-and-oreo-surprise-besties-with-exclulsive-treats"
+        },
+        {
+          "evidence_id": 211,
+          "publisher": "Marketing-Interactive",
+          "date": "2026-11-17",
+          "quote": "The cookies are stuffed with a creamy filling and popping candy to mimic the experience of drinking the beverage.",
+          "url": "https://www.marketing-interactive.com/coca-cola-and-oreo-surprise-besties-with-exclulsive-treats"
+        },
+        {
+          "evidence_id": 211,
+          "publisher": "Marketing-Interactive",
+          "date": "2026-11-17",
+          "quote": "consumers have to scan a QR code on the limited-edition products and follow the steps to explore 'Bestie Mode'",
+          "url": "https://www.marketing-interactive.com/coca-cola-and-oreo-surprise-besties-with-exclulsive-treats"
+        }
+      ],
+      "new": true
+    },
+    {
+      "id": 129,
+      "moment_id": 140,
+      "moment": {
+        "title": "Name this OREO Audio Experience Campaign",
+        "type": "digital_campaign",
+        "summary": "OREO launches \"Name this OREO\", an audio experience where fans decode and name OREO cookie combinations with a fun and simple language. Fans visit the campaign site and read the combinations aloud using their phone's microphone. The campaign is launched globally across social media, OOH campaigns and retail partnerships.",
+        "timing": {
+          "date_text": "2026-11-17",
+          "start_date": "2026-11-17",
+          "end_date": null,
+          "status": "ongoing"
+        },
+        "physical_touchpoints": [
+          "out-of-home advertising",
+          "retail store displays"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 201,
+            "exact_quote": "\"Name this OREO\" is an audio experience where fans can decode and name OREO cookie combinations with a fun and simple language."
+          },
+          {
+            "evidence_id": 201,
+            "exact_quote": "To participate, fans can visit the campaign site where they are tasked to read the OREO combinations aloud using their phone's microphone."
+          },
+          {
+            "evidence_id": 201,
+            "exact_quote": "\"Name this OREO\" is launched globally across social media, OOH campaigns and retail partnerships."
+          }
+        ]
+      },
+      "play_id": "many_locations",
+      "why_flowcode_fits": "The audio campaign runs across out-of-home advertising and retail store displays, which are signs in many places. A unique Flowcode on each placement could send people into the experience and show which locations drive the most plays and offer redemptions.",
+      "flowcode_products": [
+        "Flowcodes (branded QR codes)",
+        "FlowURLs",
+        "Analytics and Integrations"
+      ],
+      "similar_story": {
+        "name": "CLEAR",
+        "url": "https://www.flowcode.com/case-study/clear",
+        "result": "over 7,000 codes and over 1.2M scans"
+      },
+      "suggested_first_pitch": "With the audio campaign on out-of-home and in-store displays, a separate code on each placement would show you which locations bring people in to play.",
+      "verification": {
+        "quotes_checked": 3,
+        "quotes_passed": 3,
+        "verdict": "partly",
+        "reason": "Quotes support the audio experience, decoding and naming, phone microphone use, and global deployment channels, but say nothing about a timer or winning exclusive offers.",
+        "original_summary": "OREO launches a global audio experience campaign where fans decode and name cookie combinations using a fun language code. Participants use their phone's microphone to say the combinations aloud before a timer runs out to win exclusive offers, with the campaign deployed across social media, out-of-home advertising, and retail partnerships."
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 5,
+          "reason": "Launched today, 2026-11-17, across social, OOH and retail."
+        },
+        "playbook_fit": {
+          "rating": 4,
+          "reason": "OOH ads and retail store displays are signs in many places, which fits the many-locations story (CLEAR)."
+        },
+        "reach": {
+          "rating": 5,
+          "reason": "Launched globally across social media, OOH campaigns and retail partnerships."
+        },
+        "evidence_strength": {
+          "rating": 3,
+          "reason": "One current trade source (Marketing-Interactive) with no company announcement included."
+        },
+        "openness": {
+          "rating": 3,
+          "reason": "Fans visit a campaign site, but no QR code is mentioned, so the evidence doesn't point either way."
+        }
+      },
+      "score": 4.15,
+      "sources": [
+        {
+          "evidence_id": 201,
+          "publisher": "Marketing-Interactive",
+          "date": "2026-11-17",
+          "quote": "\"Name this OREO\" is an audio experience where fans can decode and name OREO cookie combinations with a fun \u2026",
+          "url": "https://www.marketing-interactive.com/name-this-oreo-audio-experience-campaign"
+        },
+        {
+          "evidence_id": 201,
+          "publisher": "Marketing-Interactive",
+          "date": "2026-11-17",
+          "quote": "To participate, fans can visit the campaign site where they are tasked to read the OREO combinations aloud using \u2026",
+          "url": "https://www.marketing-interactive.com/name-this-oreo-audio-experience-campaign"
+        },
+        {
+          "evidence_id": 201,
+          "publisher": "Marketing-Interactive",
+          "date": "2026-11-17",
+          "quote": "\"Name this OREO\" is launched globally across social media, OOH campaigns and retail partnerships.",
+          "url": "https://www.marketing-interactive.com/name-this-oreo-audio-experience-campaign"
+        }
+      ],
+      "new": true
+    },
+    {
+      "id": 133,
+      "moment_id": 144,
+      "moment": {
+        "title": "Oreo 2027 Global Relaunch",
+        "type": "packaging",
+        "summary": "Mondelez is gearing up for a sweeping relaunch of Oreo in 2027, which a secondary source says encompasses packaging redesign, new pack sizes, revised price points, expanded distribution channels, and select recipe modifications.",
+        "timing": {
+          "date_text": "2027",
+          "start_date": "2027-01-01",
+          "end_date": null,
+          "status": "upcoming"
+        },
+        "physical_touchpoints": [
+          "packaging",
+          "retail shelves"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 220,
+            "exact_quote": "Mondel\u0113z International is gearing up for a sweeping relaunch of Oreo in 2027, with a top executive saying the cookie brand still has considerable opportunities left for growth despite nearing $5 billion in global revenue."
+          },
+          {
+            "evidence_id": 223,
+            "exact_quote": "The initiative encompasses packaging redesign, new pack sizes, revised price points, expanded distribution channels, and select recipe modifications."
+          }
+        ]
+      },
+      "play_id": "packaging_signup",
+      "why_flowcode_fits": "The 2027 global relaunch includes a packaging redesign and new pack sizes on retail shelves. Building a Flowcode into the new packaging from the start could connect every pack to a sign-up or offer, with scan data by pack size.",
+      "flowcode_products": [
+        "Flowcodes (branded QR codes)",
+        "FlowURLs",
+        "FlowHubs",
+        "FlowID (customer profiles built from scans)",
+        "Analytics and Integrations"
+      ],
+      "similar_story": {
+        "name": "LOVE CORN",
+        "url": "https://www.flowcode.com/case-study/love-corn",
+        "result": "43,000 scans and 27,000 new contacts"
+      },
+      "suggested_first_pitch": "With the packaging redesign planned for the 2027 relaunch, now is the time to design a code into the new packs. Each scan could start a direct relationship with the shopper.",
+      "verification": {
+        "quotes_checked": 2,
+        "quotes_passed": 2,
+        "verdict": "partly",
+        "reason": "Quotes support a 2027 relaunch with those elements, but not that it is global, that Mondelez formally announced it, or that the recipe changes involve cleaner labels.",
+        "original_summary": "Mondelez announced a comprehensive global relaunch of Oreo in 2027 encompassing packaging redesign, new pack sizes, revised price points, expanded distribution channels, and select recipe modifications with cleaner labels."
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 3,
+          "reason": "The relaunch is in 2027, so it is a few months away and its exact dates are unknown."
+        },
+        "playbook_fit": {
+          "rating": 5,
+          "reason": "A packaging redesign with new pack sizes is the ideal moment to build in a code."
+        },
+        "reach": {
+          "rating": 5,
+          "reason": "Global relaunch of a brand nearing $5 billion in global revenue."
+        },
+        "evidence_strength": {
+          "rating": 2,
+          "reason": "Food Dive and StockTi from mid-September 2026 are older than 30 days, and the detail comes from a secondary source."
+        },
+        "openness": {
+          "rating": 3,
+          "reason": "The evidence says nothing about how the new packs will use codes."
+        }
+      },
+      "score": 3.75,
+      "sources": [
+        {
+          "evidence_id": 220,
+          "publisher": "Food Dive",
+          "date": "2026-09-15",
+          "quote": "Mondel\u0113z International is gearing up for a sweeping relaunch of Oreo in 2027, with a top executive saying the \u2026",
+          "url": "https://www.fooddive.com/news/snacking-mondelez-relaunch-oreo-2027-chips-ahoy/830320/"
+        },
+        {
+          "evidence_id": 223,
+          "publisher": "StockTi",
+          "date": "2026-09-18",
+          "quote": "The initiative encompasses packaging redesign, new pack sizes, revised price points, expanded distribution channels, and select recipe modifications.",
+          "url": "https://stockti.com/mondelez-bets-big-on-oreo-s-5b-franchise-with-2027-global-relaunch"
+        }
+      ],
+      "new": true
+    },
+    {
+      "id": 132,
+      "moment_id": 143,
+      "moment": {
+        "title": "Oreo Mini Bags and New Formats Launch",
+        "type": "product_launch",
+        "summary": "Oreo expanded into mini snack bags alongside new sharing formats and flavors including Cookie Dough, Enrobed White, and a Sharing Tray to target convenient, on-the-go consumption occasions.",
+        "timing": {
+          "date_text": "July 2026",
+          "start_date": "2026-07-22",
+          "end_date": null,
+          "status": "ongoing"
+        },
+        "physical_touchpoints": [
+          "package",
+          "retail shelves"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 222,
+            "exact_quote": "The famous biscuit can now be found in mini snack bags, as the brand looks to tap into growing demand for portion-controlled, on-the-go treats and broaden its appeal beyond the traditional biscuit aisle."
+          },
+          {
+            "evidence_id": 222,
+            "exact_quote": "The new format lands on shelves alongside Oreo Cookie Dough Flavour, Oreo Enrobed White and a new Oreo Sharing Tray."
+          }
+        ]
+      },
+      "play_id": "packaging_signup",
+      "why_flowcode_fits": "The mini bags, Cookie Dough and Enrobed White flavors, and the Sharing Tray are new formats on retail shelves. A Flowcode on each package could lead to a sign-up or giveaway, so on-the-go buyers become known customers.",
+      "flowcode_products": [
+        "Flowcodes (branded QR codes)",
+        "FlowURLs",
+        "FlowID (customer profiles built from scans)",
+        "Analytics and Integrations"
+      ],
+      "similar_story": {
+        "name": "LOVE CORN",
+        "url": "https://www.flowcode.com/case-study/love-corn",
+        "result": "43,000 scans and 27,000 new contacts"
+      },
+      "suggested_first_pitch": "The new mini bags and Sharing Tray are meeting shoppers on the go. A code on each pack could give them a reason to sign up and show you which format drives the most scans.",
+      "verification": {
+        "quotes_checked": 2,
+        "quotes_passed": 2,
+        "verdict": "yes",
+        "reason": "The quotes, both dated 2026-07-22, confirm the mini snack bags launch aimed at portion-controlled, on-the-go demand, and that it arrived with Cookie Dough, Enrobed White and a Sharing Tray.",
+        "original_summary": null
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 3,
+          "reason": "Launched in July 2026 and is on shelves now, but it is not a new moment."
+        },
+        "playbook_fit": {
+          "rating": 4,
+          "reason": "New packs and formats on retail shelves leave room for a code that leads to a sign-up or giveaway."
+        },
+        "reach": {
+          "rating": 4,
+          "reason": "Mini bags and a sharing tray sold broadly at retail, which suggests wide distribution."
+        },
+        "evidence_strength": {
+          "rating": 2,
+          "reason": "Only one trade source from July 22, 2026, which is older than 30 days."
+        },
+        "openness": {
+          "rating": 3,
+          "reason": "The evidence doesn't say whether the packs carry a QR code or what OREO's stance is."
+        }
+      },
+      "score": 3.3,
+      "sources": [
+        {
+          "evidence_id": 222,
+          "publisher": "ConfectioneryNews.com",
+          "date": "2026-07-22",
+          "quote": "The famous biscuit can now be found in mini snack bags, as the brand looks to tap into growing \u2026",
+          "url": "https://www.confectionerynews.com/Article/2026/07/22/mondelez-oreo-targets-snacking-sector-with-mini-bags-launch/"
+        },
+        {
+          "evidence_id": 222,
+          "publisher": "ConfectioneryNews.com",
+          "date": "2026-07-22",
+          "quote": "The new format lands on shelves alongside Oreo Cookie Dough Flavour, Oreo Enrobed White and a new Oreo Sharing \u2026",
+          "url": "https://www.confectionerynews.com/Article/2026/07/22/mondelez-oreo-targets-snacking-sector-with-mini-bags-launch/"
+        }
+      ],
+      "new": true
+    }
+  ],
+  "channels_covered": [
+    "social",
+    "packaging"
+  ]
+}

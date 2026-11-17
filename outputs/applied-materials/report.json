@@ -1,0 +1,42 @@
+{
+  "company": {
+    "id": 13,
+    "name": "Applied Materials",
+    "domain": "appliedmaterials.com",
+    "industry": "semiconductor equipment manufacturing",
+    "brands": [],
+    "is_existing_customer": false,
+    "customer_tier": null
+  },
+  "run_id": 15,
+  "run_date": "2026-11-17",
+  "mode": "run",
+  "company_score": {
+    "score": 1.2,
+    "factors": {
+      "best_opportunity": {
+        "rating": 1,
+        "reason": "No opportunities"
+      },
+      "strong_count": {
+        "rating": 1,
+        "reason": "0 opportunities at or above 3.5"
+      },
+      "company_size": {
+        "rating": 1,
+        "reason": "No verified opportunities to judge from"
+      },
+      "industry_fit": {
+        "rating": 3,
+        "reason": "Industry 'semiconductor equipment manufacturing'"
+      },
+      "new_activity": {
+        "rating": 1,
+        "reason": "No strong opportunities"
+      }
+    },
+    "snapshot": ""
+  },
+  "opportunities": [],
+  "channels_covered": []
+}
