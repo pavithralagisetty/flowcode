@@ -1,0 +1,13 @@
+.venv/
+.env
+flowcode.db*
+outputs/*
+!outputs/.gitkeep
+__pycache__/
+.pytest_cache/
+handoff/
+
+# React frontend
+web/node_modules/
+web/dist/
+.DS_Store

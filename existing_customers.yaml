@@ -1,0 +1,37 @@
+# Brands with a published Flowcode customer story
+case_study_customers:
+  - LOVE CORN
+  - Waterpik
+  - CLEAR
+  - NFL Shop
+  - Capri Sun
+  - Care Connections
+  - Feld Entertainment
+  - Pittsburgh Penguins
+  - PIM Brands
+  - Eddie Bauer
+  - Ceremony of Roses
+  - Buoyant Aero
+  - Jonas Brothers
+  - MoonPay
+  - GoBowling
+  - Welch's
+  - Lunchables
+  - Planters
+
+# Brands shown in Flowcode's logo strip or design gallery (likely customers, lower confidence)
+likely_customers:
+  - ESPN
+  - Ford
+  - Paramount
+  - Pfizer
+  - SoFi
+  - Uber Eats
+  - LEGO
+  - Hoka
+  - Audi
+  - NASCAR
+  - Chewy
+  - Airbnb
+  - Disney+
+  - Poppi

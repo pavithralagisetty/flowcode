@@ -1,0 +1,62 @@
+products:
+  - Flowcodes (branded QR codes)
+  - FlowURLs
+  - FlowHubs
+  - FlowID (customer profiles built from scans)
+  - Analytics and Integrations
+  # Confirm each product's description on flowcode.com before relying on it.
+
+plays:
+  - id: packaging_signup
+    name: Package to customer list
+    signals: [new product, new flavor, packaging redesign, limited edition]
+    idea: A code on the package that leads to a giveaway, contest, or sign up
+    proof:
+      name: LOVE CORN
+      url: https://www.flowcode.com/case-study/love-corn
+      result: 43,000 scans and 27,000 new contacts
+
+  - id: tv_to_purchase
+    name: TV ad to purchase
+    signals: [TV ad, big game ad, broadcast sponsorship, streaming ad]
+    idea: A code on screen that goes straight to buying
+    proof:
+      name: NFL Shop
+      url: https://www.flowcode.com/case-study/nfl-shop
+      result: $25,000 in sales and 10,000 scans from one airing
+
+  - id: live_event
+    name: Live events and tours
+    signals: [tour, festival, concert, stadium, game day, pop up]
+    idea: Codes on tickets, merch, and signs for sign ups and sales
+    proof:
+      name: Ceremony of Roses (Zach Bryan tour)
+      url: https://www.flowcode.com/case-study/ceremony-of-roses
+      result: 152,000 fan emails and $1.8M in extra merch sales
+
+  - id: product_tags
+    name: A code on every product
+    signals: [many products in stores, new collection, apparel, gear]
+    idea: A unique code on each product tag with details, reviews, and stock, with the link set after printing
+    proof:
+      name: Eddie Bauer
+      url: https://www.flowcode.com/case-study/eddie-bauer
+      result: 167,000 scans and 183% growth year over year
+
+  - id: many_locations
+    name: Codes across many locations
+    signals: [stores, airports, kiosks, signs, national rollout]
+    idea: Codes on signs at every location, tracking which spots work best
+    proof:
+      name: CLEAR
+      url: https://www.flowcode.com/case-study/clear
+      result: over 7,000 codes and over 1.2M scans
+
+  - id: contest_entry
+    name: Contest or loyalty entry
+    signals: [sweepstakes, contest, loyalty program, rewards]
+    idea: The code is how people enter
+    proof:
+      name: Capri Sun
+      url: https://www.flowcode.com/case-study/capri-sun
+      result: over 28,000 contest entries
