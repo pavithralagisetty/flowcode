@@ -1,0 +1,213 @@
+{
+  "company": {
+    "id": 9,
+    "name": "OLIPOP",
+    "domain": "drinkolipop.com",
+    "industry": "food and beverage",
+    "brands": [
+      "OLIPOP"
+    ],
+    "is_existing_customer": false,
+    "customer_tier": null
+  },
+  "run_id": 11,
+  "run_date": "2026-11-16",
+  "mode": "run",
+  "company_score": {
+    "score": 3.36,
+    "factors": {
+      "best_opportunity": {
+        "rating": 4,
+        "reason": "Best opportunity scores 3.9"
+      },
+      "strong_count": {
+        "rating": 2,
+        "reason": "1 opportunities at or above 3.5"
+      },
+      "company_size": {
+        "rating": 3,
+        "reason": "OLIPOP runs a loyalty program and a multi-location restaurant partnership, which suggests a mid-sized national consumer brand, but the evidence gives no ad budget or distribution figures."
+      },
+      "industry_fit": {
+        "rating": 3,
+        "reason": "Industry 'food and beverage'"
+      },
+      "new_activity": {
+        "rating": 5,
+        "reason": "Newest strong opportunity source is 3 days old"
+      }
+    },
+    "snapshot": "OLIPOP is running a loyalty email signup that gives subscribers 150 loyalty points and first access to new flavors. It is also partnering with BIBIBOP Asian Grill on a Good Energy Happy Hour from November 16-22, 2026, offering a free 12-ounce OLIPOP with the purchase of a regular bowl from 2-5 p.m."
+  },
+  "opportunities": [
+    {
+      "id": 89,
+      "moment_id": 107,
+      "moment": {
+        "title": "OLIPOP Good Energy Happy Hour at BIBIBOP",
+        "type": "loyalty_or_contest",
+        "summary": "OLIPOP is partnering with BIBIBOP Asian Grill for a limited-time promotion where customers receive a free 12-ounce OLIPOP with the purchase of a regular bowl during happy hour (2-5 p.m.) from November 16-22, 2026. The flavors available are Strawberry or Grape.",
+        "timing": {
+          "date_text": "November 16\u201322, 2-5 p.m. daily",
+          "start_date": "2026-11-16",
+          "end_date": "2026-11-22",
+          "status": "ongoing"
+        },
+        "physical_touchpoints": [
+          "in-store signage",
+          "product packaging",
+          "point of sale"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 145,
+            "exact_quote": "From November 16\u201322 guests can enjoy a free prebiotic soda with the purchase of a regular bowl from 2-5 p.m."
+          },
+          {
+            "evidence_id": 145,
+            "exact_quote": "Guests who purchase a regular bowl in-store during happy hour will receive a free 12-ounce OLIPOP (Strawberry or Grape)."
+          }
+        ]
+      },
+      "play_id": "many_locations",
+      "why_flowcode_fits": "The BIBIBOP happy hour offers a free 12-ounce OLIPOP with a regular bowl, with in-store signage and point of sale at each restaurant. A Flowcode on that signage could lead to the offer and sign ups, and scans would show which locations respond best.",
+      "flowcode_products": [
+        "FlowURLs",
+        "FlowHubs",
+        "Analytics and Integrations"
+      ],
+      "similar_story": {
+        "name": "CLEAR",
+        "url": "https://www.flowcode.com/case-study/clear",
+        "result": "over 7,000 codes and over 1.2M scans"
+      },
+      "suggested_first_pitch": "For the BIBIBOP happy hour week, put a Flowcode on the in-store signage at each restaurant. You'd see which locations drive the most scans and redemptions.",
+      "verification": {
+        "quotes_checked": 2,
+        "quotes_passed": 2,
+        "verdict": "yes",
+        "reason": "The quotes confirm the free 12-ounce OLIPOP (Strawberry or Grape) with a regular bowl purchase, 2-5 p.m., November 16\u201322, and the BIBIBOP/OLIPOP partnership via the press release title and content.",
+        "original_summary": null
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 5,
+          "reason": "The promotion runs November 16-22, 2026, starting today."
+        },
+        "playbook_fit": {
+          "rating": 4,
+          "reason": "A multi-location in-store promotion with signage and point of sale matches the CLEAR many-locations story, though the week-long window is short."
+        },
+        "reach": {
+          "rating": 3,
+          "reason": "It runs across BIBIBOP restaurant locations, but only for one week and only during 2-5 p.m. happy hour."
+        },
+        "evidence_strength": {
+          "rating": 4,
+          "reason": "Two quotes from a PR Newswire release published 2026-11-13, within 30 days, though both come from the same release and it is BIBIBOP's announcement rather than OLIPOP's own."
+        },
+        "openness": {
+          "rating": 3,
+          "reason": "The evidence lists in-store signage and point of sale touchpoints but does not mention QR codes or competitor tie-ins."
+        }
+      },
+      "score": 3.9,
+      "sources": [
+        {
+          "evidence_id": 145,
+          "publisher": "Cision PR Newswire",
+          "date": "2026-11-13",
+          "quote": "From November 16\u201322 guests can enjoy a free prebiotic soda with the purchase of a regular bowl from 2-5 \u2026",
+          "url": "https://www.prnewswire.com/news-releases/bibibop-asian-grill-announces-limited-time-good-energy-happy-hour-with-olipop-302939350.html"
+        },
+        {
+          "evidence_id": 145,
+          "publisher": "Cision PR Newswire",
+          "date": "2026-11-13",
+          "quote": "Guests who purchase a regular bowl in-store during happy hour will receive a free 12-ounce OLIPOP (Strawberry or Grape).",
+          "url": "https://www.prnewswire.com/news-releases/bibibop-asian-grill-announces-limited-time-good-energy-happy-hour-with-olipop-302939350.html"
+        }
+      ],
+      "new": true
+    },
+    {
+      "id": 87,
+      "moment_id": 103,
+      "moment": {
+        "title": "Loyalty Program with Sign-up Bonus",
+        "type": "loyalty_or_contest",
+        "summary": "OLIPOP offers an email signup where subscribers earn 150 loyalty points and get first sips on new flavors, surprise perks, and more.",
+        "timing": {
+          "date_text": null,
+          "start_date": null,
+          "end_date": null,
+          "status": "ongoing"
+        },
+        "physical_touchpoints": [],
+        "evidence": [
+          {
+            "evidence_id": 141,
+            "exact_quote": "Get first sips on new flavors, surprise perks, and more! Subscribers earn 150 loyalty points."
+          }
+        ]
+      },
+      "play_id": "contest_entry",
+      "why_flowcode_fits": "The loyalty email signup gives subscribers 150 loyalty points and first access to new flavors. A Flowcode on OLIPOP packaging could be the way shoppers join, and scans would show how many sign up and what brought them in.",
+      "flowcode_products": [
+        "FlowURLs",
+        "Analytics and Integrations"
+      ],
+      "similar_story": {
+        "name": "Capri Sun",
+        "url": "https://www.flowcode.com/case-study/capri-sun",
+        "result": "over 28,000 contest entries"
+      },
+      "suggested_first_pitch": "Your loyalty signup offers 150 points, but shoppers only see it if they visit the site. A Flowcode on packaging would let them join with one scan and show which packs bring people in.",
+      "verification": {
+        "quotes_checked": 1,
+        "quotes_passed": 1,
+        "verdict": "partly",
+        "reason": "The quote supports the 150 points and the early access to new flavors and perks, but it says nothing about a one-time bonus for new subscribers.",
+        "original_summary": "OLIPOP offers a loyalty email signup program where subscribers earn 150 loyalty points and get first access to new flavors and surprise perks. New subscribers receive a one-time bonus."
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 3,
+          "reason": "The loyalty signup is ongoing with no end date, so it is neither urgent nor over."
+        },
+        "playbook_fit": {
+          "rating": 4,
+          "reason": "Close match to the Capri Sun contest entry story, since a code on packaging could drive email signups and loyalty enrollment."
+        },
+        "reach": {
+          "rating": 3,
+          "reason": "Packaging could reach many shoppers, but the evidence does not say how widely it is distributed."
+        },
+        "evidence_strength": {
+          "rating": 2,
+          "reason": "Only one source, OLIPOP's own page, published 2026-05-28, which is about 6 months old."
+        },
+        "openness": {
+          "rating": 4,
+          "reason": "OLIPOP already runs an email signup that rewards subscribers with 150 loyalty points, so it already asks people to sign up."
+        }
+      },
+      "score": 3.25,
+      "sources": [
+        {
+          "evidence_id": 141,
+          "publisher": "OLIPOP",
+          "date": "2026-05-28",
+          "quote": "Get first sips on new flavors, surprise perks, and more! Subscribers earn 150 loyalty points.",
+          "url": "https://drinkolipop.com/pages/loyalty-email-sign-up"
+        }
+      ],
+      "new": true
+    }
+  ],
+  "channels_covered": [
+    "email"
+  ]
+}

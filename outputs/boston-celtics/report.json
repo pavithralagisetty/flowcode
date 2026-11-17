@@ -1,0 +1,233 @@
+{
+  "company": {
+    "id": 11,
+    "name": "Boston Celtics",
+    "domain": "nba.com",
+    "industry": "sports and entertainment",
+    "brands": [
+      "Boston Celtics",
+      "Maine Celtics"
+    ],
+    "is_existing_customer": false,
+    "customer_tier": null
+  },
+  "run_id": 13,
+  "run_date": "2026-11-16",
+  "mode": "run",
+  "company_score": {
+    "score": 3.68,
+    "factors": {
+      "best_opportunity": {
+        "rating": 4,
+        "reason": "Best opportunity scores 3.95"
+      },
+      "strong_count": {
+        "rating": 2,
+        "reason": "1 opportunities at or above 3.5"
+      },
+      "company_size": {
+        "rating": 5,
+        "reason": "The Celtics are a national-level NBA franchise with national TV exposure, a branded apparel line and international sponsors such as Experience Abu Dhabi."
+      },
+      "industry_fit": {
+        "rating": 5,
+        "reason": "Industry 'sports and entertainment' is a strong fit"
+      },
+      "new_activity": {
+        "rating": 2,
+        "reason": "Newest strong opportunity source is 276 days old"
+      }
+    },
+    "snapshot": "The Boston Celtics are wearing new green-free Gold City Edition uniforms at select games, a first for the franchise, with an \"18\" stitched into the collar for their 18 NBA titles. They also extended their advertising agreement with Experience Abu Dhabi through the 2027\u201328 season, covering courtside, stanchion, scoreboard LED and commercial placements."
+  },
+  "opportunities": [
+    {
+      "id": 106,
+      "moment_id": 135,
+      "moment": {
+        "title": "Experience Abu Dhabi Sponsorship Extension",
+        "type": "sponsorship",
+        "summary": "The Boston Celtics announced an extension of their advertising agreement with Experience Abu Dhabi through the conclusion of the 2027\u201328 season. The partnership includes in-arena visibility during Celtics home games, with courtside signage, basket stanchion signage, center-hung scoreboard LED rings, and commercial spots, all of which will extend into the playoffs.",
+        "timing": {
+          "date_text": "Announced February 13, 2026; through 2027-28 season",
+          "start_date": "2026-02-13",
+          "end_date": "2028-04-30",
+          "status": "ongoing"
+        },
+        "physical_touchpoints": [
+          "courtside signage",
+          "basket stanchion signage",
+          "scoreboard",
+          "website",
+          "in-arena commercial spots"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 200,
+            "exact_quote": "The Boston Celtics today announced the extension of their advertising agreement with Experience Abu Dhabi through the conclusion of the 2027\u201328 season."
+          },
+          {
+            "evidence_id": 200,
+            "exact_quote": "The partnership includes extensive in-arena visibility during Celtics home games, with courtside signage, basket stanchion signage, center-hung scoreboard LED rings, and commercial spots, all of which will extend into the playoffs."
+          }
+        ]
+      },
+      "play_id": "many_locations",
+      "why_flowcode_fits": "The Abu Dhabi extension runs through the 2027-28 season and includes courtside signage, basket stanchion signage, scoreboard LED rings, and in-arena commercial spots. A unique Flowcode on each sign placement could send fans to an Abu Dhabi landing page or offer, and scans would show which placements get the most response, which gives the sponsor measurable results.",
+      "flowcode_products": [
+        "Flowcodes (branded QR codes)",
+        "FlowURLs",
+        "FlowHubs",
+        "Analytics and Integrations"
+      ],
+      "similar_story": {
+        "name": "CLEAR",
+        "url": "https://www.flowcode.com/case-study/clear",
+        "result": "over 7,000 codes and over 1.2M scans"
+      },
+      "suggested_first_pitch": "With the Abu Dhabi deal covering courtside, stanchion, and scoreboard placements, giving each one its own Flowcode would let you show your sponsor which spots drive scans, and change the destination without reprinting.",
+      "verification": {
+        "quotes_checked": 2,
+        "quotes_passed": 2,
+        "verdict": "partly",
+        "reason": "The quotes support the extension through 2027\u201328 and the in-arena elements, but nothing in them mentions banner advertising on Celtics.com.",
+        "original_summary": "The Boston Celtics extended their advertising agreement with Experience Abu Dhabi through the 2027-28 season. The partnership includes extensive in-arena visibility with courtside signage, basket stanchion signage, center-hung scoreboard LED rings, and commercial spots, plus banner advertising on Celtics.com."
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 4,
+          "reason": "The deal runs through the 2027-28 season, so it's active now and for the next two seasons, though the announcement was in February 2026."
+        },
+        "playbook_fit": {
+          "rating": 5,
+          "reason": "Courtside, stanchion, scoreboard and commercial placements match the CLEAR many-locations story closely."
+        },
+        "reach": {
+          "rating": 4,
+          "reason": "The signage reaches arena crowds and playoff TV audiences, and the sponsor is an international tourism brand, but it is limited to home games."
+        },
+        "evidence_strength": {
+          "rating": 3,
+          "reason": "Source is the Celtics' own announcement via PR Newswire with specific details, but it is from February 2026, outside the last 30 days."
+        },
+        "openness": {
+          "rating": 3,
+          "reason": "The evidence doesn't mention QR codes, scanning, or a competitor, though the touchpoints list includes a website."
+        }
+      },
+      "score": 3.95,
+      "sources": [
+        {
+          "evidence_id": 200,
+          "publisher": "Cision PR Newswire",
+          "date": "2026-02-13",
+          "quote": "The Boston Celtics today announced the extension of their advertising agreement with Experience Abu Dhabi through the conclusion of \u2026",
+          "url": "https://www.prnewswire.com/news-releases/boston-celtics-and-experience-abu-dhabi-agreement-extended-through-2027-28-season-302687637.html"
+        },
+        {
+          "evidence_id": 200,
+          "publisher": "Cision PR Newswire",
+          "date": "2026-02-13",
+          "quote": "The partnership includes extensive in-arena visibility during Celtics home games, with courtside signage, basket stanchion signage, center-hung scoreboard LED \u2026",
+          "url": "https://www.prnewswire.com/news-releases/boston-celtics-and-experience-abu-dhabi-agreement-extended-through-2027-28-season-302687637.html"
+        }
+      ],
+      "new": true
+    },
+    {
+      "id": 102,
+      "moment_id": 131,
+      "moment": {
+        "title": "Boston Celtics Gold City Edition Uniforms",
+        "type": "product_launch",
+        "summary": "The Boston Celtics are wearing new green-free City Edition uniforms at select games during the 2025-2026 NBA season, a first for the franchise. The collar of the uniform has the number \"18\" stitched into the back, a nod to the franchise's 18 NBA titles.",
+        "timing": {
+          "date_text": "2025-2026 NBA season",
+          "start_date": null,
+          "end_date": null,
+          "status": "ongoing"
+        },
+        "physical_touchpoints": [
+          "Jersey",
+          "TV screen"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 195,
+            "exact_quote": "This 2025-2026 NBA season, for the first time ever, Boston has been sporting new green-free City Edition uniforms at select games."
+          },
+          {
+            "evidence_id": 195,
+            "exact_quote": "Stitched into the back of the Celtics' City Edition collar is another tiny detail with big historic significance: the number \"18,\" a nod to the franchise's overall 18 NBA titles."
+          }
+        ]
+      },
+      "play_id": "product_tags",
+      "why_flowcode_fits": "The new gold and white City Edition uniforms are a fresh apparel collection, and the jersey is a physical touchpoint fans can wear and buy. A unique Flowcode on each jersey tag could lead to details about the design, including the Red Auerbach signature and the 18 championships it celebrates, plus stock and a purchase link, and every scan would be tracked.",
+      "flowcode_products": [
+        "Flowcodes (branded QR codes)",
+        "FlowURLs",
+        "Analytics and Integrations"
+      ],
+      "similar_story": {
+        "name": "Eddie Bauer",
+        "url": "https://www.flowcode.com/case-study/eddie-bauer",
+        "result": "167,000 scans and 183% growth year over year"
+      },
+      "suggested_first_pitch": "With the Gold City Edition uniforms being the first completely green-free design, a code on every jersey tag could take fans to the story behind the Red Auerbach signature and a place to buy, and you'd see exactly which products get scanned.",
+      "verification": {
+        "quotes_checked": 2,
+        "quotes_passed": 2,
+        "verdict": "partly",
+        "reason": "Quotes support the green-free City Edition and the \"18\" collar nod to 18 titles, but not the gold and white colors, the 'completely' green-free first-ever design beyond 'green-free', or Red Auerbach's signature on the jersey.",
+        "original_summary": "The Boston Celtics are wearing new gold and white City Edition uniforms for the 2025-2026 season, their first completely green-free design. The uniforms celebrate the franchise's 18 NBA championships and feature the signature of legendary coach Red Auerbach on the jersey."
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 3,
+          "reason": "The 2025-2026 NBA season is ongoing, but the source is from January 2026 and today is November 2026, so the season has likely ended and a new one is starting. The evidence doesn't say either way."
+        },
+        "playbook_fit": {
+          "rating": 4,
+          "reason": "The jersey is a wearable product and the Eddie Bauer product-tag story is a close match, though jersey tags are less obvious than packaging."
+        },
+        "reach": {
+          "rating": 4,
+          "reason": "Celtics games are on national TV and Peacock, and the jerseys are sold to fans, but the audience is smaller than nationwide packaging."
+        },
+        "evidence_strength": {
+          "rating": 2,
+          "reason": "Both sources are from one publisher (Peacock) and date from January 2026, well outside the last 30 days, with no team announcement."
+        },
+        "openness": {
+          "rating": 3,
+          "reason": "The evidence doesn't mention QR codes or any competitor on the jersey."
+        }
+      },
+      "score": 3.3,
+      "sources": [
+        {
+          "evidence_id": 195,
+          "publisher": "Peacock",
+          "date": "2026-01-09",
+          "quote": "This 2025-2026 NBA season, for the first time ever, Boston has been sporting new green-free City Edition uniforms at \u2026",
+          "url": "https://www.peacocktv.com/blog/boston-celtics-2025-2026-gold-city-edition-jerseys-explained"
+        },
+        {
+          "evidence_id": 195,
+          "publisher": "Peacock",
+          "date": "2026-01-09",
+          "quote": "Stitched into the back of the Celtics' City Edition collar is another tiny detail with big historic significance: the \u2026",
+          "url": "https://www.peacocktv.com/blog/boston-celtics-2025-2026-gold-city-edition-jerseys-explained"
+        }
+      ],
+      "new": true
+    }
+  ],
+  "channels_covered": [
+    "events",
+    "packaging"
+  ]
+}
