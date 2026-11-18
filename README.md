@@ -30,7 +30,7 @@ Every idea comes with the source link, date and an exact quote, so a sales rep c
 
 ## Running it across thousands of companies
 
-Today one company takes about **3 to 5 minutes** and costs about **$1.50 to $3**. Most of that cost is web search,
+Today one company takes about **6 to 8 minutes** and costs about **$1.50 to $3**. Most of that cost is web search,
 because the AI reads every search result even though we only need the links.
 
 - **Cost:** use a search service that just returns links and charges per search, instead of having the AI read the
