@@ -23,7 +23,7 @@ def match_moments(ctx: RunContext, company: Company, moments: list[tuple[int, Mo
     listing = [{"moment_index": i, "title": m.title, "type": m.type, "summary": m.summary,
                 "timing": m.timing.model_dump(mode="json"), "physical_touchpoints": m.physical_touchpoints}
                for i, (_, m) in enumerate(moments)]
-    user = (f"Company: {company.name} (industry: {company.industry})\n\n"
+    user = (f"Today's date: {ctx.today.isoformat()}\nCompany: {company.name} (industry: {company.industry})\n\n"
             f"## Flowcode playbook\n```yaml\n{yaml.safe_dump(playbook, sort_keys=False)}```\n\n"
             f"## Moments\n```json\n{json.dumps(listing, indent=1)}\n```")
     calllog.progress("Matching findings to Flowcode plays")

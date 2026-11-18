@@ -7,7 +7,10 @@ For every concrete moment, return:
 - `title`: short name of the moment
 - `type`: one of `product_launch`, `packaging`, `tv_ad`, `digital_campaign`, `sponsorship`, `live_event`, `retail_expansion`, `loyalty_or_contest`, `other`
 - `summary`: what is happening, in 2 to 3 sentences, using only facts in the quotes
-- `timing`: `{date_text, start_date, end_date, status}`. Dates are `YYYY-MM-DD` or null. `status` is `upcoming`, `ongoing`, or `past` relative to today
+- `timing`: `{date_text, start_date, end_date, status}`. Dates are `YYYY-MM-DD` or null. `status` is `upcoming`, `ongoing`, or `past` relative to today:
+  - `upcoming`: announced but not started or launched yet
+  - `ongoing`: started and not clearly over. A product, flavor, collaboration or collection that launched and is still on sale is `ongoing`, even if the launch date has passed, unless the evidence says it has ended or sold out. Programs (loyalty, rewards) and running campaigns are `ongoing`
+  - `past`: clearly over: an event or game that already happened, a contest or sweepstakes whose entry deadline has passed, an ad or limited run the evidence says has ended
 - `physical_touchpoints`: real world places a printed or on screen code could go (package, TV screen, ticket, stadium sign, store shelf, product tag, receipt, and so on). Only list ones the evidence supports or that are inherent to the moment (a TV ad has a screen, a packaged product has a package). Empty list if none
 - `evidence`: a list of `{evidence_id, exact_quote}`. Each quote is one or two sentences copied word for word from that record's text and backs up the summary. Keep quotes short (under 40 words)
 

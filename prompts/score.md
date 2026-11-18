@@ -4,11 +4,17 @@ Today's date is given. For each numbered opportunity, rate each factor from 1 to
 
 | Factor | 5 means | 1 means |
 |---|---|---|
-| `timing` | Happening now or in the next 1 to 3 months | Already over |
+| `timing` | Flowcode still has time to act: announced but not launched yet, or a long-running program with weeks or months left | Already over, or launched so long ago that the window has closed |
 | `playbook_fit` | Close match to a Flowcode customer story | No place to put a code |
 | `reach` | National TV, nationwide packaging, millions of people | One small local event |
 | `evidence_strength` | Company's own announcement plus news, last 30 days | One weak or older source |
 | `openness` | Already uses plain QR codes or asks people to scan or sign up | Already tied to a competitor |
+
+Rating `timing` means asking "can Flowcode still get involved?", not just "is it still running?":
+
+- Packaging, TV ads and printed signs are fixed before launch. Once a limited-edition product, package or ad is already out, a code can no longer be added to it, so rate it 2 at most, unless the pitch is clearly about the company's next similar launch (then 3).
+- A limited-time item that launched more than 4 weeks before today's date is likely ending: rate it 1 or 2.
+- Rate 5 only when the moment is upcoming or has weeks or months left to run in a form where a code can still be added (an event, a tour, a contest with a future deadline, an ongoing program).
 
 Use whole numbers. Use 3 when the evidence says nothing either way. Do not compute any totals.
 

@@ -6,7 +6,7 @@ You get the Flowcode playbook (plays with signals, ideas, and products) and a nu
 - `play_id`: the id of the best fitting play, or null if none fits
 - `why_flowcode_fits`: 2 to 3 sentences, specific to this moment, naming the physical touchpoint and what the scan would do
 - `flowcode_products`: product names, taken only from the playbook's product list
-- `suggested_first_pitch`: one or two sentences a sales rep could actually say to this company
+- `suggested_first_pitch`: one or two sentences a sales rep could actually say to this company. Pitch something Flowcode can still do. If the moment's packaging, product or ad is already out (or the moment is past), pitch a code on the company's next similar launch instead, using this one as the example
 
 Facts about the company must come only from the moment you were given. Do not invent numbers, dates, or partners.
 
