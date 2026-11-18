@@ -24,7 +24,6 @@ function Weights({ title, weights }) {
 
 export default function Settings({ settings: s }) {
   if (!s) return <div className="page"><p className="muted">Loading…</p></div>;
-  const handoff = s.search_provider === "handoff" || s.llm_provider === "handoff";
   return (
     <div className="page">
       <div className="page-head"><h1>Manage</h1></div>
@@ -35,12 +34,6 @@ export default function Settings({ settings: s }) {
           <div className="weight-row"><span>Search</span><strong>{s.search_provider}</strong></div>
           <div className="weight-row"><span>AI</span><strong>{s.llm_provider}</strong></div>
           <div className="weight-row"><span>Models</span><span>{s.main_model} / {s.cheap_model}</span></div>
-          {handoff && (
-            <p className="pitch" style={{ marginTop: 16 }}>
-              No API key mode: each search and AI step waits for Claude Code to answer it.
-              {s.pending_handoff > 0 && ` ${s.pending_handoff} request(s) are waiting now.`}
-            </p>
-          )}
           <p className="muted" style={{ fontSize: 15 }}>Change providers in config.yaml, then restart the API.</p>
         </div>
         <div className="box">

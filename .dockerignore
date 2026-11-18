@@ -6,7 +6,6 @@ __pycache__
 .DS_Store
 flowcode.db*
 logs/
-handoff/
 outputs/
 web/node_modules
 web/dist

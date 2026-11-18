@@ -11,7 +11,6 @@ from flowcode_agent.context import RunContext
 from flowcode_agent.db import now_iso
 from flowcode_agent.fetch import FetchedPage, domain_of, extract_news_links, is_blocked, text_hash, url_hash
 from flowcode_agent.models import Company, Evidence, SearchResult
-from flowcode_agent.providers.handoff import NeedsAnswer
 
 log = logging.getLogger(__name__)
 
@@ -62,8 +61,6 @@ def cached_search(ctx: RunContext, query: str, max_results: int) -> list[SearchR
     failed = False
     try:
         results = ctx.search.search(query, max_results=max_results)
-    except NeedsAnswer:
-        raise
     except Exception as exc:  # noqa: BLE001 - one failed query should not stop the run
         log.warning("Search failed for %r: %s", query, exc)
         results, failed = [], True
@@ -71,15 +68,15 @@ def cached_search(ctx: RunContext, query: str, max_results: int) -> list[SearchR
     calllog.record("search", provider=ctx.search.name, model=getattr(ctx.search, "model", None), query=query,
                    web_searches=after[0] - before[0], input_tokens=after[1] - before[1],
                    output_tokens=after[2] - before[2], results=len(results), urls=[r.url for r in results],
-                   failed=failed, **({"list_price_usd": round(after[3] - before[3], 6)} if after[3] > before[3] else {}))
+                   failed=failed)
     if not failed:
         ctx.db.save_search(ctx.search.name, query, day, results)
     return results
 
 
-def _search_counters(ctx: RunContext) -> tuple[int, int, int, float]:
+def _search_counters(ctx: RunContext) -> tuple[int, int, int]:
     s = ctx.search
-    return s.requests, getattr(s, "input_tokens", 0), getattr(s, "output_tokens", 0), getattr(s, "cost_usd", 0.0)
+    return s.requests, getattr(s, "input_tokens", 0), getattr(s, "output_tokens", 0)
 
 
 def is_fresh(published: date | None, text: str, today: date, recency_days: int) -> bool:

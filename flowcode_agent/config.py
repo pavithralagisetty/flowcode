@@ -85,7 +85,6 @@ class PathsConfig(BaseModel):
     prompts: str = "prompts"
     playbook: str = "playbook.yaml"
     existing_customers: str = "existing_customers.yaml"
-    handoff: str = "handoff"
 
 
 class StorageConfig(BaseModel):
@@ -141,28 +140,11 @@ class Config(BaseModel):
         return str(self.path("db"))
 
 
-# Named provider pairs (search, llm). FLOWCODE_MODE in the environment picks one and overrides config.yaml,
-# which is how a deployed server is pinned to API mode.
-PROVIDER_MODES = {"api": ("claude", "anthropic"), "claude_code": ("claude_code", "claude_code")}
-MODE_ENV = "FLOWCODE_MODE"
-
-
-def forced_mode() -> str | None:
-    """The mode set by FLOWCODE_MODE, if any."""
-    mode = os.environ.get(MODE_ENV, "").strip()
-    if mode and mode not in PROVIDER_MODES:
-        raise RuntimeError(f"{MODE_ENV} must be one of {', '.join(PROVIDER_MODES)}, not {mode!r}")
-    return mode or None
-
-
 def load_config(path: str | Path = "config.yaml") -> Config:
     """Read config.yaml (and .env next to it) and validate it."""
     path = Path(path)
     load_dotenv(path.parent / ".env")
     data = yaml.safe_load(path.read_text()) or {}
-    mode = forced_mode()
-    if mode:
-        data.setdefault("search", {})["provider"], data.setdefault("llm", {})["provider"] = PROVIDER_MODES[mode]
     return Config(**data, base_dir=path.parent)
 
 

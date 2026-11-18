@@ -1,11 +1,11 @@
 search:
-  provider: claude_code              # claude (API key), claude_code (Claude Code login, no API credits), gemini, handoff
+  provider: claude                   # claude or gemini
   claude_model: claude-sonnet-5-5
   gemini_model: "gemini-3.5-flash-lite"  # supports Google Search grounding
   max_results_per_query: 10
 
 llm:
-  provider: claude_code            # anthropic (API key), claude_code (Claude Code login), gemini, handoff
+  provider: anthropic              # anthropic or gemini
   main_model: claude-sonnet-5-5
   cheap_model: claude-haiku-4-5 # there is no claude-haiku-5-5; Haiku 4.5 is the current Haiku
   gemini_main_model: gemini-3.5-flash-lite
@@ -55,10 +55,9 @@ paths:
   prompts: prompts
   playbook: playbook.yaml
   existing_customers: existing_customers.yaml
-  handoff: handoff
 
 # Prices for the cost estimate on the Usage page (US dollars, Anthropic list prices as of Nov 2026;
-# check https://www.anthropic.com/pricing). Claude Code runs are estimated the same way.
+# check https://www.anthropic.com/pricing).
 pricing:
   web_search_per_1k: 10
   models:

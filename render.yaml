@@ -8,8 +8,6 @@ services:
     healthCheckPath: /api/health
     autoDeploy: true
     envVars:
-      - key: FLOWCODE_MODE
-        value: api
       - key: DATABASE_URL
         sync: false
       - key: ANTHROPIC_API_KEY

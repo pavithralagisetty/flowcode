@@ -29,12 +29,6 @@ export default function App() {
   const [reports, setReports] = useState([]);
   const [settings, setSettings] = useState(null);
   const [job, setJob] = useState(null); // the run started from Home, polled until it finishes
-  const [mode, setMode] = useState(null);
-  useEffect(() => { api.mode().then(setMode).catch(() => {}); }, []);
-  const changeMode = async (m) => {
-    setMode(await api.setMode(m));
-    api.settings().then(setSettings).catch(() => {});
-  };
 
   const refreshReports = useCallback(() => api.reports().then(setReports).catch(() => {}), []);
   useEffect(() => { refreshReports(); api.settings().then(setSettings).catch(() => {}); }, [refreshReports]);
@@ -61,7 +55,7 @@ export default function App() {
 
   return (
     <div className="app">
-      <TopBar reports={reports} go={go} mode={mode} onMode={changeMode} running={job?.status === "running"} />
+      <TopBar reports={reports} go={go} />
       <Rail section={section} go={go} />
       <main className="main">{page}</main>
     </div>

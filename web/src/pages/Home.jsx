@@ -1,19 +1,18 @@
 import { useState } from "react";
-import { AlertTriangle, CheckCircle2, Loader2, PauseCircle, Search } from "lucide-react";
+import { AlertTriangle, CheckCircle2, Loader2, Search } from "lucide-react";
 import { fmt } from "../format.js";
 
 function RunPanel({ job, go }) {
   const icons = {
     running: <Loader2 size={20} className="spin" />,
     done: <CheckCircle2 size={20} color="var(--green)" />,
-    paused: <PauseCircle size={20} color="#b07d24" />,
     ambiguous: <AlertTriangle size={20} color="#b07d24" />,
     not_found: <AlertTriangle size={20} color="#b07d24" />,
     failed: <AlertTriangle size={20} color="var(--red)" />,
     interrupted: <AlertTriangle size={20} color="#b07d24" />,
   };
   const label = {
-    running: `Researching ${job.query}…`, done: `Done: ${job.query}`, paused: "Paused: waiting for Claude Code",
+    running: `Researching ${job.query}…`, done: `Done: ${job.query}`,
     ambiguous: "Need a more specific company", not_found: "No company found", failed: "Run failed", interrupted: "Run interrupted",
   }[job.status];
   return (

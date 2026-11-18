@@ -13,7 +13,6 @@ from flowcode_agent.db import Database
 from flowcode_agent.evaluate import GOLDEN, golden_pass, quality, write_eval
 from flowcode_agent.fetch import Fetcher
 from flowcode_agent.pipeline import RunResult, build_context, run_company
-from flowcode_agent.providers.handoff import NeedsAnswer
 from flowcode_agent.steps.resolve import AmbiguousCompany, CompanyNotFound
 
 app = typer.Typer(add_completion=False, help="Research where Flowcode could help a company.")
@@ -61,9 +60,6 @@ def run(company: str = typer.Argument(..., help="Company name or website URL"),
         for c in exc.candidates:
             typer.echo(f"  - {c.name}: {c.domain or 'no domain'} {('- ' + c.note) if c.note else ''}")
         raise typer.Exit(2)
-    except NeedsAnswer as exc:
-        typer.echo(f"PAUSED: {exc}. Answer it, then rerun the same command to continue.")
-        raise typer.Exit(3)
     _print_result(result)
     _print_usage([result.usage])
 

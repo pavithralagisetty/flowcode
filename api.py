@@ -8,8 +8,6 @@ only on the server's disk or in memory, so a redeploy or restart loses no data.
 from __future__ import annotations
 
 import logging
-import os
-import re
 import threading
 import uuid
 from dataclasses import asdict, dataclass, field
@@ -22,10 +20,9 @@ from fastapi.responses import FileResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
-from flowcode_agent.config import PROVIDER_MODES, forced_mode, load_config
+from flowcode_agent.config import load_config
 from flowcode_agent.db import Database
 from flowcode_agent.pipeline import build_context, run_company
-from flowcode_agent.providers.handoff import NeedsAnswer
 from flowcode_agent.steps.resolve import AmbiguousCompany, CompanyNotFound
 
 ROOT = Path(__file__).resolve().parent
@@ -57,7 +54,7 @@ def _db() -> Database:
 class RunJob:
     id: str
     query: str
-    status: str = "running"  # running | done | paused | ambiguous | not_found | failed | interrupted
+    status: str = "running"  # running | done | ambiguous | not_found | failed | interrupted
     message: str = ""
     step: str = "Starting"  # the research step running right now
     slug: str | None = None
@@ -106,10 +103,6 @@ def _work(job: RunJob) -> None:
     except AmbiguousCompany as exc:
         job.status, job.message = "ambiguous", f"'{exc.query}' could mean several companies."
         job.candidates = [c.model_dump() for c in exc.candidates]
-    except NeedsAnswer as exc:
-        job.status = "paused"
-        job.message = (f"No API key mode: waiting for a {exc.kind} answer in {exc.path.relative_to(ROOT)}. "
-                       "Ask Claude Code to answer it, then run again to continue.")
     except Exception as exc:  # noqa: BLE001 - surface any failure to the UI
         job.status, job.message = "failed", f"{type(exc).__name__}: {exc}"
     finally:
@@ -149,28 +142,6 @@ def _summary(slug: str, d: dict) -> dict:
 class RunRequest(BaseModel):
     query: str
 
-
-class ModeRequest(BaseModel):
-    mode: str  # "api" or "claude_code"
-
-
-def _current_mode() -> str:
-    pair = (cfg.search.provider, cfg.llm.provider)
-    return next((m for m, p in PROVIDER_MODES.items() if p == pair), "custom")
-
-
-def _set_providers(search: str, llm: str) -> None:
-    """Rewrite the provider lines in config.yaml (keeping comments) and reload the config."""
-    global cfg
-    path = ROOT / "config.yaml"
-    text = path.read_text()
-    for section, value in (("search", search), ("llm", llm)):
-        text, n = re.subn(rf"(^{section}:\n(?:[ \t].*\n)*?[ \t]+provider:[ \t]*)[\w-]+", rf"\g<1>{value}", text,
-                          count=1, flags=re.M)
-        if n != 1:
-            raise HTTPException(500, f"Could not find {section}.provider in config.yaml")
-    path.write_text(text)
-    cfg = load_config(path)
 
 
 @app.get("/api/reports")
@@ -228,10 +199,8 @@ def get_run(job_id: str) -> dict:
 
 
 def _cost(row: dict) -> float | None:
-    """Estimated dollars for one logged call at API list prices, or None when no price is set for its model.
-
-    Claude Code calls use the list-price figure the CLI reports, which also counts cache rates."""
-    if row.get("list_price_usd") is not None:
+    """Estimated dollars for one logged call at API list prices, or None when no price is set for its model."""
+    if row.get("list_price_usd") is not None:  # older calls logged their own price
         return round(row["list_price_usd"], 6)
     prices = cfg.pricing
     cost = row.get("web_searches", 0) / 1000 * prices.web_search_per_1k
@@ -295,38 +264,17 @@ def calls(session: str | None = None) -> list[dict]:
     return _calls(session)
 
 
-@app.get("/api/mode")
-def get_mode() -> dict:
-    from flowcode_agent.providers.claude_code import claude_available
-
-    return {"mode": _current_mode(), "locked": forced_mode() is not None,
-            "has_api_key": bool(os.environ.get("ANTHROPIC_API_KEY")),
-            "claude_code_installed": claude_available(),
-            "running": any(j.status == "running" for j in JOBS.values())}
-
-
-@app.post("/api/mode")
-def set_mode(req: ModeRequest) -> dict:
-    if forced_mode():
-        raise HTTPException(409, "The mode is set by the FLOWCODE_MODE environment variable on this server")
-    if req.mode not in PROVIDER_MODES:
-        raise HTTPException(400, f"Mode must be one of {', '.join(PROVIDER_MODES)}")
-    _set_providers(*PROVIDER_MODES[req.mode])
-    return get_mode()
-
-
 @app.get("/api/settings")
 def settings() -> dict:
     main, cheap = cfg.llm.models()
     playbook = yaml.safe_load(cfg.path("playbook").read_text())
-    pending = list((cfg.path("handoff") / "pending").glob("*.md")) if cfg.path("handoff").exists() else []
     return {
         "search_provider": cfg.search.provider, "llm_provider": cfg.llm.provider,
         "main_model": main, "cheap_model": cheap, "storage": cfg.storage.backend,
         "recency_days": cfg.research.recency_days, "max_pages": cfg.research.max_pages_per_company,
         "strong_threshold": cfg.scoring.strong_threshold, "strong_industries": cfg.scoring.strong_industries,
         "opportunity_weights": cfg.scoring.opportunity_weights, "company_weights": cfg.scoring.company_weights,
-        "plays": playbook.get("plays", []), "pending_handoff": len(pending),
+        "plays": playbook.get("plays", []),
     }
 
 

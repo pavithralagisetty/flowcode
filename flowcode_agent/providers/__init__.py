@@ -18,14 +18,6 @@ def get_search_provider(config: Config) -> SearchProvider:
         from flowcode_agent.providers.search_claude import ClaudeSearchProvider
 
         return ClaudeSearchProvider(model=config.search.claude_model)
-    if name == "claude_code":
-        from flowcode_agent.providers.claude_code import ClaudeCodeSearch
-
-        return ClaudeCodeSearch(model=config.search.claude_model)
-    if name == "handoff":
-        from flowcode_agent.providers.handoff import HandoffSearch
-
-        return HandoffSearch(config.path("handoff"))
     if name == "fake":
         from flowcode_agent.providers.search_fake import FakeSearchProvider
 
@@ -44,12 +36,4 @@ def get_llm(config: Config) -> LLM:
         from flowcode_agent.providers.llm_gemini import GeminiLLM
 
         return GeminiLLM(max_tokens=config.llm.max_tokens)
-    if name == "claude_code":
-        from flowcode_agent.providers.claude_code import ClaudeCodeLLM
-
-        return ClaudeCodeLLM()
-    if name == "handoff":
-        from flowcode_agent.providers.handoff import HandoffLLM
-
-        return HandoffLLM(config.path("handoff"))
     raise ValueError(f"Unknown LLM provider: {name}")

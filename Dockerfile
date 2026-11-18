@@ -14,7 +14,5 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 COPY . .
 COPY --from=web /web/dist ./web/dist
-# A server always runs in API mode; Claude Code mode needs the claude command logged in locally.
-ENV FLOWCODE_MODE=api
 EXPOSE 8000
 CMD ["sh", "-c", "uvicorn api:app --host 0.0.0.0 --port ${PORT:-8000}"]

@@ -18,7 +18,5 @@ export const api = {
   startRun: (query) => request("/runs", { method: "POST", body: JSON.stringify({ query }) }),
   settings: () => request("/settings"),
   usage: () => request("/usage"),
-  mode: () => request("/mode"),
-  setMode: (mode) => request("/mode", { method: "POST", body: JSON.stringify({ mode }) }),
   calls: (session) => request(`/calls?session=${encodeURIComponent(session)}`),
 };
