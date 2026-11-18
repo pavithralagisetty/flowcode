@@ -1,0 +1,226 @@
+{
+  "company": {
+    "id": 15,
+    "name": "Crumbl",
+    "domain": "crumblcookies.com",
+    "industry": "food and beverage",
+    "brands": [
+      "Crumbl Cookies",
+      "Weekly rotating desserts",
+      "Pink box"
+    ],
+    "is_existing_customer": false,
+    "customer_tier": null
+  },
+  "run_id": 17,
+  "run_date": "2026-11-17",
+  "mode": "run",
+  "company_score": {
+    "score": 3.84,
+    "factors": {
+      "best_opportunity": {
+        "rating": 4,
+        "reason": "Best opportunity scores 4.1"
+      },
+      "strong_count": {
+        "rating": 3,
+        "reason": "2 opportunities at or above 3.5"
+      },
+      "company_size": {
+        "rating": 4,
+        "reason": "Crumbl runs a chain with many store locations, menu boards, a mobile app, and a partnership with an NBA team. The evidence doesn't say whether its ad budgets are national."
+      },
+      "industry_fit": {
+        "rating": 3,
+        "reason": "Industry 'food and beverage'"
+      },
+      "new_activity": {
+        "rating": 5,
+        "reason": "Newest strong opportunity source is 0 days old"
+      }
+    },
+    "snapshot": "Crumbl is launching a $1.99 value offer that pairs a Dirty Soda with a thin chocolate chip cookie, which one source describes as coming from a 'struggling cookie chain'. It is also running a Bulls Win, You Win promotion at Chicago Bulls home games, where attendees can claim a free chocolate chip cookie if the team wins."
+  },
+  "opportunities": [
+    {
+      "id": 156,
+      "moment_id": 155,
+      "moment": {
+        "title": "$1.99 Value Offer with Dirty Soda and Thin Cookie",
+        "type": "product_launch",
+        "summary": "Crumbl is debuting a new $1.99 value offer combining a Dirty Soda beverage with a thin chocolate chip cookie, launching later this week.",
+        "timing": {
+          "date_text": "later this week",
+          "start_date": null,
+          "end_date": null,
+          "status": "upcoming"
+        },
+        "physical_touchpoints": [
+          "menu board",
+          "store",
+          "menu boards",
+          "point of sale displays",
+          "mobile app",
+          "website"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 256,
+            "exact_quote": "The struggling cookie chain will debut a new $1.99 value offer featuring a Dirty Soda and a thin chocolate chip cookie starting later this week"
+          },
+          {
+            "evidence_id": 262,
+            "exact_quote": "Crumbl began offering a $1.99 combo pairing a 24-ounce zero-sugar dirty soda with a Chocolate Chip Thin cookie in October."
+          }
+        ]
+      },
+      "play_id": "many_locations",
+      "why_flowcode_fits": "The $1.99 Dirty Soda and thin cookie offer will appear on menu boards and point of sale displays in stores. A Flowcode on those signs could send people to the app or offer page, and tracking scans by location would show where the offer lands best.",
+      "flowcode_products": [
+        "Flowcodes (branded QR codes)",
+        "FlowURLs",
+        "Analytics and Integrations"
+      ],
+      "similar_story": {
+        "name": "CLEAR",
+        "url": "https://www.flowcode.com/case-study/clear",
+        "result": "over 7,000 codes and over 1.2M scans"
+      },
+      "suggested_first_pitch": "For the $1.99 Dirty Soda and thin cookie offer, Flowcodes on menu boards and point of sale displays would show which stores drive the most interest.",
+      "verification": {
+        "quotes_checked": 2,
+        "quotes_passed": 2,
+        "verdict": "yes",
+        "reason": "The NRN quote (2026-11-17) states the chain will debut a $1.99 value offer featuring a Dirty Soda and a thin chocolate chip cookie starting later this week, matching the claim and timing.",
+        "original_summary": null
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 5,
+          "reason": "The offer launches 'later this week' per a source published today (2026-11-17)."
+        },
+        "playbook_fit": {
+          "rating": 4,
+          "reason": "Menu boards and point of sale displays across many store locations match the CLEAR many-locations story."
+        },
+        "reach": {
+          "rating": 4,
+          "reason": "A chainwide value offer in stores, the app and the website reaches a large customer base, though the evidence doesn't say it is nationwide."
+        },
+        "evidence_strength": {
+          "rating": 4,
+          "reason": "Nation's Restaurant News published it today, and a second source from 2026-11-11 backs it up. There is no Crumbl announcement among the sources, and the two sources disagree on the start date (October versus later this week)."
+        },
+        "openness": {
+          "rating": 3,
+          "reason": "The evidence mentions a mobile app and menu boards but no existing QR code use, and no competitor tie."
+        }
+      },
+      "score": 4.1,
+      "sources": [
+        {
+          "evidence_id": 256,
+          "publisher": "Nation's Restaurant News",
+          "date": "2026-11-17",
+          "quote": "The struggling cookie chain will debut a new $1.99 value offer featuring a Dirty Soda and a thin chocolate \u2026",
+          "url": "https://www.nrn.com/quick-service/taco-bell-crumbl-and-wingstop"
+        },
+        {
+          "evidence_id": 262,
+          "publisher": "Simplify Jobs",
+          "date": "2026-11-11",
+          "quote": "Crumbl began offering a $1.99 combo pairing a 24-ounce zero-sugar dirty soda with a Chocolate Chip Thin cookie in \u2026",
+          "url": "https://simplify.jobs/c/Crumbl"
+        }
+      ],
+      "new": true
+    },
+    {
+      "id": 157,
+      "moment_id": 156,
+      "moment": {
+        "title": "Crumbl - Bulls Win, You Win",
+        "type": "loyalty_or_contest",
+        "summary": "Crumbl offers a promotional contest where Chicago Bulls game attendees can receive a free chocolate chip cookie from participating locations within 24 hours if the Bulls win.",
+        "timing": {
+          "date_text": "at all home games",
+          "start_date": null,
+          "end_date": null,
+          "status": "ongoing"
+        },
+        "physical_touchpoints": [
+          "stadium sign",
+          "Crumbl app",
+          "store",
+          "QR code"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 257,
+            "exact_quote": "At all home games for the Chicago Bulls, if the Chicago Bulls win the game, all game attendees are eligible to win one free Crumbl\u00ae chocolate chip cookie from Crumbl Cookies at participating locations within 24 hours."
+          }
+        ]
+      },
+      "play_id": "contest_entry",
+      "why_flowcode_fits": "The Bulls Win, You Win promotion already involves a stadium sign, a QR code, and the Crumbl app. A Flowcode could be how attendees enter and claim the free chocolate chip cookie, with scans tracked at home games and captured as customer profiles.",
+      "flowcode_products": [
+        "Flowcodes (branded QR codes)",
+        "FlowHubs",
+        "FlowID (customer profiles built from scans)",
+        "Analytics and Integrations"
+      ],
+      "similar_story": {
+        "name": "Capri Sun",
+        "url": "https://www.flowcode.com/case-study/capri-sun",
+        "result": "over 28,000 contest entries"
+      },
+      "suggested_first_pitch": "Your Bulls Win, You Win promotion already uses a stadium sign and QR code, so a Flowcode could make that the entry point and show you who's scanning at each home game.",
+      "verification": {
+        "quotes_checked": 1,
+        "quotes_passed": 1,
+        "verdict": "yes",
+        "reason": "The quote states that at all home games, if the Bulls win, all attendees are eligible to win one free Crumbl chocolate chip cookie at participating locations within 24 hours.",
+        "original_summary": null
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 4,
+          "reason": "The promotion runs at all home games and is ongoing, but the page has no publish date or end date, so how current it is can't be confirmed."
+        },
+        "playbook_fit": {
+          "rating": 5,
+          "reason": "A contest entry and claim flow matches the Capri Sun contest story, with a stadium sign and QR code already in place."
+        },
+        "reach": {
+          "rating": 3,
+          "reason": "It covers Chicago Bulls home game attendees, which is a single-market audience of moderate size."
+        },
+        "evidence_strength": {
+          "rating": 2,
+          "reason": "There is one source, the NBA rules page, with an unknown publish date and no company announcement or news coverage."
+        },
+        "openness": {
+          "rating": 5,
+          "reason": "The promotion already lists a QR code and the Crumbl app, and asks attendees to take part."
+        }
+      },
+      "score": 3.9,
+      "sources": [
+        {
+          "evidence_id": 257,
+          "publisher": "nba.com",
+          "date": "date unknown",
+          "quote": "At all home games for the Chicago Bulls, if the Chicago Bulls win the game, all game attendees are \u2026",
+          "url": "https://www.nba.com/bulls/app/crumbl/rules-regulations"
+        }
+      ],
+      "new": true
+    }
+  ],
+  "channels_covered": [
+    "email",
+    "packaging"
+  ]
+}

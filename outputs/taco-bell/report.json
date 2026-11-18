@@ -10,23 +10,23 @@
     "is_existing_customer": false,
     "customer_tier": null
   },
-  "run_id": 9,
-  "run_date": "2026-11-16",
+  "run_id": 20,
+  "run_date": "2026-11-18",
   "mode": "run",
   "company_score": {
-    "score": 4.78,
+    "score": 4.72,
     "factors": {
       "best_opportunity": {
         "rating": 4,
-        "reason": "Best opportunity scores 4.45"
+        "reason": "Best opportunity scores 4.3"
       },
       "strong_count": {
         "rating": 5,
-        "reason": "5 opportunities at or above 3.5"
+        "reason": "4 opportunities at or above 3.5"
       },
       "company_size": {
         "rating": 5,
-        "reason": "National chain selling nationwide through thousands of restaurants with celebrity campaigns and an 11-year PepsiCo deal."
+        "reason": "National brand with nationwide launches, a PepsiCo partnership and a national scholarship program."
       },
       "industry_fit": {
         "rating": 5,
@@ -34,53 +34,48 @@
       },
       "new_activity": {
         "rating": 5,
-        "reason": "Newest strong opportunity source is 4 days old"
+        "reason": "Newest strong opportunity source is 22 days old"
       }
     },
-    "snapshot": "Taco Bell is stacking limited-time launches and Rewards perks: a Milk Bar Birthday Cake Empanada in custom packaging, a carne asada test in two markets and Live M\u00e1s Caf\u00e9's expansion to Indianapolis and a Las Vegas Strip flagship. The Taco Bell Foundation's Live M\u00e1s Scholarship is taking applications through January 5, 2027."
+    "snapshot": "Taco Bell is running a mix of national and regional moves: a nationwide Milk Bar Birthday Cake Empanada, a nationwide horchata drink rollout on December 10, and a carne asada test in two markets. It is also expanding Live M\u00e1s Caf\u00e9 locations, opening scholarship applications through January 5, 2027, and planning new DORITOS Locos Tacos flavors for the 15th anniversary in 2027."
   },
   "opportunities": [
     {
-      "id": 39,
-      "moment_id": 51,
+      "id": 229,
+      "moment_id": 176,
       "moment": {
-        "title": "Milk Bar Birthday Cake Empanada in custom packaging",
+        "title": "DORITOS Locos Tacos 15th Anniversary with New Flavors",
         "type": "product_launch",
-        "summary": "The Milk Bar Birthday Cake Empanada is available nationwide beginning October 15 for a limited time at participating Taco Bell restaurants, served in custom packaging made for the occasion for $3.49. Rewards Members could choose it as their birthday reward from October 15 through October 28.",
+        "summary": "Taco Bell and PepsiCo announced that DORITOS Locos Tacos will celebrate its 15th anniversary in 2027, with new flavors planned for the platform.",
         "timing": {
-          "date_text": "Nationwide from October 15, 2026, limited time",
-          "start_date": "2026-10-15",
+          "date_text": "2027",
+          "start_date": "2027-01-01",
           "end_date": null,
-          "status": "ongoing"
+          "status": "upcoming"
         },
         "physical_touchpoints": [
-          "custom empanada packaging",
-          "in-restaurant menu boards"
+          "product packaging",
+          "menu boards",
+          "in-store signage",
+          "Menu boards",
+          "Product packaging"
         ],
         "evidence": [
           {
-            "evidence_id": 71,
-            "exact_quote": "the Milk Bar Birthday Cake Empanada will be available nationwide beginning October 15 for a limited time at participating Taco Bell restaurants, while supplies last."
+            "evidence_id": 76,
+            "exact_quote": "DORITOS\u00ae Locos Tacos, another signature collaboration between Taco Bell and PepsiCo, will celebrate its 15th anniversary in 2027, with new flavors planned for the platform."
           },
           {
-            "evidence_id": 71,
-            "exact_quote": "all served in custom packaging made for the occasion and available for $3.49*."
-          },
-          {
-            "evidence_id": 71,
-            "exact_quote": "Taco Bell is giving Rewards Members the chance to choose between a limited-time Milk Bar Birthday Cake Empanada or Mountain Dew Baja Blast\u00ae Freeze as their birthday reward from October 15 thru October 28."
-          },
-          {
-            "evidence_id": 79,
-            "exact_quote": "transforming Milk Bar's iconic Birthday Cake flavor into an all-new, crispy Taco Bell dessert, available nationwide beginning October 15 for a limited time."
+            "evidence_id": 321,
+            "exact_quote": "Beyond beverages, the companies confirmed that new Doritos Locos Tacos flavors are planned as the menu item approaches its 15th anniversary in 2027."
           }
         ]
       },
       "play_id": "packaging_signup",
-      "why_flowcode_fits": "The Milk Bar Birthday Cake Empanada ships in custom packaging made for the occasion, and Taco Bell is already tying it to the Rewards birthday reward. A code on that box can send buyers who are not yet Rewards members straight to sign-up and the birthday reward, turning a limited-time dessert into new loyalty members.",
+      "why_flowcode_fits": "The DORITOS Locos Tacos 15th anniversary in 2027 is still ahead, with new flavors planned. That leaves time to put a code on the product packaging. A scan could open a flavor-reveal sign-up or giveaway, and in-store signage could carry the same code.",
       "flowcode_products": [
         "Flowcodes (branded QR codes)",
-        "FlowURLs",
+        "FlowHubs",
         "FlowID (customer profiles built from scans)",
         "Analytics and Integrations"
       ],
@@ -89,108 +84,91 @@
         "url": "https://www.flowcode.com/case-study/love-corn",
         "result": "43,000 scans and 27,000 new contacts"
       },
-      "suggested_first_pitch": "Your custom Milk Bar empanada box is in every participating restaurant right now; a code on it that drops non-members into Rewards sign-up with a birthday treat turns a dessert into a loyalty funnel, and you'll see scans by restaurant.",
+      "suggested_first_pitch": "With the 15th anniversary and new DORITOS Locos Tacos flavors coming in 2027, you could print a Flowcode on the packaging that leads to a flavor sign-up or giveaway. We'd build it now so it's ready when each new flavor drops.",
       "verification": {
-        "quotes_checked": 4,
-        "quotes_passed": 4,
+        "quotes_checked": 2,
+        "quotes_passed": 2,
         "verdict": "partly",
-        "reason": "The quotes do not say the brands reunited.",
-        "original_summary": "Taco Bell and Milk Bar reunited for a Milk Bar Birthday Cake Empanada, available nationwide from October 15 for a limited time at participating restaurants, served in custom packaging made for the occasion. Rewards Members could pick it as their birthday reward from October 15 through October 28."
+        "reason": "Quotes confirm the 15th anniversary in 2027 and planned new flavors, but say nothing about a renewed partnership through 2036.",
+        "original_summary": "Taco Bell and PepsiCo announced that DORITOS Locos Tacos will celebrate its 15th anniversary in 2027 with new flavors planned for the platform as part of their renewed partnership through 2036."
       },
       "verified": true,
       "factor_ratings": {
         "timing": {
-          "rating": 4,
-          "reason": "Limited-time and in restaurants now since October 15, but may end soon while supplies last."
+          "rating": 5,
+          "reason": "The 15th anniversary is in 2027 with new flavors planned, so there is months of lead time to add a code to packaging."
         },
         "playbook_fit": {
-          "rating": 5,
-          "reason": "Custom packaging on a limited-edition item is the packaging_signup play exactly."
+          "rating": 4,
+          "reason": "Product packaging and in-store signage for a flavor launch fit the packaging sign-up story."
         },
         "reach": {
           "rating": 5,
-          "reason": "Nationwide at participating Taco Bell restaurants."
+          "reason": "Nationwide Taco Bell and PepsiCo platform with a huge audience."
         },
         "evidence_strength": {
           "rating": 4,
-          "reason": "Company's own release plus a second source, 39 days old."
+          "reason": "PepsiCo's own press release plus Dexerto coverage, both Oct 22 (within about 4 weeks), but few details on the flavors or dates."
         },
         "openness": {
-          "rating": 4,
-          "reason": "Already ties the item to the Rewards birthday reward, so it pushes people into its loyalty app."
+          "rating": 3,
+          "reason": "No evidence about QR use or competitor ties."
         }
       },
-      "score": 4.45,
+      "score": 4.3,
       "sources": [
         {
-          "evidence_id": 71,
-          "publisher": "tacobell.com",
-          "date": "2026-10-08",
-          "quote": "the Milk Bar Birthday Cake Empanada will be available nationwide beginning October 15 for a limited time at participating \u2026",
-          "url": "https://www.tacobell.com/newsroom/taco-bell-milk-bar-reunite"
+          "evidence_id": 76,
+          "publisher": "pepsico.com",
+          "date": "2026-10-22",
+          "quote": "DORITOS\u00ae Locos Tacos, another signature collaboration between Taco Bell and PepsiCo, will celebrate its 15th anniversary in 2027, with \u2026",
+          "url": "https://www.pepsico.com/newsroom/press-releases/2026/pepsico-taco-bell-eleven-more-years-keep-mountain-dew-baja-blast-beverage-innovation-moving-forward"
         },
         {
-          "evidence_id": 71,
-          "publisher": "tacobell.com",
-          "date": "2026-10-08",
-          "quote": "all served in custom packaging made for the occasion and available for $3.49*.",
-          "url": "https://www.tacobell.com/newsroom/taco-bell-milk-bar-reunite"
-        },
-        {
-          "evidence_id": 71,
-          "publisher": "tacobell.com",
-          "date": "2026-10-08",
-          "quote": "Taco Bell is giving Rewards Members the chance to choose between a limited-time Milk Bar Birthday Cake Empanada or \u2026",
-          "url": "https://www.tacobell.com/newsroom/taco-bell-milk-bar-reunite"
-        },
-        {
-          "evidence_id": 79,
-          "publisher": "Autobound",
-          "date": "2026-10-08",
-          "quote": "transforming Milk Bar's iconic Birthday Cake flavor into an all-new, crispy Taco Bell dessert, available nationwide beginning October 15 \u2026",
-          "url": "https://www.autobound.ai/companies/taco-bell/news/taco-bell-and-milk-bar-reunite-for-all-new-birthday-cake-563ee838"
+          "evidence_id": 321,
+          "publisher": "Dexerto",
+          "date": "2026-10-22",
+          "quote": "Beyond beverages, the companies confirmed that new Doritos Locos Tacos flavors are planned as the menu item approaches its \u2026",
+          "url": "https://www.dexerto.com/food/taco-bell-confirms-baja-blast-is-staying-for-another-11-years-with-new-drinks-coming-3421132/"
         }
       ],
       "new": true
     },
     {
-      "id": 43,
-      "moment_id": 55,
+      "id": 232,
+      "moment_id": 179,
       "moment": {
-        "title": "Live M\u00e1s Scholarship applications open through January 5, 2027",
+        "title": "Taco Bell Foundation Live M\u00e1s Scholarship 2026",
         "type": "loyalty_or_contest",
-        "summary": "The Taco Bell Foundation opened applications for its 12th annual Live M\u00e1s Scholarship, with more than $13 million available for fans and Team Members ages 16-26; applicants submit a two-minute video or an essay by January 5, 2027. A scholar is designing a custom crewneck for the Foundation's Giving Tuesday efforts in December.",
+        "summary": "The Taco Bell Foundation opened applications for the 12th annual Live M\u00e1s Scholarship, with more than $13 million available. Individual scholarships of $5,000, $10,000 and $25,000 will be awarded to students aged 16-26.",
         "timing": {
-          "date_text": "Applications open until January 5, 2027",
+          "date_text": "October 27, 2026 - January 5, 2027",
           "start_date": "2026-10-27",
           "end_date": "2027-01-05",
           "status": "ongoing"
         },
         "physical_touchpoints": [
-          "in-restaurant signage",
-          "receipts",
-          "drink cups",
-          "Giving Tuesday crewneck"
+          "Taco Bell app",
+          "promotional materials",
+          "website"
         ],
         "evidence": [
           {
             "evidence_id": 68,
-            "exact_quote": "Applications are open for Taco Bell Foundation\u2019s 12th annual Live M\u00e1s Scholarship, with more than $13 million available for Taco Bell fans and Team Members ages 16\u201326."
+            "exact_quote": "Applications are officially open for the 12th annual Live M\u00e1s Scholarship, with more than $13 million available to support young people, including Taco Bell fans and Team Members, as they pursue their passions through education."
           },
           {
             "evidence_id": 68,
-            "exact_quote": "Apply by January 5, 2027, with a two-minute video or 250\u2013500-word essay."
-          },
-          {
-            "evidence_id": 68,
-            "exact_quote": "is designing a custom Taco Bell crewneck with guidance from acclaimed fashion designer Willy Chavarria for the Foundation\u2019s Giving Tuesday efforts this December"
+            "exact_quote": "Individual scholarships of $5,000, $10,000 and $25,000 will be awarded to students aged 16-26 who show what drives them and how they plan to use their education to make an impact."
           }
         ]
       },
       "play_id": "contest_entry",
-      "why_flowcode_fits": "The Live M\u00e1s Scholarship is open to fans and Team Members ages 16-26 until January 5, 2027, with more than $13 million available. A code on in-restaurant signage, receipts or cups can be the entry point to the application, reaching the young fans already in the restaurant.",
+      "why_flowcode_fits": "The Live M\u00e1s Scholarship takes applications from October 27, 2026 to January 5, 2027. A Flowcode on promotional materials could take applicants straight to the application page. Scans would show which materials bring in the most applicants.",
       "flowcode_products": [
         "Flowcodes (branded QR codes)",
+        "FlowURLs",
+        "FlowHubs",
         "Analytics and Integrations"
       ],
       "similar_story": {
@@ -198,35 +176,35 @@
         "url": "https://www.flowcode.com/case-study/capri-sun",
         "result": "over 28,000 contest entries"
       },
-      "suggested_first_pitch": "Your scholarship closes January 5; a code on cups and receipts that opens the application puts the $13 million in front of every 16-26-year-old who orders, and shows you which restaurants drive applications.",
+      "suggested_first_pitch": "The scholarship application is open until January 5, so a Flowcode on your promotional materials could send applicants straight to the entry page. You'd also see which materials bring in the most applications.",
       "verification": {
-        "quotes_checked": 3,
-        "quotes_passed": 3,
-        "verdict": "yes",
-        "reason": "Every part is stated in the quotes.",
-        "original_summary": null
+        "quotes_checked": 2,
+        "quotes_passed": 2,
+        "verdict": "partly",
+        "reason": "Quotes support the 12th annual, $13M+, award amounts and ages 16-26, but say nothing about the two-minute video or 250-500 word essay requirement.",
+        "original_summary": "The Taco Bell Foundation opened applications for the 12th annual Live M\u00e1s Scholarship, offering more than $13 million in scholarships of $5,000, $10,000 and $25,000 to applicants ages 16-26 who submit a two-minute video or 250-500 word essay."
       },
       "verified": true,
       "factor_ratings": {
         "timing": {
           "rating": 5,
-          "reason": "Applications open now through January 5, 2027."
+          "reason": "Applications are open until January 5, 2027, so there are weeks left to promote with a code."
         },
         "playbook_fit": {
           "rating": 4,
-          "reason": "An application with a deadline fits contest_entry, though it is a scholarship, not a sweepstakes."
+          "reason": "A contest-entry flow with promotional materials matches the Capri Sun contest story."
         },
         "reach": {
           "rating": 4,
-          "reason": "Open to fans and Team Members ages 16-26 nationally, with more than $13 million available."
+          "reason": "A national program with more than $13 million available for students ages 16-26."
         },
         "evidence_strength": {
-          "rating": 5,
-          "reason": "Company's own release, 20 days old."
+          "rating": 4,
+          "reason": "Company's own announcement from Oct 27, within 30 days, but only one source."
         },
         "openness": {
-          "rating": 3,
-          "reason": "Entry is by video or essay online; no scan use stated."
+          "rating": 4,
+          "reason": "The program already asks people to apply, and the website and app are touchpoints."
         }
       },
       "score": 4.25,
@@ -235,161 +213,175 @@
           "evidence_id": 68,
           "publisher": "tacobell.com",
           "date": "2026-10-27",
-          "quote": "Applications are open for Taco Bell Foundation\u2019s 12th annual Live M\u00e1s Scholarship, with more than $13 million available for \u2026",
+          "quote": "Applications are officially open for the 12th annual Live M\u00e1s Scholarship, with more than $13 million available to support \u2026",
           "url": "https://www.tacobell.com/newsroom/taco-bell-foundation-opens-live-mas-scholarship-applications"
         },
         {
           "evidence_id": 68,
           "publisher": "tacobell.com",
           "date": "2026-10-27",
-          "quote": "Apply by January 5, 2027, with a two-minute video or 250\u2013500-word essay.",
-          "url": "https://www.tacobell.com/newsroom/taco-bell-foundation-opens-live-mas-scholarship-applications"
-        },
-        {
-          "evidence_id": 68,
-          "publisher": "tacobell.com",
-          "date": "2026-10-27",
-          "quote": "is designing a custom Taco Bell crewneck with guidance from acclaimed fashion designer Willy Chavarria for the Foundation\u2019s Giving \u2026",
+          "quote": "Individual scholarships of $5,000, $10,000 and $25,000 will be awarded to students aged 16-26 who show what drives them \u2026",
           "url": "https://www.tacobell.com/newsroom/taco-bell-foundation-opens-live-mas-scholarship-applications"
         }
       ],
-      "new": true
+      "new": false
     },
     {
-      "id": 41,
-      "moment_id": 53,
+      "id": 230,
+      "moment_id": 177,
       "moment": {
-        "title": "Live M\u00e1s Caf\u00e9 expansion: Indianapolis, Southern California and a Las Vegas Strip flagship",
+        "title": "Live M\u00e1s Caf\u00e9 Concept Expansion to Multiple Markets",
         "type": "retail_expansion",
-        "summary": "Later this year, Live M\u00e1s Caf\u00e9 will enter the greater Indianapolis area, grow its Southern California footprint and open a first-of-its-kind flagship Caf\u00e9 on the Las Vegas Strip, with select sips expanding to Taco Bell restaurants nationwide in December, as Taco Bell works toward $5 billion in beverage sales by 2030.",
+        "summary": "Taco Bell is expanding its Live M\u00e1s Caf\u00e9 concept, with plans to debut in the greater Indianapolis area, expand its Southern California footprint, and open a first-of-its-kind flagship on the Las Vegas Strip next to its flagship Cantina. The Las Vegas location was expected to open in fall.",
         "timing": {
-          "date_text": "Later in 2026; nationwide sips in December",
-          "start_date": "2026-10-15",
-          "end_date": "2026-12-31",
-          "status": "upcoming"
+          "date_text": "October 22, 2026 - December 2026",
+          "start_date": "2026-10-22",
+          "end_date": null,
+          "status": "ongoing"
         },
         "physical_touchpoints": [
-          "drink cups",
-          "caf\u00e9 signage",
-          "flagship store displays"
+          "Retail storefront",
+          "Menu boards",
+          "Drink dispensers"
         ],
         "evidence": [
           {
             "evidence_id": 69,
-            "exact_quote": "Later this year, Live M\u00e1s Caf\u00e9 will enter the greater Indianapolis area, continue growing its Southern California footprint, and introduce a first-of-its-kind flagship Caf\u00e9 on the Las Vegas Strip."
+            "exact_quote": "Later this year, the concept will make its debut in the greater Indianapolis area, expand its Southern California footprint, and introduce a first-of-its-kind flagship in Las Vegas."
           },
           {
             "evidence_id": 69,
-            "exact_quote": "with select sips expanding to Taco Bell restaurants nationwide in December."
+            "exact_quote": "In Las Vegas, Taco Bell is teaming up with longtime franchise partner Diversified Restaurant Group (DRG) to bring a one-of-a-kind destination to the Strip."
           },
           {
-            "evidence_id": 69,
-            "exact_quote": "as it works toward its goal of $5 billion in beverage sales by 2030."
+            "evidence_id": 321,
+            "exact_quote": "The chain recently announced plans to open a standalone Live M\u00e1s Cafe next to its flagship Taco Bell Cantina on the Las Vegas Strip."
+          },
+          {
+            "evidence_id": 321,
+            "exact_quote": "The location, expected to open this fall, will serve an exclusive Boozy Mountain Dew Baja Blast, combining the tropical lime soda with alcohol."
           }
         ]
       },
       "play_id": "many_locations",
-      "why_flowcode_fits": "Live M\u00e1s Caf\u00e9 is entering Indianapolis, growing in Southern California and opening a Las Vegas Strip flagship, while new sips roll to restaurants nationwide in December. Codes on caf\u00e9 signage and cups at each new location can track which markets and placements drive app orders as the concept scales.",
+      "why_flowcode_fits": "The Live M\u00e1s Caf\u00e9 is opening in the greater Indianapolis area, in more Southern California locations and on the Las Vegas Strip. Each storefront, menu board and drink dispenser could carry its own code. Scans would show which caf\u00e9 and which sign brings in the most customers.",
       "flowcode_products": [
         "Flowcodes (branded QR codes)",
-        "Analytics and Integrations",
-        "FlowID (customer profiles built from scans)"
+        "FlowURLs",
+        "FlowHubs",
+        "Analytics and Integrations"
       ],
       "similar_story": {
         "name": "CLEAR",
         "url": "https://www.flowcode.com/case-study/clear",
         "result": "over 7,000 codes and over 1.2M scans"
       },
-      "suggested_first_pitch": "As Live M\u00e1s Caf\u00e9 opens in Indianapolis and on the Strip, give every caf\u00e9 its own code on signs and cups so you can see which new market and placement turns visitors into app users.",
+      "suggested_first_pitch": "As Live M\u00e1s Caf\u00e9 opens in Indianapolis, Southern California and on the Las Vegas Strip, we could put a unique Flowcode on the signs and menu boards at each location. You'd see which caf\u00e9 and which spot drives the most scans. Openings run through late 2026, so we can start with the next ones.",
       "verification": {
-        "quotes_checked": 3,
-        "quotes_passed": 3,
+        "quotes_checked": 4,
+        "quotes_passed": 4,
         "verdict": "partly",
-        "reason": "The quotes do not mention the horchata launch date or strong performance.",
-        "original_summary": "Fueled by strong performance, Taco Bell's beverage-forward Live M\u00e1s Caf\u00e9 concept is entering the greater Indianapolis area, growing in Southern California and opening a first-of-its-kind flagship on the Las Vegas Strip later this year. New horchata drinks launched October 15, with select sips expanding to Taco Bell restaurants nationwide in December."
+        "reason": "Quotes support the three expansion areas and a fall Las Vegas opening, but none say openings are scheduled through late 2026 or give dates for Indianapolis or Southern California beyond 'later this year'.",
+        "original_summary": "Taco Bell is expanding its Live M\u00e1s Caf\u00e9 concept with locations in greater Indianapolis area, additional Southern California locations, and a flagship Caf\u00e9 on the Las Vegas Strip, with openings scheduled through late 2026."
       },
       "verified": true,
       "factor_ratings": {
         "timing": {
-          "rating": 5,
-          "reason": "New markets and Las Vegas flagship later this year, nationwide sips in December."
+          "rating": 4,
+          "reason": "Openings are planned for later this year across Indianapolis, Southern California and Las Vegas, so signage can still be added, though the Las Vegas cafe was expected this fall and may open soon."
         },
         "playbook_fit": {
           "rating": 4,
-          "reason": "New locations rolling out fit many_locations; the store count is still small."
+          "reason": "Multiple storefronts, menu boards and dispensers match the many-locations story (CLEAR)."
         },
         "reach": {
-          "rating": 4,
-          "reason": "Several new markets plus nationwide sips in December."
+          "rating": 3,
+          "reason": "Regional openings in a few markets plus a Las Vegas Strip flagship, not nationwide."
         },
         "evidence_strength": {
           "rating": 4,
-          "reason": "Company's own release from 32 days ago."
+          "reason": "Company newsroom plus Dexerto coverage, within about 30 days."
         },
         "openness": {
           "rating": 3,
-          "reason": "No stated scan use at caf\u00e9s."
+          "reason": "No evidence of QR use or competitor ties."
         }
       },
-      "score": 4.1,
+      "score": 3.65,
       "sources": [
         {
           "evidence_id": 69,
           "publisher": "tacobell.com",
           "date": "2026-10-15",
-          "quote": "Later this year, Live M\u00e1s Caf\u00e9 will enter the greater Indianapolis area, continue growing its Southern California footprint, and \u2026",
+          "quote": "Later this year, the concept will make its debut in the greater Indianapolis area, expand its Southern California footprint, \u2026",
           "url": "https://www.tacobell.com/newsroom/taco-bell-new-horchata-live-mas-cafe-expansion"
         },
         {
           "evidence_id": 69,
           "publisher": "tacobell.com",
           "date": "2026-10-15",
-          "quote": "with select sips expanding to Taco Bell restaurants nationwide in December.",
+          "quote": "In Las Vegas, Taco Bell is teaming up with longtime franchise partner Diversified Restaurant Group (DRG) to bring a \u2026",
           "url": "https://www.tacobell.com/newsroom/taco-bell-new-horchata-live-mas-cafe-expansion"
         },
         {
-          "evidence_id": 69,
-          "publisher": "tacobell.com",
-          "date": "2026-10-15",
-          "quote": "as it works toward its goal of $5 billion in beverage sales by 2030.",
-          "url": "https://www.tacobell.com/newsroom/taco-bell-new-horchata-live-mas-cafe-expansion"
+          "evidence_id": 321,
+          "publisher": "Dexerto",
+          "date": "2026-10-22",
+          "quote": "The chain recently announced plans to open a standalone Live M\u00e1s Cafe next to its flagship Taco Bell Cantina \u2026",
+          "url": "https://www.dexerto.com/food/taco-bell-confirms-baja-blast-is-staying-for-another-11-years-with-new-drinks-coming-3421132/"
+        },
+        {
+          "evidence_id": 321,
+          "publisher": "Dexerto",
+          "date": "2026-10-22",
+          "quote": "The location, expected to open this fall, will serve an exclusive Boozy Mountain Dew Baja Blast, combining the tropical \u2026",
+          "url": "https://www.dexerto.com/food/taco-bell-confirms-baja-blast-is-staying-for-another-11-years-with-new-drinks-coming-3421132/"
         }
       ],
       "new": true
     },
     {
-      "id": 42,
-      "moment_id": 54,
+      "id": 228,
+      "moment_id": 175,
       "moment": {
-        "title": "Carne asada test in Nashville and Minneapolis-St. Paul",
+        "title": "Taco Bell and Milk Bar Birthday Cake Empanada Collaboration",
         "type": "product_launch",
-        "summary": "Beginning November 12, fans in Nashville and Minneapolis-St. Paul can try new carne asada, featured across six Cantina offerings, as part of a limited-market test.",
+        "summary": "Taco Bell and Milk Bar partnered on the new Milk Bar Birthday Cake Empanada, which is available nationwide beginning October 15 for a limited time at participating Taco Bell restaurants while supplies last.",
         "timing": {
-          "date_text": "From November 12, 2026 (limited-market test)",
-          "start_date": "2026-11-12",
+          "date_text": "October 15, 2026",
+          "start_date": "2026-10-15",
           "end_date": null,
           "status": "ongoing"
         },
         "physical_touchpoints": [
-          "food packaging",
-          "sauce packets",
-          "menu boards in test markets"
+          "restaurant menus",
+          "in-store displays",
+          "product packaging",
+          "Taco Bell app",
+          "package",
+          "menu",
+          "shelf"
         ],
         "evidence": [
           {
-            "evidence_id": 67,
-            "exact_quote": "Beginning November 12, fans in Nashville, Tennessee, and Minneapolis-St. Paul markets, will be among the first to try the new protein as part of a limited-market test."
+            "evidence_id": 71,
+            "exact_quote": "Taco Bell and Milk Bar are back for another sweet collaboration, folding Milk Bar's iconic Birthday Cake flavor into the all-new Milk Bar Birthday Cake Empanada."
           },
           {
-            "evidence_id": 67,
-            "exact_quote": "Carne asada will be featured across six Cantina offerings"
+            "evidence_id": 71,
+            "exact_quote": "The Milk Bar Birthday Cake Empanada will be available nationwide beginning October 15 for a limited time at participating Taco Bell restaurants, while supplies last."
+          },
+          {
+            "evidence_id": 79,
+            "exact_quote": "the Milk Bar Birthday Cake Empanada will be available nationwide beginning October 15 for a limited time at participating Taco Bell restaurants"
           }
         ]
       },
       "play_id": "packaging_signup",
-      "why_flowcode_fits": "The carne asada test in Nashville and Minneapolis-St. Paul is meant to decide whether the protein earns a permanent spot. A code on test-market packaging can collect fan feedback and sign-ups tied to each test restaurant, giving the menu team data to make that call.",
+      "why_flowcode_fits": "The Milk Bar Birthday Cake Empanada ships in custom packaging, which makes it a good place for a code. A scan could lead to a giveaway or sign-up for Taco Bell and Milk Bar fans. Scans would also show Taco Bell which stores and menu displays bring in the most sign-ups.",
       "flowcode_products": [
         "Flowcodes (branded QR codes)",
+        "FlowHubs",
         "FlowID (customer profiles built from scans)",
         "Analytics and Integrations"
       ],
@@ -398,38 +390,231 @@
         "url": "https://www.flowcode.com/case-study/love-corn",
         "result": "43,000 scans and 27,000 new contacts"
       },
-      "suggested_first_pitch": "Put a code on the carne asada packaging in Nashville and the Twin Cities that asks fans to rate it and join Rewards, so the permanent-menu decision is backed by scans, not just sales.",
+      "suggested_first_pitch": "The Birthday Cake Empanada's custom packaging could carry a Flowcode that opens a sign-up or giveaway page and turns each box into a first-party contact. Since this launch is already live, we could put a code on your next limited-time collaboration and use the empanada as the example.",
       "verification": {
-        "quotes_checked": 2,
-        "quotes_passed": 2,
+        "quotes_checked": 3,
+        "quotes_passed": 3,
         "verdict": "partly",
-        "reason": "The quotes do not say the test could earn a permanent menu spot.",
-        "original_summary": "Beginning November 12, Taco Bell is testing new carne asada across six Cantina offerings in Nashville and Minneapolis-St. Paul, a limited-market test that could earn the protein a permanent menu spot."
+        "reason": "Quotes confirm the partnership, the product, and the nationwide October 15 launch, but say nothing about the crispy pastry, cake batter filling, pink frosting, rainbow sprinkles, or custom packaging.",
+        "original_summary": "Taco Bell and Milk Bar partnered to launch the Milk Bar Birthday Cake Empanada nationwide starting October 15, featuring a crispy pastry with cake batter filling, pink frosting and rainbow sprinkles in custom packaging."
       },
       "verified": true,
       "factor_ratings": {
         "timing": {
-          "rating": 5,
-          "reason": "Test started November 12, four days ago."
+          "rating": 2,
+          "reason": "Empanada launched Oct 15 (over 4 weeks ago) and its packaging is already out; a code can't be added now, only for a next similar collab."
         },
         "playbook_fit": {
           "rating": 4,
-          "reason": "A new product in test markets fits packaging_signup, with feedback as the hook."
+          "reason": "Custom packaging is a close match to the LOVE CORN packaging sign-up story."
         },
         "reach": {
-          "rating": 2,
-          "reason": "Two test markets only."
+          "rating": 5,
+          "reason": "Available nationwide at participating Taco Bell restaurants."
         },
         "evidence_strength": {
-          "rating": 5,
-          "reason": "Company's own release, 4 days old."
+          "rating": 4,
+          "reason": "Company's own newsroom announcement plus Autobound coverage, but dated Oct 8, just over 30 days ago."
         },
         "openness": {
           "rating": 3,
-          "reason": "No stated scan use."
+          "reason": "No evidence of existing QR use or competitor ties; Taco Bell app is mentioned as a touchpoint."
         }
       },
-      "score": 3.85,
+      "score": 3.55,
+      "sources": [
+        {
+          "evidence_id": 71,
+          "publisher": "tacobell.com",
+          "date": "2026-10-08",
+          "quote": "Taco Bell and Milk Bar are back for another sweet collaboration, folding Milk Bar's iconic Birthday Cake flavor into \u2026",
+          "url": "https://www.tacobell.com/newsroom/taco-bell-milk-bar-reunite"
+        },
+        {
+          "evidence_id": 71,
+          "publisher": "tacobell.com",
+          "date": "2026-10-08",
+          "quote": "The Milk Bar Birthday Cake Empanada will be available nationwide beginning October 15 for a limited time at participating \u2026",
+          "url": "https://www.tacobell.com/newsroom/taco-bell-milk-bar-reunite"
+        },
+        {
+          "evidence_id": 79,
+          "publisher": "Autobound",
+          "date": "2026-10-08",
+          "quote": "the Milk Bar Birthday Cake Empanada will be available nationwide beginning October 15 for a limited time at participating \u2026",
+          "url": "https://www.autobound.ai/companies/taco-bell/news/taco-bell-and-milk-bar-reunite-for-all-new-birthday-cake-563ee838"
+        }
+      ],
+      "new": false
+    },
+    {
+      "id": 233,
+      "moment_id": 180,
+      "moment": {
+        "title": "Live M\u00e1s Caf\u00e9 Horchata Beverage Launch and Nationwide Expansion",
+        "type": "product_launch",
+        "summary": "Taco Bell introduced four new horchata-inspired beverages at Live M\u00e1s Caf\u00e9 locations on October 15, with the Strawberry Horchata Refresca and Vanilla Spiced Horchata Refresca expanding nationwide on December 10 for a limited time.",
+        "timing": {
+          "date_text": "October 15, 2026 - December 10, 2026",
+          "start_date": "2026-10-15",
+          "end_date": null,
+          "status": "ongoing"
+        },
+        "physical_touchpoints": [
+          "caf\u00e9 menu boards",
+          "in-store signage",
+          "Taco Bell app",
+          "product packaging"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 69,
+            "exact_quote": "On October 15, Taco Bell will introduce four new horchata-inspired sips at Live M\u00e1s Caf\u00e9 locations, bringing its take on the beloved flavor to three distinct formats."
+          },
+          {
+            "evidence_id": 69,
+            "exact_quote": "On December 10, the Strawberry Horchata Refresca, Vanilla Spiced Horchata Refresca, and a new Vanilla Spiced Horchata Freeze will join Taco Bell menus nationwide for a limited time."
+          }
+        ]
+      },
+      "play_id": "packaging_signup",
+      "why_flowcode_fits": "The four horchata-inspired drinks are already at Live M\u00e1s Caf\u00e9 locations. The Strawberry Horchata Refresca and Vanilla Spiced Horchata Refresca go nationwide on December 10 for a limited time. A code on the cups and caf\u00e9 signage could lead to a sign-up or giveaway, and the nationwide expansion gives time to add it.",
+      "flowcode_products": [
+        "Flowcodes (branded QR codes)",
+        "FlowHubs",
+        "FlowID (customer profiles built from scans)",
+        "Analytics and Integrations"
+      ],
+      "similar_story": {
+        "name": "LOVE CORN",
+        "url": "https://www.flowcode.com/case-study/love-corn",
+        "result": "43,000 scans and 27,000 new contacts"
+      },
+      "suggested_first_pitch": "When the two Horchata Refrescas go nationwide on December 10, a Flowcode on the cups and in-store signage could lead to a giveaway or sign-up. Each scan would add a customer to your list.",
+      "verification": {
+        "quotes_checked": 2,
+        "quotes_passed": 2,
+        "verdict": "yes",
+        "reason": "Both quotes match: four horchata-inspired sips at Live M\u00e1s Caf\u00e9 on October 15, and the two Refrescas joining menus nationwide on December 10 for a limited time.",
+        "original_summary": null
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 3,
+          "reason": "Two drinks go nationwide on Dec 10, which is upcoming, but cups and packaging are likely set already, so a code is a stretch."
+        },
+        "playbook_fit": {
+          "rating": 4,
+          "reason": "Cups and cafe signage fit the packaging sign-up story."
+        },
+        "reach": {
+          "rating": 4,
+          "reason": "Nationwide expansion of two limited-time drinks on Dec 10."
+        },
+        "evidence_strength": {
+          "rating": 3,
+          "reason": "Company's own announcement, but dated Oct 15 (over 30 days ago) with a single source."
+        },
+        "openness": {
+          "rating": 3,
+          "reason": "No evidence of QR use or competitor ties."
+        }
+      },
+      "score": 3.45,
+      "sources": [
+        {
+          "evidence_id": 69,
+          "publisher": "tacobell.com",
+          "date": "2026-10-15",
+          "quote": "On October 15, Taco Bell will introduce four new horchata-inspired sips at Live M\u00e1s Caf\u00e9 locations, bringing its take \u2026",
+          "url": "https://www.tacobell.com/newsroom/taco-bell-new-horchata-live-mas-cafe-expansion"
+        },
+        {
+          "evidence_id": 69,
+          "publisher": "tacobell.com",
+          "date": "2026-10-15",
+          "quote": "On December 10, the Strawberry Horchata Refresca, Vanilla Spiced Horchata Refresca, and a new Vanilla Spiced Horchata Freeze will \u2026",
+          "url": "https://www.tacobell.com/newsroom/taco-bell-new-horchata-live-mas-cafe-expansion"
+        }
+      ],
+      "new": false
+    },
+    {
+      "id": 231,
+      "moment_id": 178,
+      "moment": {
+        "title": "Taco Bell Cantina Carne Asada Limited Test",
+        "type": "product_launch",
+        "summary": "Taco Bell is testing new carne asada in Nashville, Tennessee and Minneapolis-St. Paul beginning November 12 as part of a limited-market test. The new carne asada features lime-paprika marinated steak.",
+        "timing": {
+          "date_text": "November 12, 2026",
+          "start_date": "2026-11-12",
+          "end_date": null,
+          "status": "ongoing"
+        },
+        "physical_touchpoints": [
+          "restaurant menu",
+          "in-store signage",
+          "product packaging"
+        ],
+        "evidence": [
+          {
+            "evidence_id": 67,
+            "exact_quote": "Beginning November 12, fans in Nashville, Tennessee, and Minneapolis-St. Paul markets, will be among the first to try the new protein as part of a limited-market test."
+          },
+          {
+            "evidence_id": 67,
+            "exact_quote": "The new carne asada features lime-paprika marinated steak that is sous vide for tenderness and seared for a craveable finish."
+          }
+        ]
+      },
+      "play_id": "packaging_signup",
+      "why_flowcode_fits": "The carne asada test in Nashville and Minneapolis-St. Paul covers six Cantina menu items. Those items have packaging and in-store signage that could carry a code. A scan could open a feedback form or a sign-up to hear if the item goes national, and results would be split by test market.",
+      "flowcode_products": [
+        "Flowcodes (branded QR codes)",
+        "FlowURLs",
+        "FlowHubs",
+        "FlowID (customer profiles built from scans)",
+        "Analytics and Integrations"
+      ],
+      "similar_story": {
+        "name": "LOVE CORN",
+        "url": "https://www.flowcode.com/case-study/love-corn",
+        "result": "43,000 scans and 27,000 new contacts"
+      },
+      "suggested_first_pitch": "For the Cantina carne asada test, a Flowcode on the packaging and in-store signage could collect sign-ups and feedback and compare Nashville with Minneapolis-St. Paul. Since the test is already underway, we could set this up for your next market test.",
+      "verification": {
+        "quotes_checked": 2,
+        "quotes_passed": 2,
+        "verdict": "partly",
+        "reason": "Quotes confirm the markets, November 12 start, and lime-paprika marinated steak, but say nothing about six Cantina menu items, Sonoran tortillas, or purple cabbage slaw.",
+        "original_summary": "Taco Bell is testing new carne asada in Nashville, Tennessee and Minneapolis-St. Paul beginning November 12 across six Cantina menu items featuring lime-paprika marinated steak and new components including Sonoran tortillas and purple cabbage slaw."
+      },
+      "verified": true,
+      "factor_ratings": {
+        "timing": {
+          "rating": 3,
+          "reason": "The test began Nov 12 and is already out in two markets, so a code can't be added to current packaging; the pitch would be the national rollout if it goes ahead."
+        },
+        "playbook_fit": {
+          "rating": 3,
+          "reason": "Packaging and signage could carry a feedback or sign-up code, but this is a small test."
+        },
+        "reach": {
+          "rating": 2,
+          "reason": "Limited-market test in just Nashville and Minneapolis-St. Paul."
+        },
+        "evidence_strength": {
+          "rating": 3,
+          "reason": "Company's own announcement from Nov 12, but only one source."
+        },
+        "openness": {
+          "rating": 3,
+          "reason": "No evidence of QR use or competitor ties."
+        }
+      },
+      "score": 2.8,
       "sources": [
         {
           "evidence_id": 67,
@@ -442,48 +627,46 @@
           "evidence_id": 67,
           "publisher": "tacobell.com",
           "date": "2026-11-12",
-          "quote": "Carne asada will be featured across six Cantina offerings",
+          "quote": "The new carne asada features lime-paprika marinated steak that is sous vide for tenderness and seared for a craveable \u2026",
           "url": "https://www.tacobell.com/newsroom/taco-bell-expands-cantina-menu-with-carne-asada-test"
         }
       ],
-      "new": true
+      "new": false
     },
     {
-      "id": 40,
-      "moment_id": 52,
+      "id": 238,
+      "moment_id": 186,
       "moment": {
-        "title": "PepsiCo partnership renewed through 2036",
-        "type": "other",
-        "summary": "PepsiCo renewed its partnership with Taco Bell in the U.S. and several international markets, and will serve as Taco Bell's beverage partner in the U.S., Canada, Thailand, Ireland and the United Kingdom through 2036.",
+        "title": "Nachos BellGrande Packaging Switch",
+        "type": "packaging",
+        "summary": "Taco Bell's paper box used for some Nachos BellGrande orders is smaller than the familiar plastic tub, according to diners' complaints. Paper packaging appeared to be becoming the standard for Nachos BellGrande, per reports from multiple customers.",
         "timing": {
-          "date_text": "Announced October 22, 2026; runs through 2036",
-          "start_date": "2026-10-22",
-          "end_date": "2036-12-31",
+          "date_text": "November 2026",
+          "start_date": null,
+          "end_date": null,
           "status": "ongoing"
         },
         "physical_touchpoints": [
-          "fountain drink cups"
+          "Product container"
         ],
         "evidence": [
           {
-            "evidence_id": 76,
-            "exact_quote": "PepsiCo today announced it has renewed its partnership with Taco Bell in the U.S. and several international markets."
+            "evidence_id": 322,
+            "exact_quote": "The paper box used for some Nachos BellGrande orders is smaller than the familiar plastic tub, according to diners' complaints."
           },
           {
-            "evidence_id": 76,
-            "exact_quote": "Taco Bell and PepsiCo renew U.S. partnership through 2036"
-          },
-          {
-            "evidence_id": 78,
-            "exact_quote": "PepsiCo will serve as Taco Bell\u2019s beverage partner in the U.S., Canada, Thailand, Ireland, and the United Kingdom through 2036."
+            "evidence_id": 322,
+            "exact_quote": "Paper packaging appeared to be becoming the standard for Nachos BellGrande, Sporked suggested, citing reports from multiple customers."
           }
         ]
       },
       "play_id": "packaging_signup",
-      "why_flowcode_fits": "The renewed PepsiCo deal keeps Baja Blast and new beverage innovation flowing through 2036, and fountain cups go out with nearly every order. A dynamic code on cups could point to whatever the current beverage drop is, with the link changed after printing.",
+      "why_flowcode_fits": "The Nachos BellGrande has moved from plastic tubs to smaller paper containers, and customers are complaining about the portion size. The new paper container is a printed surface that could carry a code. A scan could lead to a feedback page or a sign-up with an offer.",
       "flowcode_products": [
         "Flowcodes (branded QR codes)",
         "FlowURLs",
+        "FlowHubs",
+        "FlowID (customer profiles built from scans)",
         "Analytics and Integrations"
       ],
       "similar_story": {
@@ -491,153 +674,129 @@
         "url": "https://www.flowcode.com/case-study/love-corn",
         "result": "43,000 scans and 27,000 new contacts"
       },
-      "suggested_first_pitch": "With PepsiCo locked in through 2036, one dynamic code on fountain cups can promote each new Baja Blast drop without reprinting cups.",
+      "suggested_first_pitch": "The new Nachos BellGrande paper container could carry a Flowcode that opens a feedback page or a sign-up with an offer. That would give Taco Bell a direct way to hear from customers about the change. We could also put a code on your next packaging redesign from the start.",
       "verification": {
-        "quotes_checked": 3,
-        "quotes_passed": 3,
+        "quotes_checked": 2,
+        "quotes_passed": 2,
         "verdict": "partly",
-        "reason": "The quotes do not mention Baja Blast staying on the menu or innovation plans.",
-        "original_summary": "PepsiCo renewed its partnership with Taco Bell in the U.S. and several international markets for another 11 years, keeping Mountain Dew Baja Blast on the menu and promising new food and beverage innovation."
+        "reason": "Quotes support a smaller paper box replacing the plastic tub per customer reports, but say nothing about the box holding less food or prices staying the same, and the switch is only 'appearing' standard for some orders.",
+        "original_summary": "Taco Bell has switched Nachos BellGrande from plastic tubs to smaller paper containers. Customers across multiple locations report the new paper box holds less food while prices remain the same."
       },
       "verified": true,
       "factor_ratings": {
         "timing": {
-          "rating": 3,
-          "reason": "Long-running partnership with no specific cup campaign date."
+          "rating": 2,
+          "reason": "The paper box is already out, so a code can't be added to the current packaging."
         },
         "playbook_fit": {
           "rating": 3,
-          "reason": "Cups are packaging, but there is no specific new product or limited edition on them."
+          "reason": "The paper container is a printed surface that could carry a code, but this is a packaging complaint, not a campaign."
         },
         "reach": {
-          "rating": 5,
-          "reason": "Beverage partner across the U.S. and four other countries."
+          "rating": 4,
+          "reason": "The packaging change appears to be becoming the standard for Nachos BellGrande, according to reports from multiple customers."
         },
         "evidence_strength": {
-          "rating": 4,
-          "reason": "PepsiCo release plus trade coverage, 25 days old."
+          "rating": 2,
+          "reason": "A single third-party article based on customer reports, with no company announcement."
         },
         "openness": {
           "rating": 3,
-          "reason": "No stated scan or sign-up use."
+          "reason": "No evidence of QR use or competitor ties."
         }
       },
-      "score": 3.55,
+      "score": 2.8,
       "sources": [
         {
-          "evidence_id": 76,
-          "publisher": "pepsico.com",
-          "date": "2026-10-22",
-          "quote": "PepsiCo today announced it has renewed its partnership with Taco Bell in the U.S. and several international markets.",
-          "url": "https://www.pepsico.com/newsroom/press-releases/2026/pepsico-taco-bell-eleven-more-years-keep-mountain-dew-baja-blast-beverage-innovation-moving-forward"
+          "evidence_id": 322,
+          "publisher": "The Cool Down",
+          "date": "2026-11-06",
+          "quote": "The paper box used for some Nachos BellGrande orders is smaller than the familiar plastic tub, according to diners' \u2026",
+          "url": "https://www.thecooldown.com/sustainable-food/taco-bell-nachos-bellgrande-smaller-portions/"
         },
         {
-          "evidence_id": 76,
-          "publisher": "pepsico.com",
-          "date": "2026-10-22",
-          "quote": "Taco Bell and PepsiCo renew U.S. partnership through 2036",
-          "url": "https://www.pepsico.com/newsroom/press-releases/2026/pepsico-taco-bell-eleven-more-years-keep-mountain-dew-baja-blast-beverage-innovation-moving-forward"
-        },
-        {
-          "evidence_id": 78,
-          "publisher": "Nation's Restaurant News",
-          "date": "2026-10-22",
-          "quote": "PepsiCo will serve as Taco Bell\u2019s beverage partner in the U.S., Canada, Thailand, Ireland, and the United Kingdom through \u2026",
-          "url": "https://www.nrn.com/quick-service/taco-bell-extends-pepsico-partnership-through-2036"
+          "evidence_id": 322,
+          "publisher": "The Cool Down",
+          "date": "2026-11-06",
+          "quote": "Paper packaging appeared to be becoming the standard for Nachos BellGrande, Sporked suggested, citing reports from multiple customers.",
+          "url": "https://www.thecooldown.com/sustainable-food/taco-bell-nachos-bellgrande-smaller-portions/"
         }
       ],
       "new": true
     },
     {
-      "id": 46,
-      "moment_id": 58,
+      "id": 237,
+      "moment_id": 184,
       "moment": {
-        "title": "Drive-thru voice AI expansion with Omilia",
-        "type": "other",
-        "summary": "Taco Bell expanded its partnership with Omilia to keep scaling drive-thru voice AI across its U.S. system, which has reached over 890 U.S. units in 38 states.",
+        "title": "Happier Hour Digital Campaign",
+        "type": "digital_campaign",
+        "summary": "Taco Bell's iAd creative reads \"$1 Mtn Dew Baja Blast Freeze at Happier Hour 2-5PM.\"",
         "timing": {
-          "date_text": "Announced July 2026",
-          "start_date": "2026-07-07",
+          "date_text": "Ongoing as of November 12, 2026",
+          "start_date": null,
           "end_date": null,
           "status": "ongoing"
         },
         "physical_touchpoints": [
-          "drive-thru menu boards"
+          "phone screen"
         ],
         "evidence": [
           {
-            "evidence_id": 77,
-            "exact_quote": "Taco Bell has expanded its partnership with artificial intelligence company Omilia to continue scaling its drive-thru voice AI across Taco Bell\u2019s U.S. system, according to a press release."
-          },
-          {
-            "evidence_id": 77,
-            "exact_quote": "The two companies originally partnered in 2023 and have since brought the technology to over 890 U.S. units across 38 states."
+            "evidence_id": 312,
+            "exact_quote": "The Taco Bell iAd creative reads \"$1 Mtn Dew Baja Blast Freeze at Happier Hour 2-5PM.\""
           }
         ]
       },
-      "play_id": "many_locations",
-      "why_flowcode_fits": "Voice AI now runs in over 890 drive-thrus across 38 states. A code on drive-thru menu boards could offer app ordering or feedback, with scans tracked per location.",
-      "flowcode_products": [
-        "Flowcodes (branded QR codes)",
-        "Analytics and Integrations"
-      ],
-      "similar_story": {
-        "name": "CLEAR",
-        "url": "https://www.flowcode.com/case-study/clear",
-        "result": "over 7,000 codes and over 1.2M scans"
-      },
-      "suggested_first_pitch": "Across your 890 voice-AI drive-thrus, a code on the menu board can capture feedback on the AI order and show which locations need attention.",
+      "play_id": null,
+      "why_flowcode_fits": "",
+      "flowcode_products": [],
+      "similar_story": null,
+      "suggested_first_pitch": "",
       "verification": {
         "quotes_checked": 2,
-        "quotes_passed": 2,
-        "verdict": "yes",
-        "reason": "Both parts are stated in the quotes.",
-        "original_summary": null
+        "quotes_passed": 1,
+        "verdict": "partly",
+        "reason": "The quote only confirms the ad's text (a $1 Mtn Dew Baja Blast Freeze, 2-5PM); it doesn't mention the New York Times iPhone app, reminders, proximity alerts, inviting friends, or that the campaign is ongoing.",
+        "original_summary": "Taco Bell runs an interactive digital campaign in The New York Times iPhone app promoting $1 Mountain Dew Baja Blast Freezes from 2-5PM. Users can set reminders, receive proximity alerts near Taco Bell locations, and invite friends."
       },
       "verified": true,
       "factor_ratings": {
         "timing": {
-          "rating": 3,
-          "reason": "Ongoing rollout, no specific upcoming date."
+          "rating": 2,
+          "reason": "The iAd creative is already running, and the evidence gives no dates on how long it lasts."
         },
         "playbook_fit": {
-          "rating": 3,
-          "reason": "Many drive-thru locations fit many_locations, but the moment is about voice AI, not signage."
+          "rating": 1,
+          "reason": "A phone-screen digital ad has no physical place for a code."
         },
         "reach": {
-          "rating": 4,
-          "reason": "Over 890 U.S. units in 38 states."
+          "rating": 3,
+          "reason": "A national brand's digital ad, but with no reach figures."
         },
         "evidence_strength": {
-          "rating": 3,
-          "reason": "One trade article, 132 days old."
+          "rating": 2,
+          "reason": "One source (Retail Dive) with a single quote and no company announcement."
         },
         "openness": {
           "rating": 2,
-          "reason": "The drive-thru push is toward voice AI ordering, not scanning."
+          "reason": "The ad is a mobile iAd, with no sign of QR use."
         }
       },
-      "score": 3.05,
+      "score": 1.95,
       "sources": [
         {
-          "evidence_id": 77,
-          "publisher": "Restaurant Dive",
-          "date": "2026-07-07",
-          "quote": "Taco Bell has expanded its partnership with artificial intelligence company Omilia to continue scaling its drive-thru voice AI across \u2026",
-          "url": "https://www.restaurantdive.com/news/taco-bell-omilia-drive-thru-ai-deployment/824564/"
-        },
-        {
-          "evidence_id": 77,
-          "publisher": "Restaurant Dive",
-          "date": "2026-07-07",
-          "quote": "The two companies originally partnered in 2023 and have since brought the technology to over 890 U.S. units across \u2026",
-          "url": "https://www.restaurantdive.com/news/taco-bell-omilia-drive-thru-ai-deployment/824564/"
+          "evidence_id": 312,
+          "publisher": "retaildive.com",
+          "date": "2026-11-12",
+          "quote": "The Taco Bell iAd creative reads \"$1 Mtn Dew Baja Blast Freeze at Happier Hour 2-5PM.\"",
+          "url": "https://www.retaildive.com/ex/mobilecommercedaily/taco-bell-flaunts-happier-hour-campaign-through-interactive-iad-push"
         }
       ],
       "new": true
     }
   ],
   "channels_covered": [
+    "social",
     "email",
     "packaging",
     "retail"

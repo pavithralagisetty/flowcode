@@ -1,87 +1,84 @@
 # Liquid Death: where Flowcode could help
-Run date 2026-11-16 · Company score 4.64 · Existing Flowcode customer: no
+Run date 2026-11-18 · Company score 3.70 · Existing Flowcode customer: no
 
 ## Snapshot
 **Industry:** retail and consumer goods · **Main brands:** Liquid Death, Liquid Death Sparkling Energy
 
-Liquid Death is pushing its Sparkling Energy line with national TV ads, including a Super Bowl LX spot. It is also stacking limited-edition collaborations that are on shelves now: Pop-Tarts, Feastables, Rumpl and Tumbler. Its Country Club loyalty program is offline for a 2026 overhaul, and retail purchases still earn rewards only through manual receipt submission.
+Liquid Death is running a steady stream of limited-edition collaborations, including Pop-Tarts, Rumpl, Tumbler, Feastables and Flip 7. It is also pushing its Sparkling Energy line with a new TV ad and expanding West Coast retail distribution. It has a festival activation running from October 2026.
 
-**Company score breakdown:** best_opportunity 4 (Best opportunity scores 4.1), strong_count 5 (5 opportunities at or above 3.5), company_size 5 (National brand with Super Bowl and national TV advertising), industry_fit 5 (Industry 'retail and consumer goods' is a strong fit), new_activity 5 (Newest strong opportunity source is 0 days old)
+**Company score breakdown:** best_opportunity 4 (Best opportunity scores 3.5), strong_count 2 (1 opportunities at or above 3.5), company_size 5 (National brand with wide retail distribution, TV advertising and collaborations with large partners such as Pop-Tarts, Feastables and 19 Crimes.), industry_fit 5 (Industry 'retail and consumer goods' is a strong fit), new_activity 4 (Newest strong opportunity source is 34 days old)
 
 ## Top opportunities
-### 1. Pop-Tarts Liquid Death Squeezed to Death Frosted Orange (score 4.10)
-**What's happening:** Pop-Tarts and Liquid Death are introducing the Squeezed to Death Frosted Orange toaster pastry, the first Liquid Death-inspired Pop-Tarts flavor. It arrives at participating retailers beginning in November 2026, in 12-count and 16-count boxes. *Timing: At retailers beginning November 2026, limited time (ongoing).*
-**Where a code goes:** 12-count and 16-count boxes, retail shelf
-**Why Flowcode fits:** The co-branded Pop-Tarts boxes are on retail shelves this month for a limited time. A code on the box can send Pop-Tarts buyers to try Liquid Death and sign up, capturing a new audience.
-**Flowcode products:** Flowcodes (branded QR codes), FlowURLs, Analytics and Integrations
-**Similar Flowcode story:** LOVE CORN (https://www.flowcode.com/case-study/love-corn): 43,000 scans and 27,000 new contacts
-**Suggested first pitch:** The Pop-Tarts box puts Liquid Death in front of a whole new aisle this month. A code on it can capture those shoppers before the limited run ends.
-**Score breakdown:** timing 5 (At retailers beginning this month), playbook_fit 4 (Co-branded box on shelf fits packaging signup, but the box is the partner's), reach 4 (Pop-Tarts retail distribution at participating retailers), evidence_strength 4 (Official press release under 30 days old), openness 3 (Social sweepstakes, no QR mentioned)
+### 1. The Country Club Festival Activation (score 3.50)
+**What's happening:** Liquid Death created "The Country Club," a festival experience featuring a casket-turned-cooler, custom skull fountain, 5-piece string quartet performing metal covers, airbrush tattoos, and astrology readings. *Timing: October 2026 onwards (ongoing).*
+**Where a code goes:** merchandise, festival signage
+**Why Flowcode fits:** The Country Club festival activation has merchandise and festival signage as touchpoints. Codes on both could collect sign ups and drive merch sales, with scans tracked per spot.
+**Flowcode products:** Flowcodes (branded QR codes), FlowHubs, FlowID (customer profiles built from scans), Analytics and Integrations
+**Similar Flowcode story:** Ceremony of Roses (Zach Bryan tour) (https://www.flowcode.com/case-study/ceremony-of-roses): 152,000 fan emails and $1.8M in extra merch sales
+**Suggested first pitch:** The Country Club is ongoing, so you can add Flowcodes to the festival signage and merchandise now. Attendees could scan to join your list or buy merch, and you'd see which spots work best.
+**Score breakdown:** timing 4 (The activation is described as running from Oct 2026 onwards with no end date, so there appears to be time left, but its dates and schedule are unclear.), playbook_fit 4 (Live event with merchandise and festival signage is a close match to the live-event story.), reach 3 (A festival activation reaches thousands of attendees at most, and the scale is not stated.), evidence_strength 3 (Single source from Oct 15, within 30 days, but it is a Live Nation capabilities page rather than a Liquid Death announcement.), openness 3 (No mention of QR codes or competitors.)
 **Sources:**
-- Cision PR Newswire, 2026-10-27: "Pop-Tarts® and Liquid Death are introducing Pop-Tarts Liquid Death Squeezed to Death Frosted Orange toaster pastry, the first Liquid …" https://www.prnewswire.com/news-releases/pop-tarts-and-liquid-death-want-you-to-make-it-a-bad-morning-with-new-squeezed-to-death-frosted-orange-toaster-pastry-302920000.html
-- Cision PR Newswire, 2026-10-27: "The toaster pastries arrive at participating retailers beginning in November 2026, with suggested retail prices of $4.69 for a …" https://www.prnewswire.com/news-releases/pop-tarts-and-liquid-death-want-you-to-make-it-a-bad-morning-with-new-squeezed-to-death-frosted-orange-toaster-pastry-302920000.html
+- Live Nation for Brands, 2026-10-15: "Inside "The Country Club" you'll find a casket-turned-cooler stocked with Liquid Death on ice, a custom-made skull fountain under …" https://livenationforbrands.com/capabilities/experiential-events/
 
-### 2. Country Club loyalty program overhaul (score 4.00)
-**What's happening:** Liquid Death's loyalty program, the Country Club, was offline for an overhaul as of October 12, 2026, with no relaunch date given. Retail purchases earn rewards only when shoppers submit receipts by hand, not through automatic point-of-sale tracking. *Timing: Offline as of October 12, 2026; relaunch date not given (upcoming).*
-**Where a code goes:** can, retail receipt
-**Why Flowcode fits:** The Country Club is being overhauled, and retail purchases currently earn rewards only through manual receipt submission. Scannable codes on cans could become the in-store way to join and earn, giving the relaunch a direct retail-to-loyalty path.
-**Flowcode products:** Flowcodes (branded QR codes), FlowID (customer profiles built from scans), Analytics and Integrations
-**Similar Flowcode story:** Capri Sun (https://www.flowcode.com/case-study/capri-sun): over 28,000 contest entries
-**Suggested first pitch:** While the Country Club is being rebuilt, let's make the can the way people join and earn in store, instead of texting in receipts.
-**Score breakdown:** timing 4 (Relaunch is upcoming, date not given), playbook_fit 4 (Can-to-loyalty entry fits the contest and loyalty play), reach 4 (Loyalty program tied to retail purchases nationwide), evidence_strength 3 (One third-party review, about a month old), openness 5 (Program already asks shoppers to sign up and submit receipts)
-**Sources:**
-- rivo.io, 2026-10-13: "As of October 12, 2026, its FAQ says the Country Club is offline for an overhaul, while separate rewards …" https://www.rivo.io/blog/liquid-death-country-club-loyalty-program
-- rivo.io, 2026-10-13: "Retail purchases count toward rewards only through a receipt-submission process, not automatic point-of-sale tracking." https://www.rivo.io/blog/liquid-death-country-club-loyalty-program
-- rivo.io, 2026-10-13: "Liquid Death's FAQ says the Country Club is currently offline for a 2026 overhaul. It does not give a …" https://www.rivo.io/blog/liquid-death-country-club-loyalty-program
-
-### 3. Sparkling Energy "un-extreme amount of caffeine" ad campaign (score 3.90)
-**What's happening:** In 2026 Liquid Death has run several ads for Sparkling Energy built around an "un-extreme amount of caffeine", including one naming it the official sports drink for parenting and one about energy drinks making your head explode. It also has a 15 second TV commercial, 'The Easy-Drinking Energy Drink'. *Timing: 2026, with new spots in June and July (ongoing).*
-**Where a code goes:** Sparkling Energy can, TV and streaming ad, TV screen
-**Why Flowcode fits:** Sparkling Energy is being pushed with a run of TV and streaming spots and sold in cans. An on-screen code can send viewers straight to buy or find it in store, and a code on the can can carry the campaign onto the shelf, with each spot's scans tracked.
+### 2. Parenting: The Most Extreme Sport on Earth (score 3.45)
+**What's happening:** A Liquid Death ad transforms parenting into a full-scale combat sport, opening like a UFC or MMA championship event with arena lighting, crowd reactions, fighter entrances and dramatic introductions. It ends with Liquid Death Sparkling Energy serving as the fuel that helps parents survive the next round. *Timing: November 2026 (ongoing).*
+**Where a code goes:** TV screen
+**Why Flowcode fits:** The Parenting: The Most Extreme Sport on Earth ad is running on the TV screen for Sparkling Energy. A code on screen could take parents straight to buying and show which airings drive scans.
 **Flowcode products:** Flowcodes (branded QR codes), FlowURLs, Analytics and Integrations
 **Similar Flowcode story:** NFL Shop (https://www.flowcode.com/case-study/nfl-shop): $25,000 in sales and 10,000 scans from one airing
-**Suggested first pitch:** You're putting real money behind Sparkling Energy spots. Let's put a scannable code on screen so you can see which spot actually drives purchases, the way NFL Shop did from a single airing.
-**Score breakdown:** timing 3 (Spots ran through mid-2026; no evidence they are airing right now), playbook_fit 5 (National TV ads match the NFL Shop TV-to-purchase story), reach 5 (National TV and a Super Bowl LX spot), evidence_strength 3 (Several outlets, but the newest is about 4 months old), openness 3 (No evidence either way on QR use in ads)
+**Suggested first pitch:** Your parenting ad is on air now, and viewers have no easy way to act. On your next flight of this spot, add an on-screen Flowcode that goes straight to buying Sparkling Energy.
+**Score breakdown:** timing 2 (The TV ad is already running as of Nov 16, and ads are fixed before airing. Only a pitch for the next spot is realistic.), playbook_fit 5 (A TV ad with a product to buy is a close match to the NFL Shop TV-to-purchase story.), reach 4 (A TV ad for a national brand, though the airing scale is not stated.), evidence_strength 3 (One source from Nov 16, within 30 days, but it is a third-party ad review rather than the company's announcement.), openness 3 (No mention of on-screen codes or competitors.)
 **Sources:**
-- Bleeding Cool News, 2026-06-04: "Liquid Death has a new campaign out where they have become the official sports drink for the biggest extreme …" https://bleedingcool.com/pop-culture/liquid-death-becomes-the-official-sports-drink-for-parenting/
-- Bleeding Cool News, 2026-06-04: "The ad pitches Liquid Death Sparkling Energy as a smart pick for long days and sleepless nights parents know …" https://bleedingcool.com/pop-culture/liquid-death-becomes-the-official-sports-drink-for-parenting/
-- thestable.com.au, 2026-07-16: "Liquid Death’s other “un-extreme amount of caffeine” promises this year have included solving the common problem of energy drinks …" https://www.thestable.com.au/liquid-death-sparkling-energy-gets-you-wings-but-you-wont-fly/
-- Ispot | Realtime Tv Advertising Performance Measurement, 2026-11-16: "Check out Liquid Death's 15 second TV commercial, 'The Easy-Drinking Energy Drink' from the Water industry." https://www.ispot.tv/ad/gNGW/liquid-death-the-easy-drinking-energy-drink
-- Ispot | Realtime Tv Advertising Performance Measurement, 2026-11-16: "Liquid Death Sparkling Energy Scary Strawberry, Liquid Death Sparkling Energy Tropical Terror" https://www.ispot.tv/ad/gOW3/liquid-death-sparkling-energy-super-bowl-2026-exploding-heads-featuring-dr-darshan-shah
+- Decode, 2026-11-16: "Liquid Death transforms parenting into a full-scale combat sport. The ad opens like a UFC or MMA championship event, …" https://www.askdecode.ai/resources/ads-of-the-week/liquid-death-parenting
+- Decode, 2026-11-16: "The concept culminates with Liquid Death Sparkling Energy serving as the fuel that helps parents survive the next round." https://www.askdecode.ai/resources/ads-of-the-week/liquid-death-parenting
 
-### 4. Feastables Peanut Butter Cup sparkling water (score 3.80)
-**What's happening:** Liquid Death and Feastables teamed up to launch a limited-edition Peanut Butter Cup flavored sparkling water. As of August 2026 it was available on Amazon, with more cans rolling out to grocery stores and retailers while supplies last. *Timing: August 2026, while supplies last (ongoing).*
-**Where a code goes:** limited-edition can, grocery store shelf
-**Why Flowcode fits:** A limited-edition can rolling out to grocery stores is the exact packaging moment in the playbook. A code on the can can lead to a giveaway or sign up and capture first-party contacts from retail buyers.
-**Flowcode products:** Flowcodes (branded QR codes), FlowID (customer profiles built from scans), Analytics and Integrations
+### 3. Pop-Tarts Liquid Death Squeezed to Death Frosted Orange (score 3.35)
+**What's happening:** Pop-Tarts and Liquid Death have a toaster pastry that arrives at participating retailers beginning in November 2026. *Timing: November 2026 (ongoing).*
+**Where a code goes:** package
+**Why Flowcode fits:** The Pop-Tarts frosted orange pastry is a limited-time launch arriving in November 2026. A code on the package could lead to a giveaway or sign up for fans of the collab.
+**Flowcode products:** Flowcodes (branded QR codes), FlowHubs, FlowID (customer profiles built from scans)
 **Similar Flowcode story:** LOVE CORN (https://www.flowcode.com/case-study/love-corn): 43,000 scans and 27,000 new contacts
-**Suggested first pitch:** The Feastables can is going to grocery stores where you don't know who's buying. A code on the can turns those buyers into your contacts, like LOVE CORN did with 27,000 new contacts.
-**Score breakdown:** timing 4 (Rolling out to stores while supplies last), playbook_fit 5 (Limited-edition can is the LOVE CORN packaging play), reach 4 (Amazon plus grocery and retail rollout), evidence_strength 2 (One third-party article from August), openness 3 (No evidence either way)
+**Suggested first pitch:** The Pop-Tarts collab is landing this month. If the packaging is already printed, put a Flowcode on your next limited-time collab that leads to a giveaway or sign up.
+**Score breakdown:** timing 2 (Packaging is fixed before launch and the pastry arrives in stores this month, so the box is already printed. Only a next-collab pitch is realistic.), playbook_fit 4 (Food box packaging fits the packaging sign-up story.), reach 4 (Pop-Tarts is sold in participating retailers, which suggests wide distribution.), evidence_strength 4 (Press release from Oct 27, within 30 days, announcing a joint launch.), openness 3 (No mention of QR codes or competitors.)
 **Sources:**
-- Sporked, 2026-08-04: "Liquid Death and Feastables have teamed up to launch the new limited-edition Peanut Butter Cup flavored sparkling water." https://sporked.com/article/liquid-death-just-dropped-chocolate-peanut-butter-cup-water/
-- Sporked, 2026-08-04: "The limited-edition Peanut Butter Cup Flavored Sparkling Water is available now on Amazon, with more cans rolling out to …" https://sporked.com/article/liquid-death-just-dropped-chocolate-peanut-butter-cup-water/
+- Cision PR Newswire, 2026-10-27: "The toaster pastries arrive at participating retailers beginning in November 2026, with suggested retail prices of $4.69 for a …" https://www.prnewswire.com/news-releases/pop-tarts-and-liquid-death-want-you-to-make-it-a-bad-morning-with-new-squeezed-to-death-frosted-orange-toaster-pastry-302920000.html
 
-### 5. Rumpl x Liquid Death Body Bag and Dirt Nap Blanket (score 3.70)
-**What's happening:** Rumpl and Liquid Death launched the limited-edition Body Bag Sleeping Bag and Dirt Nap Blanket on October 27, 2026, priced from $130 to $250. They are sold at Rumpl.com and LiquidDeath.com while supplies last. *Timing: Launched October 27, 2026, while supplies last (ongoing).*
-**Where a code goes:** product tag, stuff sack
-**Why Flowcode fits:** Rumpl gear carries product tags and a stuff sack. A code on each tag can link to product details, reviews, and Liquid Death merch, with the link set after printing.
-**Flowcode products:** Flowcodes (branded QR codes), FlowURLs
-**Similar Flowcode story:** Eddie Bauer (https://www.flowcode.com/case-study/eddie-bauer): 167,000 scans and 183% growth year over year
-**Suggested first pitch:** Put a code on the Body Bag tag so every buyer lands on your merch store and email list, the way Eddie Bauer uses codes on product tags.
-**Score breakdown:** timing 5 (Launched October 27, 2026, on sale now), playbook_fit 4 (Gear with tags matches the Eddie Bauer product-tag story), reach 2 (Limited-edition, sold online only), evidence_strength 4 (Official press release under 30 days old), openness 3 (No evidence either way)
+### 4. Liquid Death Sparkling Energy Line Launch (score 3.30)
+**What's happening:** Liquid Death was set to launch a better-for-you sparkling energy drink line in late 2025, co-formulated with Dr. Darshan Shah and containing 100 mg of caffeine, equal to a cup of coffee. *Timing: Late 2025 (ongoing).*
+**Where a code goes:** package, Can
+**Why Flowcode fits:** The Sparkling Energy line is a new product, and the can is the touchpoint that reaches every buyer. A Flowcode on the can could lead to a sign up or giveaway, which turns first-time buyers into known customers.
+**Flowcode products:** Flowcodes (branded QR codes), FlowHubs, FlowID (customer profiles built from scans)
+**Similar Flowcode story:** LOVE CORN (https://www.flowcode.com/case-study/love-corn): 43,000 scans and 27,000 new contacts
+**Suggested first pitch:** Sparkling Energy is on shelves now, and the can is your best way to reach each buyer. Add a Flowcode to the can that leads to a giveaway or sign up, so you start building a list of people who buy it.
+**Score breakdown:** timing 2 (Cans are fixed before launch and the line was due 'in the coming weeks' after Nov 2025, so it is nearly a year old by today; only a next-launch pitch is possible.), playbook_fit 5 (New product can is a direct match for the packaging sign-up story (LOVE CORN).), reach 4 (Core Liquid Death line with wide retail distribution, though exact scale is not stated.), evidence_strength 2 (Sources are from Nov 2025 and June 2024, well outside the last 30 days, though one is trade press repeating the company's plan.), openness 3 (No mention of existing QR codes or competitor ties on the can.)
 **Sources:**
-- Cision PR Newswire, 2026-10-27: "The limited-edition Rumpl x Liquid Death Body Bag Sleeping Bag and Dirt Nap Blanket launch October 27, 2026, with …" https://www.prnewswire.com/news-releases/rumpl-and-liquid-death-introduce-a-body-bag-youll-actually-want-to-sleep-in-302920991.html
-- Cision PR Newswire, 2026-10-27: "The collection will be available at Rumpl.com and LiquidDeath.com while supplies last." https://www.prnewswire.com/news-releases/rumpl-and-liquid-death-introduce-a-body-bag-youll-actually-want-to-sleep-in-302920991.html
+- Beverage Industry, 2025-11-25: "In the coming weeks, Liquid Death will launch a better-for-you energy drink line." https://www.bevindustry.com/articles/97993-liquid-death-strengthens-west-coast-distribution
+- Beverage Industry, 2025-11-25: "Liquid Death's new sparkling energy drink is co-formulated with board certified surgeon and longevity specialist Dr. Darshan Shah." https://www.bevindustry.com/articles/97993-liquid-death-strengthens-west-coast-distribution
+- Beverage Industry, 2025-11-25: "The product contains an 'unextreme caffeine' level, just 100 mg of caffeine, equal to a cup of coffee." https://www.bevindustry.com/articles/97993-liquid-death-strengthens-west-coast-distribution
+- FoodBev Media, 2024-06-04: "the company plans to launch its new product, Sparkling Energy, in January 2026 – a move that appears to …" https://www.foodbev.com/news/the-next-natural-step-liquid-death-makes-move-into-energy-drinks
+- FoodBev Media, 2024-06-04: "The upcoming Sparkling Energy will be packaged in 12-ounce skinny cans, a shift from the brand's signature beer-style cans, …" https://www.foodbev.com/news/the-next-natural-step-liquid-death-makes-move-into-energy-drinks
+
+### 5. Tumbler x Liquid Death Pro Knife Sharpener (score 2.95)
+**What's happening:** Liquid Death partnered with Tumbler to launch a limited-edition $159 pro knife sharpener featuring a black design with gold sharpening discs, coffin-shaped magnetic knife holder, and custom coffin packaging. *Timing: October 20, 2026 (ongoing).*
+**Where a code goes:** package
+**Why Flowcode fits:** The limited-edition Tumbler knife sharpener ships in custom coffin packaging. A code on the package could lead to a sign up, registration, or early access for future collaborations.
+**Flowcode products:** Flowcodes (branded QR codes), FlowHubs, FlowID (customer profiles built from scans)
+**Similar Flowcode story:** LOVE CORN (https://www.flowcode.com/case-study/love-corn): 43,000 scans and 27,000 new contacts
+**Suggested first pitch:** The coffin packaging for the Tumbler sharpener is a great chance to meet buyers. On the next limited-edition collab, add a Flowcode to the box that leads to a sign up, so you can reach buyers for future drops.
+**Score breakdown:** timing 2 (Limited-edition product and coffin packaging launched Oct 20 and are already printed, so a code can't be added. Only a pitch for the next collaboration is possible.), playbook_fit 4 (Custom coffin packaging is a good place for a code, with a clear sign-up angle.), reach 2 (A $159 niche limited-edition product will reach a small audience.), evidence_strength 4 (Press release from Oct 20, within 30 days, covering a Liquid Death collaboration.), openness 3 (No evidence of QR codes or competitor ties.)
+**Sources:**
+- Cision PR Newswire, 2026-10-20: "The $159 limited-edition release features a black Tumbler Pro with gold sharpening discs, a coffin-shaped magnetic knife holder and …" https://www.prnewswire.com/news-releases/death-to-dull-knives-tumbler--liquid-death-team-up-on-limited-edition-pro-knife-sharpener-302913924.html
 
 ## Other opportunities
-- Tumbler x Liquid Death limited-edition knife sharpener (3.45): A $159 limited-edition "Death to Dull Knives" Tumbler Pro knife sharpener was announced on October 20, 2026.
-- "The Country Club" festival activation with Live Nation (3.35): Live Nation for Brands features Liquid Death's "The Country Club" experience.
-- 19 Crimes "Severed Red" wine with a QR code AR experience (3.20): 19 Crimes' Severed Red wine includes a QR code that unlocks an augmented reality experience about Murder Man's crimes.
-- Flip 7: Liquid Death Edition card game (3.10): On July 28, 2026, The Op Games announced a partnership with Liquid Death to release Flip 7: Liquid Death Edition, a new version of its card game.
+- Rumpl x Liquid Death Body Bag and Dirt Nap Blanket (2.95): Rumpl and Liquid Death launched limited-edition outdoor gear including the Body Bag Sleeping Bag and Dirt Nap Blanket, available starting October 27, 2026, priced from $130 to $250.
+- West Coast Distribution Expansion (2.80): Liquid Death announced new distribution agreements with Sunset Distributing in Southern California and Pacific Northwest distributors The Odom Corp., Bigfoot Beverages, and Summit Beverage Distribution Co.
+- MrBeast Feastables Peanut Butter Cup Flavored Sparkling Water (2.80): Liquid Death and Feastables teamed up to launch a limited-edition Peanut Butter Cup flavored sparkling water.
+- 19 Crimes Severed Red Wine (2.80): Severed Red, a red wine from 19 Crimes made with Liquid Death mountain water, begins national retail availability in January 2026.
+- Flip 7: Liquid Death Edition (2.35): Liquid Death released Flip 7: Liquid Death, made by The Op Games, which is available now on Amazon (MSRP $9.95) and features new artwork inspired by Liquid Death's aesthetic.
 
 
 ## New since last run
 Only filled in refresh mode.
 
 ## Gaps
-Nothing found for: TV, retail
+Nothing found for: social, email
