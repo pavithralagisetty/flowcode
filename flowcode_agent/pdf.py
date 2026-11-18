@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import io
 import json
 import re
 from pathlib import Path
@@ -11,12 +12,30 @@ from fpdf.enums import XPos, YPos
 
 FONTS = Path(__file__).parent / "fonts"
 INK, MUTED, GREEN, LINE, PANEL = (20, 20, 20), (95, 90, 84), (46, 115, 65), (226, 221, 214), (244, 242, 239)
-AMBER_BG, GREEN_BG = (253, 243, 226), (220, 235, 223)
+AMBER_BG, GREEN_BG, AMBER, PILL = (253, 243, 226), (220, 235, 223), (242, 194, 122), (232, 228, 222)
 STATUS_TEXT = {"ongoing": "ongoing", "upcoming": "upcoming", "past": "past"}
 
 
 # Japanese, Chinese and Korean characters, which DM Sans does not include.
 CJK = re.compile(r"[\u3000-\u30ff\u3400-\u9fff\uac00-\ud7af\uff00-\uffef]")
+
+
+# Lucide icons (the same ones the web report uses), drawn as SVG.
+ICONS = {
+    "pin": '<path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/>'
+           '<circle cx="12" cy="10" r="3"/>',
+    "book": '<path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 '
+            '1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/>',
+    "link": '<path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
+}
+
+
+def _icon(name: str, color=INK) -> io.BytesIO:
+    hex_color = "#%02x%02x%02x" % color
+    return io.BytesIO(
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" '
+        f'stroke="{hex_color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{ICONS[name]}</svg>'
+        .encode())
 
 
 def _title(text: str) -> str:
@@ -58,7 +77,78 @@ class ReportPDF(FPDF):
     def label(self, text: str) -> None:
         self.set_font("DM", "B", 7.5)
         self.set_text_color(*MUTED)
-        self.cell(0, 5, text.upper(), new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+        self.set_char_spacing(0.9)
+        self.cell(0, 6, text.upper(), new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+        self.set_char_spacing(0)
+
+    def chips(self, items: list[str], icon: str | None = None, after: float = 4) -> None:
+        """Rounded pills that wrap onto new lines, like the web report's chips."""
+        self.set_font("DM", "", 9.5)
+        self.set_text_color(*INK)
+        h, pad, gap, icon_w = 7, 3.2, 2.2, (3.2 if icon else 0)
+        x, y = self.l_margin, self.get_y()
+        self.keep(h)
+        y = self.get_y()
+        for item in items:
+            text_w = min(self.get_string_width(item), self.epw - 2 * pad - icon_w - 1.5)
+            w = 2 * pad + text_w + (icon_w + 1.5 if icon else 0)
+            if x + w > self.w - self.r_margin and x > self.l_margin:
+                x, y = self.l_margin, y + h + gap
+                if y + h > self.h - self.b_margin:
+                    self.add_page()
+                    y = self.get_y()
+            self.set_fill_color(*PILL)
+            self.rect(x, y, w, h, style="F", round_corners=True, corner_radius=h / 2 - 0.01)  # fpdf2 shrinks r >= h/2
+            tx = x + pad
+            if icon:
+                self.image(_icon(icon), tx, y + (h - icon_w) / 2, w=icon_w)
+                tx += icon_w + 1.5
+            self.set_xy(tx, y)
+            self.cell(text_w, h, item)
+            x += w + gap
+        self.set_xy(self.l_margin, y + h)
+        self.ln(after)
+
+    def pitch(self, text: str) -> None:
+        """Amber box with a darker bar on the left."""
+        self.set_font("DM", "", 10.5)
+        line, pad, bar = 5.6, 4, 1.2
+        width = self.epw - bar - 2 * pad
+        lines = self.multi_cell(width, line, text, dry_run=True, output="LINES")
+        height = len(lines) * line + 2 * pad
+        self.keep(height + 2)
+        x, y = self.l_margin, self.get_y()
+        self.set_fill_color(*AMBER_BG)
+        self.rect(x, y, self.epw, height, style="F")
+        self.set_fill_color(*AMBER)
+        self.rect(x, y, bar, height, style="F")
+        self.set_text_color(*INK)
+        self.set_xy(x + bar + pad, y + pad)
+        self.multi_cell(width, line, text)
+        self.set_xy(self.l_margin, y + height)
+        self.ln(4)
+
+    def story(self, story: dict) -> None:
+        """Grey panel with a book icon, the story name and result, and a link icon."""
+        height, pad = 14, 4
+        self.keep(height + 2)
+        x, y = self.l_margin, self.get_y()
+        self.set_fill_color(*PANEL)
+        self.rect(x, y, self.epw, height, style="F")
+        self.image(_icon("book"), x + pad, y + (height - 5.5) / 2, w=5.5)
+        self.image(_icon("link"), self.w - self.r_margin - pad - 4, y + (height - 4) / 2, w=4)
+        text_x, text_w = x + pad + 9, self.epw - pad * 2 - 9 - 7
+        self.set_xy(text_x, y + 2.3)
+        self.set_font("DM", "B", 10.5)
+        self.set_text_color(*INK)
+        self.cell(text_w, 5, f"Similar story: {story['name']}")
+        self.set_xy(text_x, y + 7.3)
+        self.set_font("DM", "", 9)
+        self.set_text_color(*MUTED)
+        self.cell(text_w, 4.5, story.get("result") or "")
+        self.link(x, y, self.epw, height, story["url"])
+        self.set_xy(self.l_margin, y + height)
+        self.ln(4)
 
     def rule(self, gap: float = 4) -> None:
         self.set_draw_color(*LINE)
@@ -156,30 +246,19 @@ def report_pdf(data: dict) -> bytes:
         pdf.text_block(m["summary"], after=3)
         if m.get("physical_touchpoints"):
             pdf.label("Where a code goes")
-            pdf.text_block(", ".join(m["physical_touchpoints"]), after=3)
+            pdf.chips(m["physical_touchpoints"], icon="pin")
         pdf.label("Why Flowcode fits")
         pdf.text_block(o["why_flowcode_fits"], after=3)
 
         pdf.keep(30)  # keep the pitch label and its box on one page
         pdf.label("Suggested first pitch")
-        pdf.set_font("DM", "", 10)
-        pdf.set_text_color(*INK)
-        pdf.set_fill_color(*AMBER_BG)
-        pdf.multi_cell(0, 5.2, f"“{o['suggested_first_pitch']}”", fill=True, padding=(2.5, 3, 2.5, 3),
-                       new_x=XPos.LMARGIN, new_y=YPos.NEXT)
-        pdf.ln(3)
+        pdf.pitch(f"“{o['suggested_first_pitch']}”")
 
-        story = o.get("similar_story")
-        if story:
-            pdf.label("Similar Flowcode story")
-            pdf.set_font("DM", "B", 9.5)
-            pdf.set_text_color(*GREEN)
-            pdf.multi_cell(0, 5, f"{story['name']}: {story['result']}", link=story["url"],
-                           new_x=XPos.LMARGIN, new_y=YPos.NEXT)
-            pdf.ln(2)
+        if o.get("similar_story"):
+            pdf.story(o["similar_story"])
         if o.get("flowcode_products"):
             pdf.label("Products")
-            pdf.text_block(", ".join(o["flowcode_products"]), size=9, after=3)
+            pdf.chips(o["flowcode_products"])
 
         if o.get("factor_ratings"):
             pdf.label("Score breakdown")
