@@ -4,6 +4,18 @@ Give it a company name. It finds what the company is doing right now (launches, 
 sponsorships, loyalty programs) and returns a ranked list of places Flowcode's QR codes could help.
 Every idea comes with the source link, date and an exact quote, so a sales rep can trust it.
 
+## Screenshots
+
+| Home | Reports |
+|---|---|
+| ![Home](docs/screenshots/home.png) | ![Reports](docs/screenshots/reports.png) |
+| **Usage** (tokens and cost per run) | **Manage** (providers and scoring weights) |
+| ![Usage](docs/screenshots/usage.png) | ![Manage](docs/screenshots/manage.png) |
+
+**Playbook** (the Flowcode use cases each finding is matched to)
+
+![Playbook](docs/screenshots/playbook.png)
+
 ## How it works
 
 1. **Find the company**: its official website, industry and brands.
