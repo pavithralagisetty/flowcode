@@ -8,12 +8,13 @@ function RunPanel({ job, go }) {
     done: <CheckCircle2 size={20} color="var(--green)" />,
     paused: <PauseCircle size={20} color="#b07d24" />,
     ambiguous: <AlertTriangle size={20} color="#b07d24" />,
+    not_found: <AlertTriangle size={20} color="#b07d24" />,
     failed: <AlertTriangle size={20} color="var(--red)" />,
     interrupted: <AlertTriangle size={20} color="#b07d24" />,
   };
   const label = {
     running: `Researching ${job.query}…`, done: `Done: ${job.query}`, paused: "Paused: waiting for Claude Code",
-    ambiguous: "Need a more specific company", failed: "Run failed", interrupted: "Run interrupted",
+    ambiguous: "Need a more specific company", not_found: "No company found", failed: "Run failed", interrupted: "Run interrupted",
   }[job.status];
   return (
     <div className="run-panel">

@@ -13,7 +13,7 @@ from flowcode_agent.config import Config
 from flowcode_agent.context import RunContext
 from flowcode_agent.db import Database
 from flowcode_agent.pipeline import RunResult, run_company
-from flowcode_agent.steps.resolve import AmbiguousCompany
+from flowcode_agent.steps.resolve import AmbiguousCompany, CompanyNotFound
 
 log = logging.getLogger(__name__)
 ContextFactory = Callable[[Database], RunContext]
@@ -40,6 +40,8 @@ def _run_one(config: Config, make_ctx: ContextFactory, item: BatchItem, mode: st
     db = Database(config.db_target())
     try:
         item.result = run_company(make_ctx(db), item.name, item.domain, mode=mode)
+    except CompanyNotFound:
+        item.error = "no company found, check the name or add a domain"
     except AmbiguousCompany as exc:
         item.error = f"ambiguous, add a domain: {', '.join(f'{c.name} ({c.domain})' for c in exc.candidates)}"
     except Exception as exc:  # noqa: BLE001 - one company failing must not stop the batch

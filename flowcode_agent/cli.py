@@ -14,7 +14,7 @@ from flowcode_agent.evaluate import GOLDEN, golden_pass, quality, write_eval
 from flowcode_agent.fetch import Fetcher
 from flowcode_agent.pipeline import RunResult, build_context, run_company
 from flowcode_agent.providers.handoff import NeedsAnswer
-from flowcode_agent.steps.resolve import AmbiguousCompany
+from flowcode_agent.steps.resolve import AmbiguousCompany, CompanyNotFound
 
 app = typer.Typer(add_completion=False, help="Research where Flowcode could help a company.")
 CONFIG_OPT = typer.Option("config.yaml", "--config", "-c", help="Path to config.yaml")
@@ -52,6 +52,9 @@ def run(company: str = typer.Argument(..., help="Company name or website URL"),
     ctx = build_context(cfg)
     try:
         result = run_company(ctx, company)
+    except CompanyNotFound as exc:
+        typer.echo(f"{exc}. Check the spelling, or rerun with the company's website.")
+        raise typer.Exit(2)
     except AmbiguousCompany as exc:
         typer.echo(f"'{exc.query}' could mean several companies (confidence {exc.confidence:.2f}). "
                    "Rerun with the website of the one you mean:")

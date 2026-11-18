@@ -28,6 +28,14 @@ class AmbiguousCompany(Exception):
         self.confidence = confidence
 
 
+class CompanyNotFound(Exception):
+    """The input does not match any real company."""
+
+    def __init__(self, query: str):
+        super().__init__(f"No company found for '{query}'")
+        self.query = query
+
+
 def normalize_name(name: str) -> str:
     """Lowercase and drop everything but letters and digits."""
     return re.sub(r"[^a-z0-9]", "", name.lower())
@@ -73,7 +81,7 @@ def _gather_context(ctx: RunContext, query: str, domain: str | None) -> tuple[st
 
 
 def resolve_company(ctx: RunContext, user_input: str, domain: str | None = None) -> Company:
-    """Resolve a company. Raises AmbiguousCompany when confidence is low and no domain was given."""
+    """Resolve a company. Raises CompanyNotFound or AmbiguousCompany when no domain was given and it is unclear."""
     user_input = user_input.strip()
     if not domain and looks_like_url(user_input):
         domain = domain_of(user_input)
@@ -93,8 +101,13 @@ def resolve_company(ctx: RunContext, user_input: str, domain: str | None = None)
     log.info("Resolved %r -> %s (%s), confidence %.2f", user_input, answer.official_name, answer.official_domain,
              answer.confidence)
 
+    if not domain and not answer.is_company:
+        raise CompanyNotFound(user_input)
     if not domain and answer.confidence < ctx.config.resolve.min_confidence:
-        candidates = answer.candidates or [Candidate(name=answer.official_name, domain=answer.official_domain)]
+        candidates = answer.candidates or (
+            [Candidate(name=answer.official_name, domain=answer.official_domain)] if answer.official_name else [])
+        if not candidates:
+            raise CompanyNotFound(user_input)
         raise AmbiguousCompany(user_input, candidates, answer.confidence)
 
     company = Company(

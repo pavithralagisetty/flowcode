@@ -41,6 +41,7 @@ class Candidate(BaseModel):
 class ResolvedCompany(BaseModel):
     """What the AI returns when resolving a company."""
 
+    is_company: bool = True
     official_name: str
     official_domain: str
     industry: str

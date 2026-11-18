@@ -26,7 +26,7 @@ from flowcode_agent.config import PROVIDER_MODES, forced_mode, load_config
 from flowcode_agent.db import Database
 from flowcode_agent.pipeline import build_context, run_company
 from flowcode_agent.providers.handoff import NeedsAnswer
-from flowcode_agent.steps.resolve import AmbiguousCompany
+from flowcode_agent.steps.resolve import AmbiguousCompany, CompanyNotFound
 
 ROOT = Path(__file__).resolve().parent
 DIST = ROOT / "web" / "dist"
@@ -57,7 +57,7 @@ def _db() -> Database:
 class RunJob:
     id: str
     query: str
-    status: str = "running"  # running | done | paused | ambiguous | failed | interrupted
+    status: str = "running"  # running | done | paused | ambiguous | not_found | failed | interrupted
     message: str = ""
     step: str = "Starting"  # the research step running right now
     slug: str | None = None
@@ -99,6 +99,10 @@ def _work(job: RunJob) -> None:
         job.run_id = result.run_id
         job.message = (f"Company score {result.score.score:.2f}, {len(result.opportunities)} opportunities"
                        if result.score else "Nothing new since the last run")
+    except CompanyNotFound as exc:
+        job.status = "not_found"
+        job.message = (f"No company found for '{exc.query}'. Check the spelling, or enter the company's website "
+                       "(like tacobell.com).")
     except AmbiguousCompany as exc:
         job.status, job.message = "ambiguous", f"'{exc.query}' could mean several companies."
         job.candidates = [c.model_dump() for c in exc.candidates]
