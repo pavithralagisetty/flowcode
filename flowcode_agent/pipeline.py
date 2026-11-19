@@ -69,7 +69,7 @@ def run_company(ctx: RunContext, user_input: str, domain: str | None = None, mod
 def _run_company(ctx: RunContext, user_input: str, domain: str | None, mode: str) -> RunResult:
     start_search, start_in, start_out = ctx.search.requests, *_tokens(ctx)
     with calllog.tagged(company=user_input):
-        calllog.progress("Starting research")
+        calllog.progress("Starting research", 0)
         company = _known_company(ctx, user_input, domain) or resolve_company(ctx, user_input, domain)
     unfinished = ctx.db.unfinished_run(company.id, mode)
     if unfinished:
@@ -134,7 +134,7 @@ def _run_stages(ctx: RunContext, company: Company, run_id: int, status: str, ref
         [o for o in db.list_opportunities(run_id) if o.verified and o.score is not None and not is_over(o, ctx.today)],
         key=lambda o: o.score, reverse=True,
     )
-    calllog.progress("Writing the report")
+    calllog.progress("Writing the report", 99)
     folder = write_report(ctx.config.path("outputs"), company, cs, ranked, db.get_evidence_map(company.id), run_id,
                           ctx.today, refresh=refresh, new_evidence_ids=new_ids)
     db.save_report(company.id, run_id, folder.name, (folder / "report.json").read_text(),

@@ -21,6 +21,18 @@ MomentType = Literal[
 TimingStatus = Literal["upcoming", "ongoing", "past"]
 
 
+def unique_ignoring_case(items: list[str]) -> list[str]:
+    """Drop repeats that differ only in case or spacing, keeping the first spelling."""
+    seen: set[str] = set()
+    out = []
+    for item in items:
+        key = " ".join(item.lower().split())
+        if key not in seen:
+            seen.add(key)
+            out.append(item)
+    return out
+
+
 class SearchResult(BaseModel):
     url: str
     title: str | None = None

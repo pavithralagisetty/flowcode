@@ -134,18 +134,18 @@ class Gatherer:
         return new_id
 
     def run_queries(self, brand: str) -> None:
-        for template in QUERY_TEMPLATES:
+        for i, template in enumerate(QUERY_TEMPLATES):
             if self.full:
                 return
             query = template.format(brand=brand)
-            calllog.progress(SEARCH_LABELS.get(template, "Searching the web"))
+            calllog.progress(SEARCH_LABELS.get(template, "Searching the web"), 5 + 55 * i // len(QUERY_TEMPLATES))
             for result in cached_search(self.ctx, query, self.ctx.config.search.max_results_per_query):
                 self.consider(result.url)
 
     def read_newsroom(self) -> None:
         """Find the newsroom by search and common paths, then read its recent articles."""
         domain = self.company.domain
-        calllog.progress("Reading the company newsroom")
+        calllog.progress("Reading the company newsroom", 3)
         pages = [f"https://{domain}{p}" for p in NEWSROOM_PATHS]
         for r in cached_search(self.ctx, f"{self.company.name} newsroom press releases",
                                self.ctx.config.search.max_results_per_query):

@@ -92,10 +92,10 @@ def resolve_company(ctx: RunContext, user_input: str, domain: str | None = None)
             return mark_customer(ctx, existing)
 
     query = domain or user_input
-    calllog.progress("Finding the official website")
+    calllog.progress("Finding the official website", 1)
     context, used = _gather_context(ctx, query if not domain else f"{user_input} {domain}", domain)
     user = f"User input: {user_input}\nKnown domain: {domain or 'none'}\n\n{context}"
-    calllog.progress("Identifying the company and its brands")
+    calllog.progress("Identifying the company and its brands", 2)
     with calllog.tagged(step="resolve", pages=used):
         answer = ctx.llm.complete_json(ctx.prompt("resolve"), user, ResolvedCompany, ctx.cheap_model)
     log.info("Resolved %r -> %s (%s), confidence %.2f", user_input, answer.official_name, answer.official_domain,

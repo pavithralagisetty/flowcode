@@ -22,6 +22,7 @@ from pydantic import BaseModel
 
 from flowcode_agent.config import load_config
 from flowcode_agent.db import Database
+from flowcode_agent.models import unique_ignoring_case
 from flowcode_agent.pipeline import build_context, run_company
 from flowcode_agent.steps.resolve import AmbiguousCompany, CompanyNotFound
 
@@ -57,6 +58,7 @@ class RunJob:
     status: str = "running"  # running | done | ambiguous | not_found | failed | interrupted
     message: str = ""
     step: str = "Starting"  # the research step running right now
+    percent: int = 0  # rough progress, from where each step usually starts in a run
     slug: str | None = None
     candidates: list[dict] = field(default_factory=list)
     run_id: int | None = None
@@ -84,6 +86,7 @@ class JobLogHandler(logging.Handler):
         self.job.logs.append(record.getMessage())
         if hasattr(record, "progress"):
             self.job.step = record.progress
+            self.job.percent = max(self.job.percent, record.percent)  # brand searches repeat labels; never go back
             self.job.save()
 
 
@@ -93,6 +96,7 @@ def _work(job: RunJob) -> None:
     try:
         result = run_company(build_context(cfg, db=_db()), job.query)
         job.status, job.slug = "done", result.report_dir.name if result.report_dir else None
+        job.percent = 100
         job.run_id = result.run_id
         job.message = (f"Company score {result.score.score:.2f}, {len(result.opportunities)} opportunities"
                        if result.score else "Nothing new since the last run")
@@ -144,17 +148,26 @@ class RunRequest(BaseModel):
 
 
 
+
 @app.get("/api/reports")
 def list_reports() -> list[dict]:
     items = [_summary(r["slug"], r["json"]) for r in _db().latest_reports()]
     return sorted(items, key=lambda r: r["score"], reverse=True)
 
 
-@app.get("/api/reports/{slug}")
-def get_report(slug: str) -> dict:
+def _saved_report(slug: str) -> dict:
+    """A saved report, with repeated code locations removed (older runs kept "Menu boards" and "menu boards")."""
     saved = _db().get_report(slug)
     if saved is None:
         raise HTTPException(404, "No report for that company")
+    for o in saved["json"]["opportunities"]:
+        o["moment"]["physical_touchpoints"] = unique_ignoring_case(o["moment"].get("physical_touchpoints", []))
+    return saved
+
+
+@app.get("/api/reports/{slug}")
+def get_report(slug: str) -> dict:
+    saved = _saved_report(slug)
     return {"report": saved["json"], "markdown": saved["markdown"]}
 
 
@@ -162,9 +175,7 @@ def get_report(slug: str) -> dict:
 def report_pdf(slug: str) -> Response:
     from flowcode_agent.pdf import report_pdf as build_pdf
 
-    saved = _db().get_report(slug)
-    if saved is None:
-        raise HTTPException(404, "No report for that company")
+    saved = _saved_report(slug)
     return Response(build_pdf(saved["json"]), media_type="application/pdf",
                     headers={"Content-Disposition": f'attachment; filename="{slug}-flowcode-report.pdf"'})
 

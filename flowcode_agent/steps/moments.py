@@ -7,7 +7,7 @@ import logging
 
 from flowcode_agent import calllog
 from flowcode_agent.context import RunContext
-from flowcode_agent.models import Company, Evidence, MergeGroups, Moment, MomentList
+from flowcode_agent.models import Company, Evidence, MergeGroups, Moment, MomentList, unique_ignoring_case
 from flowcode_agent.steps.gather import is_fresh
 
 log = logging.getLogger(__name__)
@@ -53,7 +53,7 @@ def merge_moments(ctx: RunContext, moments: list[Moment]) -> list[Moment]:
         return moments
     listing = [{"index": i, "title": m.title, "type": m.type, "summary": m.summary,
                 "timing": m.timing.date_text} for i, m in enumerate(moments)]
-    calllog.progress("Combining duplicate findings")
+    calllog.progress("Combining duplicate findings", 73)
     with calllog.tagged(step="merge", moments=len(moments)):
         groups = ctx.llm.complete_json(MERGE_SYSTEM, json.dumps(listing, indent=1), MergeGroups, ctx.cheap_model).groups
     used: set[int] = set()
@@ -71,8 +71,8 @@ def merge_moments(ctx: RunContext, moments: list[Moment]) -> list[Moment]:
 def _combine(group: list[Moment]) -> Moment:
     """Keep the first moment's text; union touchpoints and evidence links."""
     base = group[0].model_copy(deep=True)
+    base.physical_touchpoints = unique_ignoring_case([t for m in group for t in m.physical_touchpoints])
     for other in group[1:]:
-        base.physical_touchpoints += [t for t in other.physical_touchpoints if t not in base.physical_touchpoints]
         seen = {(e.evidence_id, e.exact_quote) for e in base.evidence}
         base.evidence += [e for e in other.evidence if (e.evidence_id, e.exact_quote) not in seen]
     return base
@@ -83,7 +83,7 @@ def find_moments(ctx: RunContext, company: Company) -> list[Moment]:
     evidence = usable_evidence(ctx, company)
     size = ctx.config.research.evidence_batch_size
     moments: list[Moment] = []
-    calllog.progress("Reading the pages for campaigns, launches and events")
+    calllog.progress("Reading the pages for campaigns, launches and events", 62)
     for start in range(0, len(evidence), size):
         batch = evidence[start : start + size]
         with calllog.tagged(batch=f"{start // size + 1}/{-(-len(evidence) // size)}"):

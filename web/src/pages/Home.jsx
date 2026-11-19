@@ -1,6 +1,40 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AlertTriangle, CheckCircle2, Loader2, Search } from "lucide-react";
 import { fmt } from "../format.js";
+
+const TYPICAL_RUN_SECONDS = 8 * 60; // recent full runs took 7.5 to 9 minutes
+// The 7 pipeline steps and the percent each starts at (matches the percents the server sends).
+const STEPS = [[0, "Find the company"], [3, "Search"], [62, "Find moments"], [78, "Match to Flowcode"],
+  [83, "Check the facts"], [96, "Score"], [99, "Write the report"]];
+
+function minutesText(seconds) {
+  const m = Math.floor(seconds / 60), s = Math.floor(seconds % 60);
+  return `${m}:${String(s).padStart(2, "0")}`;
+}
+
+/** Progress bar with elapsed time and a rough time left (from typical run length, then from the pace so far). */
+function RunProgress({ job }) {
+  const [now, setNow] = useState(Date.now());
+  useEffect(() => {
+    const timer = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+  const elapsed = Math.max(0, (now - new Date(job.started_at).getTime()) / 1000);
+  const percent = Math.min(99, job.percent || 0);
+  const left = percent >= 15 ? (elapsed * (100 - percent)) / percent : TYPICAL_RUN_SECONDS - elapsed;
+  const leftText = left < 60 ? "Almost done" : `About ${Math.round(left / 60)} min left`;
+  const stepIndex = STEPS.findLastIndex(([start]) => percent >= start);
+  return (
+    <div className="run-progress">
+      <div className="run-progress-step">Step {stepIndex + 1} of {STEPS.length}: {STEPS[stepIndex][1]}</div>
+      <div className="bar"><div style={{ width: `${Math.max(percent, 2)}%` }} /></div>
+      <div className="run-progress-text">
+        <span>{minutesText(elapsed)} elapsed</span>
+        <span>{leftText}</span>
+      </div>
+    </div>
+  );
+}
 
 function RunPanel({ job, go }) {
   const icons = {
@@ -24,6 +58,7 @@ function RunPanel({ job, go }) {
           <span>{job.step}</span>
         </div>
       )}
+      {job.status === "running" && <RunProgress job={job} />}
       {job.message && <div className="msg">{job.message}</div>}
       {job.candidates?.length > 0 && (
         <div className="msg">
@@ -83,7 +118,7 @@ export default function Home({ reports, go, job, startRun }) {
         <div className="hero-right">
           <div className="mock">
             <div className="mock-head">
-              <strong>Top accounts</strong>
+              <strong>Top prospects</strong>
             </div>
             <table>
               <thead><tr><th>Company</th><th>Opportunities</th><th>Score</th></tr></thead>
@@ -99,8 +134,9 @@ export default function Home({ reports, go, job, startRun }) {
           </div>
           {best && (
             <div className="float-card" role="button" onClick={() => go(`/reports/${best.slug}`)}>
-              <div className="label">TOP PITCH · {best.name.toUpperCase()} · {fmt(best.top_score)}</div>
-              <h4>{best.top}</h4>
+              <div className="label">TOP PITCH</div>
+              <div className="company" title={best.name}>{best.name}</div>
+              <h4 title={best.top}>{best.top}</h4>
             </div>
           )}
         </div>

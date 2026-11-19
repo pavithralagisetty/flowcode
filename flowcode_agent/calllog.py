@@ -53,6 +53,6 @@ def record(kind: str, **fields: Any) -> dict[str, Any]:
     return entry
 
 
-def progress(message: str) -> None:
-    """Announce the step that is running now (shown live in the app and in CLI logs)."""
-    progress_log.info(message, extra={"progress": message})
+def progress(message: str, percent: int) -> None:
+    """Announce the step that is running now and roughly how far along the run is (shown live in the app)."""
+    progress_log.info(message, extra={"progress": message, "percent": percent})
