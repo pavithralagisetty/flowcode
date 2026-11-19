@@ -7,12 +7,7 @@ const TYPICAL_RUN_SECONDS = 8 * 60; // recent full runs took 7.5 to 9 minutes
 const STEPS = [[0, "Find the company"], [3, "Search"], [62, "Find moments"], [78, "Match to Flowcode"],
   [83, "Check the facts"], [96, "Score"], [99, "Write the report"]];
 
-function minutesText(seconds) {
-  const m = Math.floor(seconds / 60), s = Math.floor(seconds % 60);
-  return `${m}:${String(s).padStart(2, "0")}`;
-}
-
-/** Progress bar with elapsed time and a rough time left (from typical run length, then from the pace so far). */
+/** Progress bar with the current step and a rough time left (from typical run length, then from the pace so far). */
 function RunProgress({ job }) {
   const [now, setNow] = useState(Date.now());
   useEffect(() => {
@@ -29,7 +24,6 @@ function RunProgress({ job }) {
       <div className="run-progress-step">Step {stepIndex + 1} of {STEPS.length}: {STEPS[stepIndex][1]}</div>
       <div className="bar"><div style={{ width: `${Math.max(percent, 2)}%` }} /></div>
       <div className="run-progress-text">
-        <span>{minutesText(elapsed)} elapsed</span>
         <span>{leftText}</span>
       </div>
     </div>
